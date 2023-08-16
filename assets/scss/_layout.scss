@@ -12,8 +12,23 @@
 	
 	.nav{
 		display: flex;
-		padding: 0 40px;
+		margin: 0 40px;
 		gap: 0 60px;
+	}
+	.nav>li::before{
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: skyblue;
+	}
+	/* 오버시 가상요소서브메뉴창 열기 */
+	.nav:hover> li::before{
+		display: block;
+		height: 400px;
+		transition-duration: .3s;
 	}
 	.gnb{
 		display: flex;
@@ -29,8 +44,10 @@
 	.etc-menu{
 		display: flex;
 	}
-	.main-menu{
-		width: 100px;
+	.main-menu > a{
+		display: block;
+		// width: 130px;
+		line-height: 100px;
 	}
 	.main-menu a{
 		color : $black-1e;

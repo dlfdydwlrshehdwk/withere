@@ -1163,12 +1163,29 @@ h2, h3, h4 {
   justify-content: space-between;
   position: relative;
   margin: 0 auto;
+  /* 오버시 가상요소서브메뉴창 열기 */
 }
 
 #header .nav {
   display: flex;
-  padding: 0 40px;
+  margin: 0 40px;
   gap: 0 60px;
+}
+
+#header .nav > li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: skyblue;
+}
+
+#header .nav:hover > li::before {
+  display: block;
+  height: 400px;
+  transition-duration: .3s;
 }
 
 #header .gnb {
@@ -1189,8 +1206,9 @@ h2, h3, h4 {
   display: flex;
 }
 
-#header .main-menu {
-  width: 100px;
+#header .main-menu > a {
+  display: block;
+  line-height: 100px;
 }
 
 #header .main-menu a {
