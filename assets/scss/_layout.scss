@@ -2,3 +2,35 @@
 	Layout
 ********************************************************************/
 
+#header{
+	max-width: 1440px;
+	display: flex;
+	height: 100px;
+	justify-content: space-between;
+	position: relative;
+	margin: 0 auto;
+	
+	.nav{
+		display: flex;
+		padding: 0 40px;
+		gap: 0 60px;
+	}
+	.gnb{
+		display: flex;
+	}
+	.logo{
+		width: 146px;
+		aspect-ratio: 146/32;
+	}
+	img{
+		width: 100%;
+		height: 100%;
+	}
+	.etc-menu{
+		display: flex;
+	}
+	.main-menu a{
+		color : $black-1e;
+		font-weight: bold;
+	}
+}
