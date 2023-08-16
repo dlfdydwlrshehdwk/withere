@@ -9,13 +9,13 @@ $(function () {
  
     ani.init();
 
-    $('.toggle').slideup()
-    $('.toggle')
-    .hover(
-    function(){
-
-    },
-    function(){
-
-    })
+    // $('.sub-menu').hide()
+    // $('.toggle')
+    // .hover(
+    // function(){
+    //   $('.sub-menu').stop().slideDown()
+    // },
+    // function(){
+    //   $('.sub-menu').stop().slideUp()
+    // })
 });

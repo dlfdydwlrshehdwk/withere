@@ -1157,7 +1157,7 @@ h2, h3, h4 {
 	Layout
 ********************************************************************/
 #header {
-  max-width: 1440px;
+  max-width: 1920px;
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -1189,9 +1189,34 @@ h2, h3, h4 {
   display: flex;
 }
 
+#header .main-menu {
+  width: 100px;
+}
+
 #header .main-menu a {
   color: #1E1E1E;
   font-weight: bold;
+}
+
+.footer {
+  height: 100px;
+  background-color: #F5F7F9;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-logo {
+  width: 146px;
+  aspect-ratio: 146/32;
+}
+
+.footer .footer-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.footer .copyright {
+  margin: 0 0 0 auto;
 }
 
 /*! jQuery UI - v1.13.2 - 2022-12-19
@@ -3892,6 +3917,65 @@ button.swiper-pagination-bullet {
   background: #000;
   opacity: 0.6;
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)';
+}
+
+.popup {
+  border: 1px solid #000;
+  border-radius: 20px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  width: 720px;
+  padding: 40px;
+}
+
+.popup .popup-header {
+  text-align: right;
+}
+
+.popup .popup-header .popup-close {
+  font-size: 32px;
+}
+
+.popup .popup-header h1 {
+  text-align: center;
+  font-size: 64px;
+  font-weight: normal;
+}
+
+.popup .form-list {
+  width: 640px;
+  margin: 0 auto;
+  background-color: #F5F7F9;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px 0;
+  margin-top: 28px;
+}
+
+.popup .form-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 16px;
+  height: 48px;
+}
+
+.popup .form-list .necessary {
+  width: 20%;
+}
+
+.popup .form-list .con {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.popup .form-list .con input {
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
