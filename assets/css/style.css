@@ -3920,6 +3920,7 @@ button.swiper-pagination-bullet {
 }
 
 .popup {
+  display: none;
   border: 1px solid #000;
   border-radius: 20px;
   position: fixed;

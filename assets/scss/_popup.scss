@@ -13,10 +13,8 @@
 	opacity: 0.6;
 	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)';
 }
-.pop-inquiry{
-	display: none;
-}
 .popup{
+	display: none;
 	border: 1px solid #000;
 	border-radius: 20px;
 	position: fixed;
@@ -26,7 +24,6 @@
 	background-color: $white;
 	width: 720px;
 	padding: 40px;
-	display: none;
 
 	.popup-header{
 		text-align: right;

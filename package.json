@@ -5,7 +5,6 @@
     "sass": "node-sass -rw --source-map true --source-map-contents true --output-style expanded ./assets/scss/style.scss ./assets/css/style.css"
   },
   "dependencies": {
-    "bezier-easing": "^2.1.0",
-    "node-sass": "^7.0.3"
+    "bezier-easing": "^2.1.0"
   }
 }
