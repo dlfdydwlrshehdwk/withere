@@ -1156,36 +1156,65 @@ h2, h3, h4 {
 /*******************************************************************
 	Layout
 ********************************************************************/
+.headerwrap {
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #fff;
+}
+
 #header {
   max-width: 1920px;
   display: flex;
   height: 100px;
   justify-content: space-between;
-  position: relative;
-  margin: 0 auto;
-  /* 오버시 가상요소서브메뉴창 열기 */
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 
 #header .nav {
   display: flex;
-  margin: 0 40px;
-  gap: 0 60px;
 }
 
-#header .nav > li::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: skyblue;
+#header .main-menu a {
+  color: #1E1E1E;
+  font-weight: 700;
 }
 
-#header .nav:hover > li::before {
+#header .main-menu:hover > a {
+  color: #fff;
+}
+
+#header .main-menu:hover {
+  background-color: #3848A2;
+}
+
+#header .main-menu:hover .sub-menu {
+  background-color: #3848A2;
+}
+
+#header .main-menu:hover .sub-menu a {
+  color: #A1BBFF;
+}
+
+#header .main-menu .sub-menu li:hover a {
+  color: #fff;
+}
+
+#header .main-menu > a {
   display: block;
-  height: 400px;
-  transition-duration: .3s;
+  line-height: 100px;
+  padding: 0 20px;
+}
+
+#header .sub-menu a {
+  padding: 10px 20px;
+  display: block;
 }
 
 #header .gnb {
@@ -1204,16 +1233,63 @@ h2, h3, h4 {
 
 #header .etc-menu {
   display: flex;
+  align-items: center;
+  gap: 0 20px;
+  padding-left: 20px;
 }
 
-#header .main-menu > a {
-  display: block;
-  line-height: 100px;
+#header .etc-menu .btn-round {
+  height: 48px;
+  padding: 5px 10px;
+  border-radius: 16px;
+  color: #fff;
+  background-color: #3848A2;
+  font-weight: 700;
 }
 
-#header .main-menu a {
-  color: #1E1E1E;
-  font-weight: bold;
+#header .lang {
+  background-color: #EAEAEA;
+  display: flex;
+  gap: 0 8px;
+  border-radius: 278px;
+  font-size: 14px;
+  align-items: center;
+}
+
+#header .lang .btn-lang {
+  padding: 4px 8px;
+}
+
+#header .active {
+  background-color: #858795;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 28px;
+}
+
+#header .btn-drawer {
+  display: none;
+}
+
+.main .txt {
+  font-size: 200px;
+  font-weight: 700;
+  color: #f3f3f3;
+}
+
+.main .txt-section {
+  position: relative;
+}
+
+.main .txt-set {
+  position: relative;
+  height: 300vh;
+}
+
+.main .txtsticky {
+  position: sticky;
+  top: 33%;
+  transform: translateY(-33%);
 }
 
 .footer {
@@ -3948,6 +4024,7 @@ button.swiper-pagination-bullet {
   background-color: #fff;
   width: 720px;
   padding: 40px;
+  z-index: 901;
 }
 
 .popup .popup-header {

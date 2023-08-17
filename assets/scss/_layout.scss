@@ -1,34 +1,60 @@
 /*******************************************************************
 	Layout
 ********************************************************************/
-
+body *{
+	// border: 1px dashed red;
+}
+.headerwrap {
+	height: 100px;
+	position: fixed;
+	top: 0;
+	left: 0;
+    width: 100vw;
+	background-color: $white;
+}
 #header{
 	max-width: 1920px;
-	display: flex;
-	height: 100px;
-	justify-content: space-between;
-	position: relative;
-	margin: 0 auto;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
 	
 	.nav{
 		display: flex;
-		margin: 0 40px;
-		gap: 0 60px;
 	}
-	.nav>li::before{
-		content: '';
-		position: absolute;
-		z-index: -1;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background-color: skyblue;
+	.main-menu a{
+		color : $black-1e;
+		font-weight: $fw-bold;
 	}
-	/* 오버시 가상요소서브메뉴창 열기 */
-	.nav:hover> li::before{
+	.main-menu:hover > a {
+		color: $white;
+	}
+	.main-menu:hover {
+		background-color : $primary;
+	}
+	.main-menu:hover .sub-menu{
+		background-color : $primary;
+	}
+	.main-menu:hover .sub-menu a{
+		color : $secondary;
+	}
+	.main-menu .sub-menu li:hover a{
+		color : $white
+	}
+	.main-menu > a{
 		display: block;
-		height: 400px;
-		transition-duration: .3s;
+		line-height: 100px;
+		padding: 0 20px;
+	}
+	.sub-menu{
+		a{
+			padding: 10px 20px;
+			display: block;
+		}
 	}
 	.gnb{
 		display: flex;
@@ -41,19 +67,70 @@
 		width: 100%;
 		height: 100%;
 	}
+
+
 	.etc-menu{
 		display: flex;
+		align-items: center;
+		gap: 0 20px;
+		padding-left: 20px;
+		.btn-round { 
+			height: 48px;
+			padding: 5px 10px;
+			border-radius: 16px;
+			color: $white;
+			background-color: $primary;
+			font-weight: $fw-bold;
+		}
 	}
-	.main-menu > a{
-		display: block;
-		// width: 130px;
-		line-height: 100px;
+	.lang{
+		background-color: $bg-ea;
+		display: flex;
+		gap: 0 8px;
+		border-radius: 278px;
+		font-size: 14px;
+		align-items: center;
+		.btn-lang{
+			padding: 4px 8px;
+		}
 	}
-	.main-menu a{
-		color : $black-1e;
-		font-weight: bold;
+	.active{
+		background-color: $gray-85;
+		color: $white;
+		font-weight: $fw-bold;
+		border-radius: 28px;
+	}
+	.btn-drawer{
+		display: none;
+	}
+	
+}
+
+.main{
+	// margin-top: 100px;
+	.txt{
+		font-size: 200px;
+		font-weight: $fw-bold;
+		color: #f3f3f3;
+	}
+	.txt-section{
+		position: relative;
+	}
+	.txt-set{
+		position: relative;
+		height: 300vh;
+	}
+	.txtsticky{
+		position : sticky;
+		top: 33%;
+    transform: translateY(-33%);
 	}
 }
+
+
+
+
+
 
 
 
