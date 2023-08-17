@@ -1284,7 +1284,6 @@ h2, h3, h4 {
 
 .main .txt-set {
   position: relative;
-  height: 300vh;
 }
 
 .main .txtsticky {
@@ -1375,6 +1374,119 @@ h2, h3, h4 {
   font-size: 28px;
 }
 
+.main .news {
+  height: 100vh;
+  background-color: #3848A2;
+  padding: 180px 240px;
+  display: flex;
+  align-items: center;
+}
+
+.main .news img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.main .news h3 {
+  font-size: 64px;
+  color: #fff;
+}
+
+.main .news .news-slide {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.main .news .news-slide ul {
+  display: flex;
+  gap: 40px;
+}
+
+.main .news .news-slide ul li {
+  background-color: #fff;
+  width: 400px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.main .news .news-slide ul li > div:nth-child(1) {
+  flex: 1;
+  font-size: 28px;
+}
+
+.main .news .news-slide ul li > div:nth-child(2) {
+  height: 260px;
+}
+
+.main .news .news-slide-textbx {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main .news .news-slide-textbx > div {
+  flex: 1;
+  font-weight: 500;
+}
+
+.main .news .news-slide-textbx > p {
+  font-size: 14px;
+  color: #6D6D6D;
+}
+
+.main .news .newsbtn {
+  line-height: 32px;
+  border: 1px solid #fff;
+  border-radius: 60px;
+  padding: 20px 40px;
+  color: #fff;
+}
+
+.main .news .newsbtn .arrow {
+  width: 32px;
+  height: 32px;
+}
+
+.main .banner {
+  width: 1920px;
+  height: 480px;
+  margin: 0 auto;
+  background: url(../images/contact.png) no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 80px 240px;
+  gap: 40px;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  flex-direction: column;
+}
+
+.main .banner .banner-txtbx > div:nth-child(1) {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.main .banner .banner-txtbx button {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.main .banner .bannerbtn {
+  line-height: 32px;
+  border: 1px solid #fff;
+  border-radius: 60px;
+  padding: 20px 40px;
+}
+
+.main .banner .bannerbtn .arrow {
+  width: 32px;
+  height: 32px;
+}
+
 .footer {
   height: 100px;
   background-color: #F5F7F9;
@@ -1392,8 +1504,9 @@ h2, h3, h4 {
   height: 100%;
 }
 
-.footer .copyright {
-  margin: 0 0 0 auto;
+.footer .footer-info {
+  display: flex;
+  flex: 1;
 }
 
 /*! jQuery UI - v1.13.2 - 2022-12-19
@@ -4089,8 +4202,8 @@ button.swiper-pagination-bullet {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   background: #000;
   opacity: 0.6;
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)';

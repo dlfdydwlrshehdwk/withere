@@ -39,12 +39,28 @@ $(function () {
       // 오버시
       function(){
         console.log('h')
-        $(this).find('.product-bottombx').slideDown()
+        $(this).find('.product-bottombx').stop().slideDown()
       },
       // 아웃시
       function(){
-        $(this).find('.product-bottombx').slideUp()
+        $(this).find('.product-bottombx').stop().slideUp()
       })
 
+
+      // news 스크롤이벤트
+
+      // 필요변수
+      let targetPage = $('.news'); // 타겟박스
+      let stickyBx = $('.news-slide') // 스티키 될 박스
+      let moveBx = $('.news-slide ul') // 실제로 움직일 박스
+
+      $(window).scroll(function(){
+        // 되나 체크
+        console.log('scr')
+        let a = moveBx.getBoundingClientRect().top;
+        console.log(a)
+
+      })
+      
 
 });
