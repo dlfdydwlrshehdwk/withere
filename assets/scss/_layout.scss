@@ -118,7 +118,7 @@ body *{
 	}
 	.txt-set{
 		position: relative;
-		// height: 300vh;
+		height: 300vh;
 	}
 	.txtsticky{
 		position : sticky;
@@ -143,16 +143,24 @@ body *{
 		.product-topbx{
 			display: flex;
 			gap: 0 80px;
-		}
-		.product-imgbx{
-			width: 428px;
-			height: 276px;
-		}
-		.product-txtbx{
-			width: 780px;
-			display: flex;
-			flex-direction: column;
-			gap: 60px;
+
+			.product-txtbx{
+				h3 {font-size: 64px;}
+				p {
+					color: $gray-6d;
+					font-size: 32px;
+				}
+			}
+			.product-imgbx{
+				width: 428px;
+				height: 276px;
+			}
+			.product-txtbx{
+				width: 780px;
+				display: flex;
+				flex-direction: column;
+				gap: 60px;
+			}
 		}
 		.product-bottombx{
 			margin-top: 80px;
@@ -165,6 +173,14 @@ body *{
 						margin-bottom: 24px;
 					}
 				}
+			}
+			h3{
+				color: $primary;
+				font-size: 36px;
+			}
+			p{
+				color: $gray-6d;
+				font-size: 28px;
 			}
 		}
 	}
