@@ -57,8 +57,8 @@ $(function () {
       $(window).scroll(function(){
         // 되나 체크
         console.log('scr')
-        let a = moveBx.getBoundingClientRect().top;
-        console.log(a)
+        // let a = moveBx.getBoundingClientRect().top;
+        // console.log(a)
 
       })
       
