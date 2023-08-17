@@ -53,14 +53,15 @@ $(function () {
       let targetPage = $('.news'); // 타겟박스
       let stickyBx = $('.news-slide') // 스티키 될 박스
       let moveBx = $('.news-slide ul') // 실제로 움직일 박스
+      let point = targetPage.offset().top
+      
+      $(window).on('scroll',function(){
+        let c = targetPage.offset()
+        let d = $('.news')
 
-      $(window).scroll(function(){
-        // 되나 체크
-        console.log('scr')
-        // let a = moveBx.getBoundingClientRect().top;
-        // console.log(a)
-
+        console.log(c,d,e,point)
       })
+
       
 
 });

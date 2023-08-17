@@ -1375,11 +1375,10 @@ h2, h3, h4 {
 }
 
 .main .news {
-  height: 100vh;
+  height: calc(100vh + 3800px);
   background-color: #3848A2;
   padding: 180px 240px;
   display: flex;
-  align-items: center;
 }
 
 .main .news img {
@@ -1399,6 +1398,7 @@ h2, h3, h4 {
 }
 
 .main .news .news-slide ul {
+  width: calc(3800px + 100vw);
   display: flex;
   gap: 40px;
 }
