@@ -52,6 +52,8 @@ body{
 		padding: 0 20px;
 	}
 	.sub-menu{
+		height: 0;
+		overflow: hidden;
 		a{
 			padding: 10px 20px;
 			display: block;
