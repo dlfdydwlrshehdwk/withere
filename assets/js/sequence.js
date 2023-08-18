@@ -2,6 +2,10 @@ $(()=>{
     // 시퀀스 1-175 176-350 351-526 
     // 변수값은 시작사진숫자, 끝나는사진숫자, 몇초동안할건지숫자 
     function sequence(startN,endN,duration){
+        $('.img-set').css({display : 'block'})
+        setTimeout(()=>{
+            $('.img-set').hide()
+        },5000)
         let a = startN;
         let b = endN;
         let c = duration;
@@ -90,12 +94,16 @@ $(()=>{
     // $('.t2').css({display : 'flex'})
     function interval(){
         blackText('.t1 ',0,175,5)
+        // 3.5초뒤에 애니가 실행 5초
+        // blackText('.t2 ',176,351,5)
+        // 처음엔 이미지소스가 없으니 .img-set dn상태
+        // blackText 1 실행하고 8.5초 뒤에 .img-set 숨김 + t1숨김 t2보이게하고 blackText t2실행
         setTimeout(()=>{
-            $('.testimg').attr('src','')
             $('.t1').hide()
             $('.t2').css({display : 'flex'})
             blackText('.t2 ',176,351,5)
-        },9000)
+        },8500)
+
     }
     interval()
 

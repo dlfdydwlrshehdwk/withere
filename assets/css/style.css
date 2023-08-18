@@ -1299,6 +1299,10 @@ body {
   justify-content: center;
 }
 
+.main .intro .img-set {
+  display: none;
+}
+
 .main .intro .t2 {
   display: none;
 }
