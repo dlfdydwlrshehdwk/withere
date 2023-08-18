@@ -62,9 +62,10 @@ $(function () {
         let a = $('.news-content').height()
         // 가로스크롤처럼 보일 적용구간 
         if(targetP >= 0 && targetP <= 3480 - a ){
-          console.log('여기') 
+          // 적용구간에 들어오면 스크롤되는 만큼 박스이동
           moveBx.css({left :'-' + targetP + 'px'})
         }
+        // 타겟값이 아니라면(화면의 위쪽이라면) 박스는 원위치유지상태
         else if(targetP < 0){
           moveBx.css({left : '0'});
         }
