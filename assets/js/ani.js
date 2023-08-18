@@ -30,7 +30,7 @@ $(function () {
         height : '0'
       })
       $('.headerwrap').css({height : '100px',
-      backgroundColor : 'white' })
+      backgroundColor : '' })
     })
 
     // product부분 초기에 안보이게 셋팅
@@ -51,7 +51,6 @@ $(function () {
 
       // 필요변수
       let targetPage = $('.news'); // 타겟박스
-      let stickyBx = $('.news-slide') // 스티키 될 박스
       let moveBx = $('.news-slide ul') // 실제로 움직일 박스
       
       $(window).on('scroll',function(){
@@ -71,6 +70,32 @@ $(function () {
         }
       })
 
-      
+      // new 스크롤이벤트 끝
+
+      // intro 텍스트 칼라 이벤트
+      function blackText(){
+        let tg = $('.t1 .txt');
+        tg.eq(0)
+        .delay(500)
+        .animate({ color : 'black' },0)
+        .delay(500)
+        .animate({ color : '#f3f3f3' },0,()=>{
+          tg.eq(1)
+          .delay(500)
+          .animate({ color : 'black' },0)
+          .delay(500)
+          .animate({ color : '#f3f3f3' },0,()=>{
+            tg.eq(2)
+            .delay(500)
+            .animate({ color : 'black'},0)
+            .delay(500)
+            .animate({ color : '#f3f3f3'},0,()=>{
+              tg.delay(500).animate({color : 'blue'},0)
+            })
+          })
+        })
+
+      }
+      blackText()
 
 });

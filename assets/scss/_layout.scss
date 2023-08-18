@@ -1,14 +1,16 @@
 /*******************************************************************
 	Layout
 ********************************************************************/
-
+body{
+	overflow-x: hidden;
+}
 .headerwrap {
 	height: 100px;
 	position: fixed;
 	top: 0;
 	left: 0;
     width: 100%;
-	background-color: beige;
+	// background-color: beige;
 	z-index: 1;
 }
 #header{
@@ -106,24 +108,21 @@
 }
 
 .main{
-	.txt{
-		font-size: 200px;
-		font-weight: $fw-bold;
-		color: #f3f3f3;
+	.intro{
+		.txt{
+			font-size: 200px;
+			font-weight: $fw-bold;
+			color: #f3f3f3;
+		}
+		.txt-set{
+			width: 1440px;
+			height: 100vh;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
 	}
-	.txt-section{
-		position: relative;
-	}
-	.txt-set{
-		position: relative;
-		// height: 300vh;
-	}
-	.txtsticky{
-		position : sticky;
-		top: 33%;
-    transform: translateY(-33%);
-	}
-
 	.product{
 		display: flex;
 		flex-direction: column;

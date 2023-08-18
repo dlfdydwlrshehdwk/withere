@@ -1156,13 +1156,16 @@ h2, h3, h4 {
 /*******************************************************************
 	Layout
 ********************************************************************/
+body {
+  overflow-x: hidden;
+}
+
 .headerwrap {
   height: 100px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: beige;
   z-index: 1;
 }
 
@@ -1272,24 +1275,19 @@ h2, h3, h4 {
   display: none;
 }
 
-.main .txt {
+.main .intro .txt {
   font-size: 200px;
   font-weight: 700;
   color: #f3f3f3;
 }
 
-.main .txt-section {
-  position: relative;
-}
-
-.main .txt-set {
-  position: relative;
-}
-
-.main .txtsticky {
-  position: sticky;
-  top: 33%;
-  transform: translateY(-33%);
+.main .intro .txt-set {
+  width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .main .product {
