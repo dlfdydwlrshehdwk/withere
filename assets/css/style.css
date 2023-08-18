@@ -1280,6 +1280,10 @@ body {
   display: none;
 }
 
+.main .intro {
+  position: relative;
+}
+
 .main .intro .txt {
   font-size: 200px;
   font-weight: 700;
@@ -1293,6 +1297,33 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.main .intro .t2 {
+  display: none;
+}
+
+.main .intro .t3 {
+  display: none;
+}
+
+.main .intro .bg-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+}
+
+.main .intro .bg-section .img-set {
+  width: 100%;
+  height: 100%;
+}
+
+.main .intro .bg-section img {
+  width: 100%;
+  height: 100%;
 }
 
 .main .product {

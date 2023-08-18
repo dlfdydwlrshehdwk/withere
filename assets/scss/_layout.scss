@@ -111,6 +111,8 @@ body{
 
 .main{
 	.intro{
+		position: relative;
+
 		.txt{
 			font-size: 200px;
 			font-weight: $fw-bold;
@@ -123,6 +125,28 @@ body{
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+		}
+		.t2{
+			display: none;
+		}
+		.t3{
+			display: none;
+		}
+		.bg-section{
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			height: 100vh;
+			width: 100%;
+			.img-set{
+				width: 100%;
+				height: 100%;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 	.product{

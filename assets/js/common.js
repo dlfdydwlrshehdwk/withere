@@ -22,8 +22,10 @@ let common = {
 		$("body").css("position", "relative").css("overflow", "auto");
 		$(".popup").hide();
 	}
+
 }
 
 $(function () {
 	common.init();
+	
 });
