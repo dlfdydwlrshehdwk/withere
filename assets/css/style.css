@@ -1375,10 +1375,11 @@ h2, h3, h4 {
 }
 
 .main .news {
-  height: calc(100vh + 3800px);
+  position: relative;
+  display: flex;
+  height: 3800px;
   background-color: #3848A2;
   padding: 180px 240px;
-  display: flex;
 }
 
 .main .news img {
@@ -1392,13 +1393,20 @@ h2, h3, h4 {
   color: #fff;
 }
 
+.main .news .news-content {
+  position: sticky;
+  top: 120px;
+  left: 0;
+  height: 100vh;
+}
+
 .main .news .news-slide {
   margin-top: 120px;
   margin-bottom: 120px;
 }
 
 .main .news .news-slide ul {
-  width: calc(3800px + 100vw);
+  position: relative;
   display: flex;
   gap: 40px;
 }
