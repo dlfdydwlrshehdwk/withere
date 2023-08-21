@@ -10,7 +10,7 @@ $(function () {
 
     // .scrolltop 을 누르면 맨위로
     $('.scrolltop').click(function(){
-      location.reload()
+      // location.reload()
       $(window).scrollTop(0)
     })
 
