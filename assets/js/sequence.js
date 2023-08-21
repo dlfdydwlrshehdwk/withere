@@ -58,8 +58,6 @@ $(()=>{
         // 안에있는 txt 3가지에게 순차적으로 효과를 줌
         let tg = $( target + '.txt');
 
-
-
         tg.eq(0)
         .delay(500)
         .animate({ color : 'black' },0)
@@ -83,7 +81,7 @@ $(()=>{
         })
       };
 
-    // 실행코드
+    // 실행코드 - 새로만드는중 .t1 스페이스임
     //   blackText('.t1 ')
 
     //   handle form change  양식 변경을 처리하다 - 이벤트 핸들러 뭐할때 시작할거니?
@@ -91,7 +89,7 @@ $(()=>{
     sequence(0,175,5)
     });
 
-    // $('.t2').css({display : 'flex'})
+    // 인터벌을 어떻게 할까 고민중
     function interval(){
         blackText('.t1 ',0,175,5)
         // 3.5초뒤에 애니가 실행 5초
@@ -105,8 +103,16 @@ $(()=>{
         },8500)
 
     }
-    interval()
+    // 실행코드 
+    // interval()
 
+
+
+
+
+
+
+    // 깔끔하게 새로제작 준비중
     /* 
       이름 : 인트로 애니메이션
       조건1 : 시퀀스를 사용해야함 1~175 장씩 3개 5초동안 보여지게 
@@ -114,7 +120,56 @@ $(()=>{
       조건3 : 각 애니메이션 종류시 .3~5초정도 사이간격을 주고싶음 사이간격때는 흰색배경처리 
       조건4 : 애니메이션을 인터벌로 무한반복을 할지 ... 3번진행후 다른화면을 고정으로 놓을지 고민...
       조건5 : 지저분한 코드로 잇지말고 효율적인 코드로 함수화를 해서 사용하고 싶은데...
-
-
     */
+    function blackText(target){
+
+      // 기능 : 파라미터를 받음 - 그 요소안에 .txt들(3개있을것) 걔네를 한번씩 번쩍해줌!
+      let tg = $( target + '.txt');
+      // console.log(tg)
+
+      tg.eq(0)
+        .delay(500)
+        .animate({ color : 'black' },0)
+        .delay(500)
+        .animate({ color : '#f3f3f3' },0,()=>{
+          tg.eq(1)
+          .delay(500)
+          .animate({ color : 'black' },0)
+          .delay(500)
+          .animate({ color : '#f3f3f3' },0,()=>{
+            tg.eq(2)
+            .delay(500)
+            .animate({ color : 'black'},0)
+            .delay(500)
+            .animate({ color : '#f3f3f3'},0)
+          })
+        })
+    }
+
+    function sq(startN,endN,duration){
+
+      // 사진담을 배열만들기
+      // 빈배열을 만든 후 for문을 돌려 파라미터로 받은 시작값과 끝값을 각각 넣어준다.
+      let array = []
+      for(let i = startN ; i < endN ; i++){
+          array.push("../assets/images/sequence/sequence_" + i + ".jpg")
+      }
+      let time =  duration / (endN - startN) // 대략 28.5 이미지가 바뀌어야 할 주기
+      
+      $('.testimg').attr('src','../assets/images/sequence/sequence_' + 2 + '.jpg')
+
+
+    sq(1,176,5000)
+
+
+
+
+
+
+
+
+
+    blackText('.t1 ')
+
+    
 })

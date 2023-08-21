@@ -1426,7 +1426,7 @@ body {
 }
 
 .main .intro .img-set {
-  display: none;
+  display: block;
 }
 
 .main .intro .t2 {
