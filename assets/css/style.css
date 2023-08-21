@@ -1402,6 +1402,10 @@ body {
   opacity: 1;
 }
 
+.main {
+  position: relative;
+}
+
 .main .intro {
   position: relative;
 }
@@ -1543,7 +1547,7 @@ body {
 }
 
 .main .product .product-bottombx h4 {
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 700;
 }
 
@@ -1631,25 +1635,83 @@ body {
   color: #fff;
 }
 
-.main .news .newsbtn .arrow {
-  width: 32px;
-  height: 32px;
+.main .news .newsbtn i {
+  padding-left: 5px;
+}
+
+.main .news .newsbtn:hover {
+  transition: .3s;
+  border: 1px solid #fff;
+  border-radius: 60px;
+  padding: 20px 40px;
+  color: #3848A2;
+  background-color: #fff;
+  font-weight: bold;
 }
 
 .main .contact {
   padding: 180px 240px;
 }
 
-.main .contact .flowbx-wrap {
-  display: flex;
+.main .contact h2 {
+  font-size: 64px;
+  font-weight: bold;
 }
 
-.main .contact .flowbx {
-  display: flex;
+.main .contact .contact-cont {
+  overflow: hidden;
+  margin-top: 120px;
 }
 
-.main .contact .flowbx > div {
+.main .contact .contact-cont .flowbx-wrap {
+  display: flex;
+  width: 200%;
+  position: relative;
+}
+
+.main .contact .contact-cont .flowbx-wrap:nth-child(1) {
+  animation: marquee 20s linear infinite;
+}
+
+.main .contact .contact-cont .flowbx-wrap:nth-child(2) {
+  margin-top: 80px;
+  left: 15%;
+  animation: marquee2 20s linear infinite;
+}
+
+.main .contact .contact-cont .flowbx {
+  display: flex;
+  flex-basis: 50%;
+  gap: 60px;
+  padding-right: 160px;
+}
+
+.main .contact .contact-cont .flowbx > div:nth-child(1) {
   width: 200px;
+}
+
+.main .contact .contact-cont .flowbx > div:nth-child(2) p {
+  margin-top: 20px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    left: 15%;
+  }
+  100% {
+    left: -85%;
+  }
 }
 
 .main .banner {
@@ -1684,9 +1746,16 @@ body {
   padding: 20px 40px;
 }
 
-.main .banner .bannerbtn .arrow {
-  width: 32px;
-  height: 32px;
+.main .banner .bannerbtn i {
+  padding-left: 5px;
+}
+
+.main .banner .bannerbtn:hover {
+  transition: .3s;
+  border: 1px solid #1E1E1E;
+  background-color: #fff;
+  color: #1E1E1E;
+  font-weight: 700;
 }
 
 .footer {
@@ -1694,6 +1763,8 @@ body {
   background-color: #F5F7F9;
   display: flex;
   align-items: center;
+  padding: 40px;
+  gap: 40px;
 }
 
 .footer .footer-logo {
@@ -1709,12 +1780,31 @@ body {
 .footer .footer-info {
   display: flex;
   flex: 1;
+  gap: 40px;
+}
+
+.footer .footer-info .contact {
+  display: flex;
+  gap: 20px;
+}
+
+.footer .footer-info .contact .email a {
+  color: black;
+  text-decoration: underline;
+}
+
+.footer .footer-info .contact .email a span {
+  padding-right: 5px;
+}
+
+.footer .footer-info .contact .tel span {
+  padding-right: 5px;
 }
 
 .scrolltop {
   position: fixed;
   width: 60px;
-  bottom: 5%;
+  bottom: 30px;
   right: 3%;
   height: 60px;
   border: 1px solid black;

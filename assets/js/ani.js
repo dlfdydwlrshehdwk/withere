@@ -11,7 +11,7 @@ $(function () {
     // .scrolltop 을 누르면 맨위로
     $('.scrolltop').click(function(){
       location.reload()
-      // $(window).scrollTop(0)
+      $(window).scrollTop(0)
     })
 
     // 네비게이션 오버시 

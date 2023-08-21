@@ -21,6 +21,7 @@ $(()=>{
       
       $(window).on('scroll',function(){
         let windowH = $(window).scrollTop()
+        console.log(windowH)
         let point = targetPage.offset().top // DOM에서 요소간의 거리 4446
         let targetP = windowH - point // js에서 getBoundingClientRect() 느낌
         // console.log('스크롤값',windowH,'\n포인트값',point,'사용할숫자\n',targetP)
@@ -38,7 +39,7 @@ $(()=>{
 
         // 스크롤이 맨위일시만 헤더가 보이고 
         // 평소에는 보이지 않으며 마우스휠을 올릴경우 헤더가 보이게!
-        console.log(windowH)
+        
         if(windowH !== 0){
           // 실행지점 = window.scrollTop() 이 0 이 아닐경우
           if (windowH > last_scrollTop) {
@@ -73,13 +74,37 @@ $(()=>{
           })
         }
 
+        // 스크롤이 footer위에까지 올쯔음에 footer 위로가게 설정
+        // 이벤트대상 
+        let scrolltopbtn = $('.scrolltop')
+        // 전체 높이값
+        let wrapH = $('#wrap').height() // 8562 // windowH는 7279임 100vh만큼 빠지기때문 기준을 화면맨위로잡기에
+        // 대상높이값
+        let footerH = $('.footer').innerHeight() 
+        // 목표값
+        let target_scrolltop = wrapH - footerH - $(window).height()
+        // console.log(target_scrolltop) // 7179
+        // 윈도우스크롤의 위치가 타겟보다 크다면 코드
+        // console.log(target_scrolltop)
+        // console.log(wrapH - $(window).height())
+        if($(window).scrollTop() != 7279){
+          $('.scrolltop').css({
+            transition : '.3s',
+            bottom : 30 + 'px'
+          })
+        }
+        if(windowH > target_scrolltop){
+          scrolltopbtn.css({
+            transition : '.3s',
+            bottom : footerH  + 30 + 'px'
+          })
+        }
 
-
-
-
-
+        
       });
 
-      // new 스크롤이벤트 끝
+      
 
+      // new 스크롤이벤트 끝
+      
 })

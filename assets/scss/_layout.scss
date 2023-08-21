@@ -206,6 +206,7 @@ body{
 	opacity: 1;
 }
 .main{
+	position: relative;
 	.intro{
 		position: relative;
 
@@ -323,7 +324,7 @@ body{
 			h4{
 				// 박스 오버하면 이색으로되는가봄
 				// color: $primary;
-				font-size: 36px;
+				font-size: 34px;
 				font-weight: $fw-bold;
 			}
 			p{
@@ -398,22 +399,66 @@ body{
 			border-radius: 60px;
 			padding: 20px 40px;
 			color: $white;
-			.arrow{
-				width: 32px;
-				height: 32px;
+			i {
+				padding-left: 5px;
 			}
+		}
+		.newsbtn:hover {
+			transition: .3s;
+			border: 1px solid $white;
+			border-radius: 60px;
+			padding: 20px 40px;
+			color: $primary;
+			background-color: $white;
+			font-weight: bold;
 		}
 	}
 	.contact{
 		padding: 180px 240px;
-		.flowbx-wrap{
-			display: flex;
+		h2 {
+			font-size: 64px;
+			font-weight: bold;
 		}
-		.flowbx {
-			display: flex;
+		.contact-cont{
+			overflow: hidden;
+			margin-top: 120px;
+			.flowbx-wrap{
+				display: flex;
+				width: 200%;
+				position: relative;
+			}
+			.flowbx-wrap:nth-child(1){
+				animation: marquee 20s linear infinite;
+			}
+			.flowbx-wrap:nth-child(2){
+				margin-top: 80px;
+				left: 15%;
+				animation: marquee2 20s linear infinite;
+			}
+			.flowbx {
+				display: flex;
+				flex-basis: 50%;
+				gap: 60px;
+				padding-right: 160px;
+			}
+			.flowbx > div:nth-child(1) {
+				width: 200px;
+			}
+			.flowbx > div:nth-child(2) {
+				p {
+					margin-top: 20px;
+					font-size: 36px;
+					font-weight: bold;
+				}
+			}
 		}
-		.flowbx > div {
-			width: 200px;
+		@keyframes marquee {
+			0%{left : 0}
+			100%{left : -100%}
+		}
+		@keyframes marquee2 {
+			0%{left : 15%}
+			100%{left : -85%}
 		}
 	}
 	.banner {
@@ -445,10 +490,16 @@ body{
 			border: 1px solid $white;
 			border-radius: 60px;
 			padding: 20px 40px;
-			.arrow{
-				width: 32px;
-				height: 32px;
+			i{
+				padding-left: 5px;
 			}
+		}
+		.bannerbtn:hover {
+			transition: .3s;
+			border: 1px solid $black-1e;
+			background-color: $white;
+			color : $black-1e;
+			font-weight: $fw-bold;
 		}
 		
 	}
@@ -466,6 +517,8 @@ body{
 	background-color: $bg-f5;
 	display: flex;
 	align-items: center;
+	padding: 40px;
+	gap: 40px;
 
 	.footer-logo{
 		width: 146px;
@@ -478,12 +531,29 @@ body{
 	.footer-info{
 		display: flex;
 		flex: 1;
+		gap: 40px;
+		.contact {
+			display: flex;
+			gap: 20px;
+
+			.email a{
+				color : black;
+				text-decoration: underline;
+
+				span {
+					padding-right: 5px;
+				}
+			}
+			.tel span{
+				padding-right: 5px;
+			}
+		}
 	}
 }
 .scrolltop{
 	position: fixed;
     width: 60px;
-    bottom: 5%;
+    bottom: 30px;
     right: 3%;
     height: 60px;
     border: 1px solid black;
