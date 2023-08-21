@@ -148,17 +148,31 @@ $(()=>{
 
     function sq(startN,endN,duration){
 
+      let i  = 0;
       // 사진담을 배열만들기
       // 빈배열을 만든 후 for문을 돌려 파라미터로 받은 시작값과 끝값을 각각 넣어준다.
       let array = []
       for(let i = startN ; i < endN ; i++){
           array.push("../assets/images/sequence/sequence_" + i + ".jpg")
       }
+    
       let time =  duration / (endN - startN) // 대략 28.5 이미지가 바뀌어야 할 주기
       
-      $('.testimg').attr('src','../assets/images/sequence/sequence_' + 2 + '.jpg')
+      // 이미지 넣는곳 + 이미지 경로
+      $('.testimg').attr('src','../assets/images/sequence/sequence_' + 1 + '.jpg')
 
+      console.log($('.testimg').attr('src'))
+      
+      let interval = setInterval(imgInterval,time)
 
+      function imgInterval(){
+        // 이미지 넣는곳 + 이미지 경로
+        $('.testimg').attr('src','../assets/images/sequence/sequence_' + i + '.jpg')
+        i++;
+        if(i > 526) i = 1;
+      }
+      
+    }
     sq(1,176,5000)
 
 
