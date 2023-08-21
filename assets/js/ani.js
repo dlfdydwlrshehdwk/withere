@@ -8,15 +8,20 @@ let ani = {
 $(function () {
     ani.init();
 
+    // .scrolltop 을 누르면 맨위로
+    $('.scrolltop').click(function(){
+      location.reload()
+      // $(window).scrollTop(0)
+    })
+
     // 네비게이션 오버시 
     $('.nav').hover(
     function(){
-      console.log('hh')
       $('.sub-menu').css({
         height : 'auto'
       })
       $('.headerwrap').css({height : '272px',
-      backgroundColor : 'beige' })
+      backgroundColor : 'white' })
     },
     // 네비게이션 오버 뗐을때
     function(){
@@ -24,8 +29,7 @@ $(function () {
         overflow:'hidden',
         height : '0'
       })
-      $('.headerwrap').css({height : '100px',
-      backgroundColor : '' })
+      $('.headerwrap').css({height : '100px' })
     });
 
     // product부분 초기에 안보이게 셋팅
@@ -44,7 +48,7 @@ $(function () {
       // aside li ▼ 누르면 서브메뉴 펼쳐지기 + 닫히기
       $('.mobile-nav-list').click(function(event){
           event.preventDefault()
-          $(this).parent().find('.mobile-submenu').slideToggle()
+          $(this).parent().find('.mobile-submenu').stop().slideToggle()
           $(this).find('.mobile-state').toggleClass('db')
       })
 
