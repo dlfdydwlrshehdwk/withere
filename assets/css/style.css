@@ -1179,10 +1179,17 @@ body {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  padding: 0 20px;
 }
 
 #header .nav {
   display: flex;
+}
+
+@media screen and (max-width: 1440px) {
+  #header .nav {
+    display: none;
+  }
 }
 
 #header .main-menu a {
@@ -1228,6 +1235,7 @@ body {
 
 #header .gnb {
   display: flex;
+  gap: 20px;
 }
 
 #header .logo {
@@ -1278,6 +1286,119 @@ body {
 
 #header .btn-drawer {
   display: none;
+}
+
+#header .btn-drawer span {
+  line-height: 100px;
+}
+
+@media screen and (max-width: 1440px) {
+  #header .btn-drawer {
+    display: block;
+  }
+}
+
+#aside {
+  display: none;
+  background-color: beige;
+}
+
+@media screen and (max-width: 1440px) {
+  #aside {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    width: 400px;
+    opacity: 0;
+    transition: .3s;
+  }
+}
+
+#aside .aside-close {
+  position: absolute;
+  top: 0%;
+  right: 3%;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+#aside .aside {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+#aside .mobile-etc-menu {
+  margin-bottom: 40px;
+  margin-top: auto;
+}
+
+#aside .logo {
+  width: 146px;
+  display: flex;
+  height: 100px;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#aside .mobile-nav > li {
+  border-bottom: 1px solid;
+}
+
+#aside .mobile-nav > li:nth-child(1) {
+  border-top: 1px solid;
+}
+
+#aside .mobile-nav li a {
+  display: block;
+  padding: 15px 0;
+}
+
+#aside .mobile-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+#aside .mobile-subclose {
+  display: none;
+}
+
+#aside .mobile-submenu > li > a {
+  padding: 15px;
+}
+
+#aside .mobile-submenu {
+  display: none;
+}
+
+#aside .mobile-state {
+  display: none;
+}
+
+#aside .mobile-state.db {
+  display: block;
+}
+
+#aside .mobile-demo {
+  height: 48px;
+  padding: 5px 10px;
+  border-radius: 16px;
+  color: #fff;
+  background-color: #3848A2;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+#aside.on {
+  right: 0;
+  opacity: 1;
 }
 
 .main .intro {
@@ -1356,6 +1477,14 @@ body {
   gap: 0 80px;
 }
 
+.main .product .product-topbx .product-txtbx {
+  position: relative;
+  width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
 .main .product .product-topbx .product-txtbx h3 {
   font-size: 64px;
   font-weight: 700;
@@ -1369,16 +1498,26 @@ body {
   font-size: 32px;
 }
 
+.main .product .product-topbx .product-txtbx .barogagi {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  cursor: pointer;
+}
+
+.main .product .product-topbx .product-txtbx .barogagi > a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.main .product .product-topbx .product-txtbx .barogagi > a > div:nth-child(1) {
+  padding-right: 16px;
+}
+
 .main .product .product-topbx .product-imgbx {
   width: 428px;
   height: 276px;
-}
-
-.main .product .product-topbx .product-txtbx {
-  width: 780px;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
 }
 
 .main .product .product-bottombx {
@@ -1494,6 +1633,22 @@ body {
 .main .news .newsbtn .arrow {
   width: 32px;
   height: 32px;
+}
+
+.main .contact {
+  padding: 180px 240px;
+}
+
+.main .contact .flowbx-wrap {
+  display: flex;
+}
+
+.main .contact .flowbx {
+  display: flex;
+}
+
+.main .contact .flowbx > div {
+  width: 200px;
 }
 
 .main .banner {
@@ -4260,7 +4415,7 @@ button.swiper-pagination-bullet {
   border: 1px solid #000;
   border-radius: 20px;
   position: fixed;
-  top: 10%;
+  top: 0%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
@@ -4304,16 +4459,48 @@ button.swiper-pagination-bullet {
 
 .popup .form-list .necessary {
   width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .popup .form-list .con {
+  display: flex;
+  align-items: center;
   width: 100%;
   background-color: #fff;
   border-radius: 8px;
+  padding: 0 10px;
 }
 
 .popup .form-list .con input {
   border: none;
+}
+
+.popup .terms-agree {
+  margin-top: 28px;
+}
+
+.popup .btn-area button {
+  display: block;
+  padding: 16px 32px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #3848A2;
+  width: 145px;
+  margin: 0 auto;
+  margin-top: 28px;
+}
+
+.popup .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popup .contact .contact-info {
+  display: flex;
+  gap: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

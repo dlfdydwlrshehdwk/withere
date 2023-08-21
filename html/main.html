@@ -51,7 +51,7 @@
     <script type="text/javascript" src="../assets/js/common.js"></script>
     <script type="text/javascript" src="../assets/js/ani.js"></script>
     <script type="text/javascript" src="../assets/js/scrollEvent.js"></script>
-    <script type="text/javascript" src="../assets/js/sequence.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/sequence.js"></script> -->
     <script type="text/javascript">
       $(function () {});
     </script>
@@ -133,12 +133,115 @@
               <button type="button" class="btn btn-lang active">KO</button>
               <button type="button" class="btn btn-lang">EN</button>
             </div>
-            <div class="gogo" style="color: rgb(44, 160, 154);">실행</div>
+          </div>
+          <!-- 모바일 버튼 -->
+          <div class="btn-drawer"><span>삼석</span></div>
+        </div>
+      </div>
+      <aside id="aside">
+        <div class="aside-wrap">
+          <div class="aside">
+            <div class="aside-close">×</div>
+              <div class="logo">
+                <a href="main.html"><img src="../assets/images/logo.svg" alt="NEUL" /></a>
+              </div>
+                <ul class="mobile-nav">
+                  <li>
+                    <a href="" onclick="event.preventDefault()" style="padding: 15px 15px;">NEUL</a>
+                  </li>
+                  <li>
+                    <div class="mobile-nav-list">
+                      <div>
+                        <a href="">Service</a>
+                      </div>
+                      <div class="mobile-state db">▼</div>
+                      <div class="mobile-state">▲</div>
+                    </div>
+                    <ul class="mobile-submenu">
+                      <li>
+                        <a href="">NEUL Silver Care</a>
+                      </li>
+                      <li>
+                        <a href="">적정성 평가</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mobile-nav-list">
+                      <div>
+                        <a href="">Product</a>
+                      </div>
+                      <div class="mobile-state db">▼</div>
+                      <div class="mobile-state">▲</div>
+                    </div>
+                    <ul class="mobile-submenu">
+                      <li>
+                        <a href="">NEUL Silver Care</a>
+                      </li>
+                      <li>
+                        <a href="">적정성 평가</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mobile-nav-list">
+                      <div>
+                        <a href="">Work</a>
+                      </div>
+                      <div class="mobile-state db">▼</div>
+                      <div class="mobile-state">▲</div>
+                    </div>
+                    <ul class="mobile-submenu">
+                      <li>
+                        <a href="">NEUL Silver Care</a>
+                      </li>
+                      <li>
+                        <a href="">적정성 평가</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mobile-nav-list">
+                      <div>
+                        <a href="">News</a>
+                      </div>
+                      <div class="mobile-state db">▼</div>
+                      <div class="mobile-state">▲</div>
+                    </div>
+                    <ul class="mobile-submenu">
+                      <li>
+                        <a href="">NEUL Silver Care</a>
+                      </li>
+                      <li>
+                        <a href="">적정성 평가</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mobile-nav-list">
+                      <div>
+                        <a href="">Help</a>
+                      </div>
+                      <div class="mobile-state db">▼</div>
+                      <div class="mobile-state">▲</div>
+                    </div>
+                    <ul class="mobile-submenu">
+                      <li>
+                        <a href="">NEUL Silver Care</a>
+                      </li>
+                      <li>
+                        <a href="">적정성 평가</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="mobile-etc-menu">
+                  <button type="button" class="mobile-demo" onclick="common.openModalPopup('pop-inquiry');"><img style="width: 18px; height: auto;" src="../assets/images/icon/(ICON) Free Trial.png" alt=""> DEMO 신청</button>
+                </div>
           </div>
         </div>
-        <!-- 모바일 버튼 -->
-        <div class="btn-drawer"></div>
-      </div>
+
+      </aside>
     </div>
       <div id="container">
         <div class="main">
@@ -182,6 +285,14 @@
                 <div class="product-txtbx">
                   <h3>늘 실비 케어</h3>
                   <p>AI 기반 요양병원 환자 위험도 예측.<br>예방을 통한 한 발 앞선 돌봄.</p>
+                  <div class="barogagi">
+                    <a href="">
+                      <div>바로가기</div>
+                      <div style="width: 20px;height: 20px;">
+                        <img src="../assets/images/circlearrow.svg" alt="">
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -212,6 +323,14 @@
               <div class="product-txtbx">
                 <h3>늘 적정성 평가 관리</h3>
                 <p>요양병원 적정성 평가.<br>숫자가 아닌, 프로세스 관리가 필요</p>
+                <div class="barogagi">
+                  <a href="">
+                    <div>바로가기</div>
+                    <div style="width: 20px;height: 20px;">
+                      <img src="../assets/images/circlearrow.svg" alt="">
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
             <div class="product-bottombx">
@@ -242,6 +361,14 @@
                   <h3>늘 스마트 밴드</h3>
                   <p>더 안전하게 믿을 수 있게.
                     환자를 고려한 친환경 소재와 디자인.</p>
+                    <div class="barogagi">
+                      <a href="">
+                        <div>바로가기</div>
+                        <div style="width: 20px;height: 20px;">
+                          <img src="../assets/images/circlearrow.svg" alt="">
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div class="product-bottombx">
@@ -358,7 +485,89 @@
           <!-- news 끝 -->
           <!-- contact 시작 -->
           <div class="contact">
-            <h2>고객사례 </h2>
+            <h2>고객사례</h2>
+            <div class="contact-cont">
+              <div class="flowbx-wrap">
+                <div class="flowbx">
+                  <div>
+                    <img src="../assets/images/IMAGE.svg" alt="">
+                  </div>
+                  <div>
+                    <small>A요양병원</small>
+                    <p>"환자별 위험 지표를 통해 고위험군 환자의 체계적인 관리가 가능해졌어요."</p>
+                  </div>
+                </div>
+                <div class="flowbx">
+                  <div>
+                    <img src="../assets/images/IMAGE (1).svg" alt="">
+                  </div>
+                  <div>
+                    <small>B요양병원</small>
+                    <p>“응급상황 발생 시 즉시 알람을 받을 수 있고, 
+                      환자의 상태나 위치 확인이 가능해 빠른 대응이 가능해졌어요”</p>
+                  </div>
+                </div>
+                <div class="flowbx">
+                  <div>
+                    <img src="../assets/images/IMAGE.svg" alt="">
+                  </div>
+                  <div>
+                    <small>C요양병원</small>
+                    <p>"환자별 위험 지표를 통해 고위험군 환자의 체계적인 관리가 가능해졌어요."</p>
+                  </div>
+                </div>
+                <div class="flowbx">
+                  <div>
+                    <img src="../assets/images/IMAGE.svg" alt="">
+                  </div>
+                  <div>
+                    <small>D요양병원</small>
+                    <p>“응급상황 발생 시 즉시 알람을 받을 수 있고, 
+                      환자의 상태나 위치 확인이 가능해 빠른 대응이 가능해졌어요”</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flowbx-wrap">
+                <div class="flowbx">
+                  <div>
+                    <img src="../assets/images/IMAGE.svg" alt="">
+                  </div>
+                  <div>
+                    <small>A요양병원</small>
+                    <p>"적정성평가 준비 시에 어떤 지표를 어떻게 관리해야 할 지 한눈에 보여 등급이 올라갔어요."</p>
+                  </div>
+                </div>
+                <div class="flowbx">
+                  <div>
+                    <img src="../assets/images/IMAGE.svg" alt="">
+                  </div>
+                  <div>
+                    <small>B요양병원</small>
+                    <p>"환자별 위험 지표를 통해 고위험군 환자의 체계적인 관리가 가능해졌어요."</p>
+                  </div>
+                </div>
+                <div class="flowbx">
+                  <div>
+                    <img src="../assets/images/IMAGE.svg" alt="">
+                  </div>
+                  <div>
+                    <small>C요양병원</small>
+                    <p>“적정성평가 준비 시에 어떤 지표를 어떻게 관리해야 할 지 
+                      한눈에 보여 등급이 올라갔어요”</p>
+                  </div>
+                </div>
+                <div class="flowbx">
+                  <div>
+                    <img src="../assets/images/IMAGE.svg" alt="">
+                  </div>
+                  <div>
+                    <small>D요양병원</small>
+                    <p>"환자별 위험 지표를 통해 고위험군 환자의 체계적인 관리가 가능해졌어요."</p>
+                  </div>
+                </div>
+              </div>
+              <div></div>
+            </div>
           </div>
           <!-- contact 끝 -->
           <!-- banner 시작 -->
@@ -449,7 +658,7 @@
                 </div>
               </li>
               <li>
-                <div class="tit necessary"><strong>회사명</strong><br><span class="cmt">기관/단체명</span></div>
+                <div class="tit necessary"><strong>회사명</strong><span class="cmt">기관/단체명</span></div>
                 <div class="con">
                   <input type="text" name="" id="" class="inp" placeholder="" />
                 </div>
@@ -500,6 +709,7 @@
           <div class="terms-agree">
             <div class="chk-box">
               <input type="checkbox" name="agree" id="all" checked />
+              <label for="all"></label>
               <label for="all">약관 전체 동의</label>
             </div>
             <div class="chk-set">

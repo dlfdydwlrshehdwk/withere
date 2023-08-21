@@ -18,7 +18,7 @@
 	border: 1px solid #000;
 	border-radius: 20px;
 	position: fixed;
-	top: 10%;
+	top: 0%;
 	left: 50%;
 	transform: translateX(-50%);
 	background-color: $white;
@@ -54,14 +54,43 @@
 		}
 		.necessary{
 			width: 20%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}
 		.con{
+			display: flex;
+			align-items: center;
 			width: 100%;
 			background-color: $white;
 			border-radius: 8px;
+			padding: 0 10px;
 			input{
 				border: none;
 			}
+		}
+	}
+	.terms-agree{
+		margin-top: 28px;
+	}
+	.btn-area button{
+		display: block;
+		padding: 16px 32px;
+		border-radius: 8px;
+		color: $white;
+		background-color: $primary;
+		width: 145px;
+		margin: 0 auto;
+		margin-top: 28px;
+	}
+	.contact{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		
+		.contact-info{
+			display: flex;
+			gap: 40px;
 		}
 	}
 }

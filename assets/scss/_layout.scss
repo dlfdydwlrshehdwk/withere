@@ -23,9 +23,14 @@ body{
     left: 50%;
     top: 0;
     transform: translateX(-50%);
+	padding: 0 20px;
 	
 	.nav{
 		display: flex;
+
+		@media screen and (max-width : 1440px) {
+			display: none;
+		}
 	}
 	.main-menu a{
 		color : $black-1e;
@@ -61,6 +66,7 @@ body{
 	}
 	.gnb{
 		display: flex;
+		gap: 20px;
 	}
 	.logo{
 		width: 146px;
@@ -105,10 +111,100 @@ body{
 	}
 	.btn-drawer{
 		display: none;
+		
+		span {
+			line-height: 100px;
+		}
+		@media screen and (max-width : 1440px) {
+			display: block;
+		}
 	}
 	
 }
-
+#aside { 
+	display: none;
+	background-color: beige;
+	@media screen and (max-width : 1440px) {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: -400px;
+		bottom: 0;
+		width: 400px;
+		opacity: 0;
+		transition: .3s;
+	}
+	.aside-close{
+		position: absolute;
+		top: 0%;
+		right: 3%;
+		font-size: 50px;
+		cursor: pointer;
+	}
+	.aside {
+		position: relative;
+		height: 100vh;
+		display: flex;
+    	flex-direction: column;
+		gap: 40px;
+		padding: 20px 0;
+	}
+	.mobile-etc-menu{
+		margin-bottom: 40px;
+		margin-top: auto;
+	}
+	.logo {
+		width: 146px;
+		display: flex;
+		height: 100px;
+		align-items: center;
+		margin-left: 10px;
+	}
+	.mobile-nav > li {
+		border-bottom: 1px solid ;
+	}
+	.mobile-nav > li:nth-child(1) {
+		border-top: 1px solid;
+	}
+	.mobile-nav li a {
+		display: block;
+		padding: 15px 0;
+	}
+	.mobile-nav-list{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 15px;
+	}
+	.mobile-subclose{
+		display: none;
+	}
+	.mobile-submenu > li > a{
+		padding:  15px;
+	}
+	.mobile-submenu{
+		display: none;
+	}
+	.mobile-state{
+		display: none;
+	}
+	.mobile-state.db {
+		display: block;
+	}
+	.mobile-demo{
+		height: 48px;
+		padding: 5px 10px;
+		border-radius: 16px;
+		color: $white;
+		background-color: $primary;
+		font-weight: $fw-bold;
+		margin-left: 20px;
+	}
+}
+#aside.on{
+	right: 0;
+	opacity: 1;
+}
 .main{
 	.intro{
 		position: relative;
@@ -171,6 +267,12 @@ body{
 			gap: 0 80px;
 
 			.product-txtbx{
+				position: relative;
+				width: 780px;
+				display: flex;
+				flex-direction: column;
+				gap: 60px;
+
 				h3 {
 					font-size: 64px;
 					font-weight: $fw-bold;
@@ -182,16 +284,24 @@ body{
 					color: $gray-6d;
 					font-size: 32px;
 				}
+				.barogagi {
+					position: absolute;
+					top: 5%;
+					right: 0;
+					cursor: pointer;
+					> a {
+						display: flex;
+						align-items: center;
+						font-size: 18px;
+						> div:nth-child(1){
+							padding-right: 16px;
+						}
+					} 
+				}
 			}
 			.product-imgbx{
 				width: 428px;
 				height: 276px;
-			}
-			.product-txtbx{
-				width: 780px;
-				display: flex;
-				flex-direction: column;
-				gap: 60px;
 			}
 		}
 		.product-bottombx{
@@ -292,6 +402,18 @@ body{
 				width: 32px;
 				height: 32px;
 			}
+		}
+	}
+	.contact{
+		padding: 180px 240px;
+		.flowbx-wrap{
+			display: flex;
+		}
+		.flowbx {
+			display: flex;
+		}
+		.flowbx > div {
+			width: 200px;
 		}
 	}
 	.banner {

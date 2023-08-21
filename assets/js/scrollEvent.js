@@ -28,6 +28,20 @@ $(()=>{
         else if(targetP < 0){
           moveBx.css({left : '0'});
         }
+
+
+        // 스크롤이 맨위일시만 헤더가 보이고 
+        // 평소에는 보이지 않으며 마우스휠을 올릴경우 헤더가 보이게!
+        console.log(windowH)
+        if(windowH !== 0){
+          console.log('실행지점')
+        }
+
+
+
+
+
+
       });
 
       // new 스크롤이벤트 끝
