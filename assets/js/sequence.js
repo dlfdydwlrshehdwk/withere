@@ -163,8 +163,10 @@ $(()=>{
 
       console.log($('.testimg').attr('src'))
       
+      // setInterval 을 이용한 일정시간마다 반복
       let interval = setInterval(imgInterval,time)
 
+      // 반복될함수 - 이미지 넣는곳에 이미지를 넣어준다.
       function imgInterval(){
         // 이미지 넣는곳 + 이미지 경로
         $('.testimg').attr('src','../assets/images/sequence/sequence_' + i + '.jpg')
