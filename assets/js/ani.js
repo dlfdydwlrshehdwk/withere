@@ -20,7 +20,7 @@ $(function () {
     $('.nav').hover(
     function(){
       $('.sub-menu').css({
-        height : 'auto'
+        height : '172px'
       })
       $('.headerwrap').css({
         height : '272px',

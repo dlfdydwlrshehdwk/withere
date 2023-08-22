@@ -13,15 +13,14 @@ body{
 	z-index: 1;
 }
 #header{
+	@include center(horizontal);
 	max-width: 1920px;
     display: flex;
     height: 100px;
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    left: 50%;
     top: 000px;
-    transform: translateX(-50%);
 	padding: 0 20px;
 	
 	.nav{
@@ -96,7 +95,7 @@ body{
 		display: flex;
 		gap: 0 8px;
 		border-radius: 278px;
-		font-size: 14px;
+		font-size: calcRem(14px);
 		align-items: center;
 		.btn-lang{
 			padding: 4px 8px;
@@ -113,7 +112,7 @@ body{
 		
 		i {
 			line-height: 100px;
-			font-size: 30px;
+			font-size: calcRem(30px);
 		}
 		@media screen and (max-width : 1440px) {
 			display: block;
@@ -139,7 +138,7 @@ body{
 		position: absolute;
 		top: 0%;
 		right: 3%;
-		font-size: 50px;
+		font-size: calcRem(50px);
 		cursor: pointer;
 	}
 	.aside {
@@ -224,7 +223,7 @@ body{
 		position: relative;
 
 		.txt{
-			font-size: 200px;
+			font-size: calcRem(200px);
 			font-weight: $fw-bold;
 			color: #f3f3f3;
 		}
@@ -291,7 +290,7 @@ body{
 				gap: 60px;
 
 				h3 {
-					font-size: 64px;
+					font-size: calcRem(64px);
 					font-weight: $fw-bold;
 					background-image: linear-gradient(to right, #6C93EA, #E5BFC3, #9AE5DC);
 					-webkit-background-clip: text;
@@ -299,7 +298,7 @@ body{
 				}
 				p {
 					color: $gray-6d;
-					font-size: 32px;
+					font-size: calcRem(32px)
 				}
 				.barogagi {
 					position: absolute;
@@ -309,7 +308,7 @@ body{
 					> a {
 						display: flex;
 						align-items: center;
-						font-size: 18px;
+						font-size: 16px;
 						> div:nth-child(1){
 							padding-right: 16px;
 						}
@@ -340,12 +339,12 @@ body{
 			h4{
 				// 박스 오버하면 이색으로되는가봄
 				// color: $primary;
-				font-size: 34px;
+				font-size: calcRem(34px);
 				font-weight: $fw-bold;
 			}
 			p{
 				color: $gray-6d;
-				font-size: 28px;
+				font-size: calcRem(28px)
 			}
 		}
 	}
@@ -362,7 +361,7 @@ body{
 			object-fit: fill;
 		}
 		h3{
-			font-size: 64px;
+			font-size:calcRem(64px);
 			color: $white;
 		}
 		.news-content{
@@ -390,7 +389,7 @@ body{
 			border-radius: 20px;
 			> div:nth-child(1){
 				flex : 1;
-				font-size: 28px;
+				font-size: calcRem(28px);
 			}
 			> div:nth-child(2){
 				height: 260px;
@@ -405,7 +404,7 @@ body{
 				font-weight: $fw-medium;
 			}
 			> p {
-				font-size: 14px;
+				font-size: calcRem(14px);
 				color : $gray-6d;
 			}
 		}
@@ -426,14 +425,14 @@ body{
 			padding: 20px 40px;
 			color: $primary;
 			background-color: $white;
-			font-weight: bold;
+			font-weight: $fw-bold;
 		}
 	}
 	.contact{
 		padding: 180px 240px;
 		h2 {
-			font-size: 64px;
-			font-weight: bold;
+			font-size: calcRem(64px);
+			font-weight: $fw-bold;
 		}
 		.contact-cont{
 			overflow: hidden;
@@ -463,8 +462,8 @@ body{
 			.flowbx > div:nth-child(2) {
 				p {
 					margin-top: 20px;
-					font-size: 36px;
-					font-weight: bold;
+					font-size: calcRem(36px);
+					font-weight: $fw-bold;
 				}
 			}
 		}
@@ -493,7 +492,7 @@ body{
 
 		.banner-txtbx{
 			> div:nth-child(1) { 
-				font-size: 56px;
+				font-size: calcRem(56px);
 				font-weight: $fw-bold;
 			}
 			button { 
