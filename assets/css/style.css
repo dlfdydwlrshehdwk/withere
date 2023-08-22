@@ -1578,7 +1578,7 @@ body {
 .main .news {
   position: relative;
   display: flex;
-  height: 3800px;
+  height: 100vh;
   background-color: #3848A2;
   padding: 180px 240px;
 }
