@@ -21,7 +21,7 @@ $(()=>{
       
       $(window).on('scroll',function(){
         let windowH = $(window).scrollTop()
-        console.log(windowH)
+        // console.log(windowH)
         let point = targetPage.offset().top // DOM에서 요소간의 거리 4446
         let targetP = windowH - point // js에서 getBoundingClientRect() 느낌
         // console.log('스크롤값',windowH,'\n포인트값',point,'사용할숫자\n',targetP)
