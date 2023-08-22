@@ -12,6 +12,8 @@ $(function () {
     $('.scrolltop').click(function(){
       // location.reload()
       $(window).scrollTop(0)
+      $('.headerwrap').css({top:'0'})
+      $('#header').css({top:0})
     })
 
     // 네비게이션 오버시 
@@ -20,8 +22,9 @@ $(function () {
       $('.sub-menu').css({
         height : 'auto'
       })
-      $('.headerwrap').css({height : '272px',
-      backgroundColor : 'white' })
+      $('.headerwrap').css({
+        height : '272px'
+      })
     },
     // 네비게이션 오버 뗐을때
     function(){
@@ -72,6 +75,7 @@ $(function () {
         $('.mobile-state:odd').removeClass('db')
       }
 
+      // ko en 버튼 누를시 회색 동그라미 옮겨가기 
       $('.btn-lang').click(function(){
         $('.btn-lang').removeClass('active')
         $(this).addClass('active')
