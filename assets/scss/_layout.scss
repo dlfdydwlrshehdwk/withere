@@ -30,6 +30,10 @@ body{
 			display: none;
 		}
 	}
+	// 메인메뉴들 가로폭맞추려고 어쩔수없는 width사용
+	.main-menu {
+		width: 172px;
+	}
 	.main-menu a{
 		color : $black-1e;
 		font-weight: $fw-bold;

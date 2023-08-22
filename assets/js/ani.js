@@ -20,10 +20,10 @@ $(function () {
     $('.nav').hover(
     function(){
       $('.sub-menu').css({
-        height : '172px'
+        height : '180px'
       })
       $('.headerwrap').css({
-        height : '272px',
+        height : '280px',
         backgroundColor : 'white' 
     })
     },

@@ -1194,6 +1194,10 @@ body {
   }
 }
 
+#header .main-menu {
+  width: 172px;
+}
+
 #header .main-menu a {
   color: #1E1E1E;
   font-weight: 700;
