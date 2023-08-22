@@ -23,8 +23,9 @@ $(function () {
         height : 'auto'
       })
       $('.headerwrap').css({
-        height : '272px'
-      })
+        height : '272px',
+        backgroundColor : 'white' 
+    })
     },
     // 네비게이션 오버 뗐을때
     function(){
@@ -32,7 +33,7 @@ $(function () {
         overflow:'hidden',
         height : '0'
       })
-      $('.headerwrap').css({height : '100px' })
+      $('.headerwrap').css({height : '100px',backgroundColor : "" })
     });
 
     // product부분 초기에 안보이게 셋팅
