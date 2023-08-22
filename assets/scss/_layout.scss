@@ -123,7 +123,8 @@ body{
 }
 #aside { 
 	display: none;
-	background-color: beige;
+	background-color: $white;
+	border-left: 1px solid #000;
 	@media screen and (max-width : 1440px) {
 		display: block;
 		position: fixed;
@@ -148,6 +149,10 @@ body{
     	flex-direction: column;
 		gap: 40px;
 		padding: 20px 0;
+
+		a {
+			color : $primary;
+		}
 	}
 	.mobile-etc-menu{
 		margin-bottom: 40px;
@@ -162,6 +167,9 @@ body{
 	}
 	.mobile-nav > li {
 		border-bottom: 1px solid ;
+		> a {
+			font-weight: $fw-bold;
+		}
 	}
 	.mobile-nav > li:nth-child(1) {
 		border-top: 1px solid;
@@ -171,6 +179,7 @@ body{
 		padding: 15px 0;
 	}
 	.mobile-nav-list{
+		font-weight: $fw-bold;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -179,7 +188,11 @@ body{
 	.mobile-subclose{
 		display: none;
 	}
+	.mobile-submenu > li {
+		border-top: 1px solid rgba(0, 0, 0, 0.2);
+	}
 	.mobile-submenu > li > a{
+		color: $primary;
 		padding:  15px;
 	}
 	.mobile-submenu{
@@ -242,6 +255,9 @@ body{
 			.img-set{
 				width: 100%;
 				height: 100%;
+			}
+			.testimg{
+				display: none;
 			}
 			img{
 				width: 100%;
@@ -553,7 +569,7 @@ body{
 .scrolltop{
 	position: fixed;
     width: 60px;
-    bottom: 30px;
+    bottom: 5%;
     right: 3%;
     height: 60px;
     border: 1px solid black;
@@ -562,7 +578,8 @@ body{
     align-items: center;
     justify-content: center;
 	background-color: $white;
-	
+	display: none;
+	// opacity: 0;
 	> i {
 		font-size: 30px;
 	}

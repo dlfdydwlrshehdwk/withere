@@ -72,6 +72,9 @@ $(function () {
         $('.mobile-state:odd').removeClass('db')
       }
 
-      
+      $('.btn-lang').click(function(){
+        $('.btn-lang').removeClass('active')
+        $(this).addClass('active')
+      })
 
 });

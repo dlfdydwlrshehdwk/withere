@@ -21,11 +21,10 @@ $(()=>{
       
       $(window).on('scroll',function(){
         let windowH = $(window).scrollTop()
-        // console.log(windowH)
         let point = targetPage.offset().top // DOM에서 요소간의 거리 4446
         let targetP = windowH - point // js에서 getBoundingClientRect() 느낌
-        // console.log('스크롤값',windowH,'\n포인트값',point,'사용할숫자\n',targetP)
         let a = $('.news-content').height()
+
         // 가로스크롤처럼 보일 적용구간 
         if(targetP >= 0 && targetP <= 3480 - a ){
           // 적용구간에 들어오면 스크롤되는 만큼 박스이동
@@ -35,7 +34,6 @@ $(()=>{
         else if(targetP < 0){
           moveBx.css({left : '0'});
         }
-
 
         // 스크롤이 맨위일시만 헤더가 보이고 
         // 평소에는 보이지 않으며 마우스휠을 올릴경우 헤더가 보이게!
@@ -83,24 +81,39 @@ $(()=>{
         let footerH = $('.footer').innerHeight() 
         // 목표값
         let target_scrolltop = wrapH - footerH - $(window).height()
-        // console.log(target_scrolltop) // 7179
+
         // 윈도우스크롤의 위치가 타겟보다 크다면 코드
-        // console.log(target_scrolltop)
-        // console.log(wrapH - $(window).height())
-        if($(window).scrollTop() != 7279){
-          $('.scrolltop').css({
-            transition : '.3s',
-            bottom : 30 + 'px'
-          })
-        }
         if(windowH > target_scrolltop){
           scrolltopbtn.css({
             transition : '.3s',
             bottom : footerH  + 30 + 'px'
           })
         }
+        else{
+          $('.scrolltop').css({
+            transition : '.3s',
+            bottom : '5%'
+          })
+        }
 
-        
+
+        console.log($(window).height()) // 1273 보이는폭
+        // 위로가는버튼 보이는폭만큼 지나가야 보이게 하기
+        if(windowH > $(window).height()){
+          $('.scrolltop').css({display : 'flex'})
+          scrolltopon()
+        }
+        else { 
+          scrolltopoff()
+          $('.scrolltop').css({display : 'none'})
+          
+        }
+        function scrolltopon(){
+          $('.scrolltop').stop().animate({opacity : 1},100)
+        }
+        function scrolltopoff(){
+          $('.scrolltop').stop().animate({opacity : 0},100)
+        }
       });
 
       
