@@ -104,7 +104,7 @@ $(()=>{
     // 최초실행 + 실행코드
     gogo()
     // 반복실행하려면 이거 주석풀기
-    // let interval = setInterval(gogo,25500)
+    let interval = setInterval(gogo,25500)
     // 자동재생 멈추고 싶다면
     // let clear = clearInterval(interval)
 
