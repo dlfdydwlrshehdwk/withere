@@ -1432,9 +1432,14 @@ body {
 }
 
 .main .intro .txt {
+  transition: color .3s;
   font-size: 12.5rem;
   font-weight: 700;
   color: #f3f3f3;
+}
+
+.main .intro .txt.on {
+  color: #1E1E1E;
 }
 
 .main .intro .txt-set {
@@ -1448,14 +1453,6 @@ body {
 
 .main .intro .img-set {
   display: block;
-}
-
-.main .intro .t2 {
-  display: none;
-}
-
-.main .intro .t3 {
-  display: none;
 }
 
 .main .intro .bg-section {

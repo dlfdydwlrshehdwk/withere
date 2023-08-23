@@ -227,9 +227,14 @@ body{
 		position: relative;
 
 		.txt{
+			transition: color .3s;
 			font-size: calcRem(200px);
 			font-weight: $fw-bold;
 			color: #f3f3f3;
+		}
+		.txt.on{
+			
+			color : $black-1e;
 		}
 		.txt-set{
 			width: 1440px;
@@ -241,12 +246,6 @@ body{
 		}
 		.img-set {
 			display: block;
-		}
-		.t2{
-			display: none;
-		}
-		.t3{
-			display: none;
 		}
 		.bg-section{
 			position: absolute;
