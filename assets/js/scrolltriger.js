@@ -1,4 +1,7 @@
 $(()=>{
+
+  gsap.registerPlugin(ScrollTrigger);
+
     // 가로스크롤 되게하기
     let ex = gsap.timeline({ // 타임라인에 추가할 수 있다!
         scrollTrigger: {
