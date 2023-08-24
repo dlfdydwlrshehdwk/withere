@@ -33,7 +33,7 @@ $(()=>{
         },
         onComplete : ()=>{
             $('.bg-section').css({display : 'none'});
-            $(window).scrollTop(next.offset().top)
+            $(window).scrollTop(next.offset().top - 50)
             console.log('끝남');
         }
     })
@@ -98,7 +98,7 @@ $(()=>{
 
     silhum(".txtwrap1",1,176,$('.txtwrap2'))
     silhum(".txtwrap2",176,351,$('.txtwrap3'))
-    silhum(".txtwrap3",351,526,$('.product'))
+    silhum(".txtwrap3",351,526,$('.startbanner'))
     // silhum(트리거요소,시작수,끝수,다음스크롤위치)
 
 

@@ -17,4 +17,18 @@ $(()=>{
       }).to(".news-target",{
         left : '-40%'
       });
+
+      let ex2 = gsap.timeline({
+        scrollTrigger:{
+          trigger : ".startbanner",
+          // pin : true, // 활성상태에서 트리거 요소 고정
+          duration : 10000,
+          start : "-=100", // 트리거 상단이 뷰포트 상단에 닿을 때
+          end : "+=100", // 시작부분에서 x px 까지 스크롤 한 후 종료
+          scrub : 1, // 부드러운 스크러빙, 스크롤바를 잡는데 1초가 걸린다.
+        }
+      })
+
+      ex2.from(".startbanner-txtbx", { y: 100, opacity : 0 ,duration : 1})
+
 })
