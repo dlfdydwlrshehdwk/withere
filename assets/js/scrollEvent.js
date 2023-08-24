@@ -6,12 +6,11 @@ let scroll = {
   };
 $(()=>{
   // 새로고침시 맨위로
-    
   setTimeout(()=>{
     $(window).scrollTop(0)
   },100)
 
-// news 스크롤이벤트
+      // news 스크롤이벤트
 
       // 필요변수
       let  last_scrollTop = 0; // 마우스의 방향(위,아래)를 알 수 있는 변수

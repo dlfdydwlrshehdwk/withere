@@ -1,4 +1,5 @@
 $(()=>{
+
     let wH = $(window).height()
 
     // 스크롤매직을 이용한 이미지 시퀀스
@@ -139,7 +140,6 @@ $(()=>{
         let tween = TweenMax.to(target, .001, { // 요소, 애니시간, 속성
             onComplete : ()=>{
                 $(".txt").removeClass('on');
-
                 }
         });
         let scene = new ScrollMagic.Scene({
@@ -192,12 +192,6 @@ $(window).scroll(function(){
                 target.find('.txt3').siblings().removeClass('on')
                 target.find('.txt3').addClass('on')
             }
-            // 첫글씨가 회색이되면서 두번째 글씨가 바뀌어야 하는부분 - 왜중복
-            // else if (e > c / 3 * 2 && e !== 0){
-            //     target.find('.txt3').siblings().removeClass('on')
-            //     target.find('.txt3').addClass('on')
-            // }
-
             // 마지막글씨부분 100vh넘어가면 회색되기 - 글씨 한번씩 다 번쩎고나서 회색되게하기
             if ( e > c ){
                 target.find('.txt').removeClass('on')
@@ -225,3 +219,17 @@ $(window).scroll(function(){
     chgColor($('.t3'),$('.txtwrap3'))
 })
 })
+
+
+// 스크롤시 박스가 고정되며 텍스트의 색이 순서대로 바뀌고 스크롤에 맞게 이미지가 시퀀스 된 후 
+// 다음 요소까지 스크롤되게만듬
+
+// 정리할겸 순서정리
+
+// 1. 먼저 최상단 박스를 고정시켰음 - 이때 duration 을 200%로 주었음 화면의 200% 중요!
+// 2. 제이쿼리 스크롤이벤트로 현재스크롤의 위치가 박스크기의 시작, 1/3, 2/3 에 등 조건을 알아내어
+// 맞게 글씨 색을 바뀌게함
+// 3. 함수를 두개만들었음 
+// 3-1. 하나는 이미지를 타겟에 스크롤에 따라서 이미지를 넣어주는... 업데이트시 - 이미지넣음 끝났을시 이미지박스삭제
+// 3-2. 하나는 트리거에 맞으면 이미지박스를 보여주고 이미지보여주는 함수를 실행하는 함수
+// 여기서 중요 offset을 윈도우 세로값만큼주어 텍스트가 먼저바뀌고 시퀀스가 실행되는것 처럼보이게 하였음
