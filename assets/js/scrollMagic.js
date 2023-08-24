@@ -4,7 +4,7 @@ $(()=>{
     console.log(wH)
 
     // 스크롤매직을 이용한 이미지 시퀀스
-function sq(trele,pinele,start,end,target){
+    function sq(trele,pinele,start,end,target){
     // 트리거요소, 핀요소, 시작사진수,끝사진수
 
     // 1. 빈배열을 만들어서 배열안에 이미지 소스들을 넣어줌 for문활용했음
@@ -12,7 +12,7 @@ function sq(trele,pinele,start,end,target){
     // TweenMax는 모든 객체의 속성을 구분할 수 있다. 이 객체를 사용하여 배열을 순환한다
     let obj = { curimg : 0 }
     for ( let i = start; i < end ; i++ ){
-        image.push(`../assets/images/sequence/sequence_${i}.jpg'`)
+        image.push(`../assets/images/sequence/sequence_${i}.jpg`)
     }
 
     // 2. 컨트롤러 생성 - 왜하는지모름
@@ -31,7 +31,7 @@ function sq(trele,pinele,start,end,target){
             target.attr('src',image[obj.curimg])
         },
         onComplete : ()=>{
-            target.css({display : 'none'})
+            // target.css({display : 'none'})
         }
     })
     
@@ -51,18 +51,57 @@ function sq(trele,pinele,start,end,target){
     }
 
 
-    // sq("#trigger1","#pin1",1,176)
+    // sq("#trigger1","#pin1",1,176,$('.sqimg1'))
+
+    function zebal(){
+        
+            let controller2 = new ScrollMagic.Controller();
+        
+            let tween_on = TweenMax.to('.testimg',1,{
+                display : 'block',
+                onComplete : sq(".txtwrap2",".img-set",1,176,$('.testimg'))
+            });
+        
+            let scene = new ScrollMagic.Scene({
+                triggerElement : ".txtwrap1",
+                duration : wH,
+                triggerHook : 0.0
+            })
+            .setTween(tween_on)
+            .addTo(controller2)
+            // .addIndicators({
+            //     name : 'on!'
+            // })
+    }
+
+
+    function silhum(){
+        // 트리거 - 각 화면멈처구간에서 트리거훅 1줘서 맨밑에서실행
+        // onStart로 사진 넣는공간 dib 
+        // onComplete 로 끝날때 dn
+        let controller2 = new ScrollMagic.Controller();
+        
+            let tween_on = TweenMax.to('.testimg',1,{
+                display : 'block',
+                onComplete : sq(".txtwrap2",".img-set",1,176,$('.testimg'))
+            });
+        
+            let scene = new ScrollMagic.Scene({
+                triggerElement : ".txtwrap1",
+                duration : wH,
+                triggerHook : 1
+            })
+            .setTween(tween_on)
+            .addTo(controller2)
+            .addIndicators({
+                name : '제발'
+            })
+    }
 
 
 
 
-
-
-
-
-
-
-
+    // silhum()
 
 
 
@@ -106,10 +145,11 @@ function sq(trele,pinele,start,end,target){
         let tween = TweenMax.to(target, .001, { // 요소, 애니시간, 속성
             onStart : ()=>{console.log('박스멈춰!')},
             onComplete : ()=>{$(".txt").removeClass('on')},
+            // onComplete : ()=>{zebal()}
         });
         let scene = new ScrollMagic.Scene({
             triggerElement: target,
-            duration:'100%',// 스크롤 길이 조정 - 요소위치가 기준 - 소수점안됨
+            duration:'200%',// 스크롤 길이 조정 - 요소위치가 기준 - 소수점안됨
             triggerHook : 0 // 뷰포트기준 트리거위치 소수점됨
         })
         .setTween(tween)
@@ -139,6 +179,7 @@ $(window).scroll(function(){
         let d = deop.offset().top // 타겟요소를 덮고있는 요소의 DOM에서의 거리
         let e = a - d; // 글씨 바뀌는 기준이 될 변수
         console.log(wH,a,b,c,d,e)
+        // console.log(deop.offset().top,wH)
         if(b == 0){
             // 여기가 1차조건 = 박스멈춰! 가 되는 구역
 
@@ -160,19 +201,35 @@ $(window).scroll(function(){
                 target.find('.txt3').siblings().removeClass('on')
                 target.find('.txt3').addClass('on')
             }
+            else if (e > c / 3 * 2 && e !== 0){
+                // 첫글씨가 회색이되면서 두번째 글씨가 바뀌어야 하는부분
+                // console.log('세번째글씨바낌')
+                target.find('.txt3').siblings().removeClass('on')
+                target.find('.txt3').addClass('on')
+            }
+            // 마지막글씨부분 100vh넘어가면 회색되기
+            if ( e > c ){
+                target.find('.txt').removeClass('on')
+            }
+
             if( e == 0 ){
                 target.find('.txt3').find('.txt').removeClass('on')
+            }
+            // 글씨가 위로갈때 초기화
+            if(deop.offset().top >= wH){
+                target.find('.txt').removeClass('on')
             }
         }
         else {
             target.find('.txt3').find('.txt').removeClass('on')
+            
         }
     }
 
 
 
-    chgColor($('.t1'),$('.txtwrap1'))
+    // chgColor($('.t1'),$('.txtwrap1'))
     chgColor($('.t2'),$('.txtwrap2'))
-    chgColor($('.t3'),$('.txtwrap3'))
+    // chgColor($('.t3'),$('.txtwrap3'))
 })
 })

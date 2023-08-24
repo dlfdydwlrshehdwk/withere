@@ -83,7 +83,7 @@ $(()=>{
         }
 
 
-        console.log($(window).height()) // 1273 보이는폭
+        // console.log($(window).height()) // 1273 보이는폭
         // 위로가는버튼 보이는폭만큼 지나가야 보이게 하기
         if(windowH > $(window).height()){
           $('.scrolltop').css({display : 'flex'})
