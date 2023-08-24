@@ -4,7 +4,7 @@ $(()=>{
     console.log(wH)
 
     // 스크롤매직을 이용한 이미지 시퀀스
-    function sq(trele,pinele,start,end,target){
+    function sq(trele,start,end){
     // 트리거요소, 핀요소, 시작사진수,끝사진수
     console.log('되는주웅~')
     // 1. 빈배열을 만들어서 배열안에 이미지 소스들을 넣어줌 for문활용했음
@@ -23,12 +23,13 @@ $(()=>{
         curimg : image.length - 1, // 애니메이트 속성 curImg 이미지 수로 이동 1 - 175
         roundProps : "curimg", // 배열 인덱스로 사용할 수 있도록 정수만 사용한다는데 뭔지모름
         repeat :0, // 반복할건지 ? 안할거라 0 할거면 숫자 
+        
         immediateRender : false, // 첫번째 이미지 자동 로드할건지?
         ease: Linear.easeNone, // 이징 : 일정하게
-        // offset : 150, // 트리거에서 150px밑에서 실행 애니메이션 지연 느낌 
+        // offset : wH, // 트리거에서 150px밑에서 실행 애니메이션 지연 느낌 
         // duration : 200, // pin이용할거면 duration 지정 근데 잘안되는걸로봐서 scene에서 정하는거같음
         onUpdate : function(){ // 이미지 경로를 업데이트해주나봄 첨봄
-            target.attr('src',image[obj.curimg])
+            $('.testimg').attr('src',image[obj.curimg])
         },
         onComplete : ()=>{
             $('.bg-section').css({display : 'none'})
@@ -39,15 +40,18 @@ $(()=>{
     // 4. Scene object 생성 - 짜놓은 애니메이션을 실행하기위한 셋팅
     let scene = new ScrollMagic.Scene({
         triggerElement : trele, // 트리거 요소명 - 이벤트시작지점
-        duration : wH, // 이벤트 끝나는지점 설정 단순숫자 300 -> 300px아래 지점, %단위 '50%' 요소의 50%지점
-        triggerHook: 0 // 트리거 위치 조정 0 맨위 기본값 화면중앙 
+        duration : '100%', // 이벤트 끝나는지점 설정 단순숫자 300 -> 300px아래 지점, %단위 '50%' 요소의 50%지점
+        triggerHook: 0 ,// 트리거 위치 조정 0 맨위 기본값 화면중앙 
+        offset : wH,
     })
     .setTween(tween) // 애니메이션 오브젝트 tween을 장착
     // .setPin(pinele , {pushFollowers : false}) 
     // 요소 고정가능하다고함 특정지점이후로는 따라오지않게 하려면 속성에서 duration지정
     // pushFollowers : false 하면 핀-스페이서 안생긴다고함
     .addTo(controller) // 컨트롤러 장착 - 무슨역할인지모름
-    // .addIndicators(); // trigger위치 표시
+    .addIndicators({
+        name : 'ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ'
+    }); // trigger위치 표시
     
     }
 
@@ -55,28 +59,16 @@ $(()=>{
     // sq("#trigger1","#pin1",1,176,$('.sqimg1'))
     // sq(트리거요소,핀요소,시작숫자,끝숫자,사진출력할타겟요소)
 
-    function zebal(){
-        
-            let controller2 = new ScrollMagic.Controller();
-        
-            let tween_on = TweenMax.to('.testimg',1,{
-                display : 'block',
-                onComplete : sq(".txtwrap2",".img-set",1,176,$('.testimg'))
-            });
-        
-            let scene = new ScrollMagic.Scene({
-                triggerElement : ".txtwrap1",
-                duration : wH,
-                triggerHook : 1
-            })
-            .setTween(tween_on)
-            .addTo(controller2)
-            // .addIndicators({
-            //     name : 'on!'
-            // })
-    }
+
+    // 온업데이트 넣어서 이거 실행 ㄱㄱ 해보자
 
 
+    /* 
+        이름 : silhum
+        기능 : .bg-section 을 db시켜준다.
+        트리거 시작점 : '.txtwrap2'
+
+    */
     function silhum(){
         // 트리거 - 각 화면멈처구간에서 트리거훅 1줘서 맨밑에서실행
         // onStart로 사진 넣는공간 dib 
@@ -87,12 +79,13 @@ $(()=>{
                 display : 'block',
                 // duration : '100%',
                 // onStart : $('.bg-section').css({opacity : .5}),
-                onComplete : sq(".txtwrap2",".bg-section",1,176,$('.testimg'))
+                onComplete : sq(".txtwrap2",1,176,$('.testimg'))
             });
         
             let scene = new ScrollMagic.Scene({
                 triggerElement : ".txtwrap2",
                 duration : '100%',
+                offset : wH,
                 triggerHook : 0
             })
             .setTween(tween_on)
@@ -106,7 +99,7 @@ $(()=>{
 
 
     silhum()
-
+    // silhum(트리거요소,시작수,끝수,)
 
 
 
