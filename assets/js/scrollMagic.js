@@ -4,7 +4,7 @@ $(()=>{
     console.log(wH)
 
     // 스크롤매직을 이용한 이미지 시퀀스
-    function sq(trele,start,end){
+    function sq(trele,start,end,next){
     // 트리거요소, 핀요소, 시작사진수,끝사진수
     console.log('되는주웅~')
     // 1. 빈배열을 만들어서 배열안에 이미지 소스들을 넣어줌 for문활용했음
@@ -32,8 +32,9 @@ $(()=>{
             $('.testimg').attr('src',image[obj.curimg])
         },
         onComplete : ()=>{
-            $('.bg-section').css({display : 'none'})
-            console.log('끝남')
+            $('.bg-section').css({display : 'none'});
+            $(window).scrollTop(next.offset().top)
+            console.log('끝남');
         }
     })
     
@@ -60,16 +61,13 @@ $(()=>{
     // sq(트리거요소,핀요소,시작숫자,끝숫자,사진출력할타겟요소)
 
 
-    // 온업데이트 넣어서 이거 실행 ㄱㄱ 해보자
-
-
     /* 
         이름 : silhum
         기능 : .bg-section 을 db시켜준다.
         트리거 시작점 : '.txtwrap2'
 
     */
-    function silhum(trigger,startN,endN){
+    function silhum(trigger,startN,endN,next){
         // 트리거 - 각 화면멈처구간에서 트리거훅 1줘서 맨밑에서실행
         // onStart로 사진 넣는공간 dib 
         // onComplete 로 끝날때 dn
@@ -79,7 +77,7 @@ $(()=>{
                 display : 'block',
                 // duration : '100%',
                 // onStart : $('.bg-section').css({opacity : .5}),
-                onComplete : sq(trigger,startN,endN,$('.testimg'))
+                onComplete : sq(trigger,startN,endN,next)
             });
         
             let scene = new ScrollMagic.Scene({
@@ -98,10 +96,10 @@ $(()=>{
 
 
 
-    silhum(".txtwrap1",1,176)
-    silhum(".txtwrap2",176,351)
-    silhum(".txtwrap3",351,526)
-    // silhum(트리거요소,시작수,끝수,)
+    silhum(".txtwrap1",1,176,$('.txtwrap2'))
+    silhum(".txtwrap2",176,351,$('.txtwrap3'))
+    silhum(".txtwrap3",351,526,$('.product'))
+    // silhum(트리거요소,시작수,끝수,다음스크롤위치)
 
 
 
@@ -143,8 +141,10 @@ $(()=>{
         let controller = new ScrollMagic.Controller();
         let tween = TweenMax.to(target, .001, { // 요소, 애니시간, 속성
             onStart : ()=>{console.log('박스멈춰!')},
-            onComplete : ()=>{$(".txt").removeClass('on')},
-            // onComplete : ()=>{zebal()}
+            onComplete : ()=>{
+                $(".txt").removeClass('on');
+
+                }
         });
         let scene = new ScrollMagic.Scene({
             triggerElement: target,
@@ -158,7 +158,7 @@ $(()=>{
             {name : '박스멈춰!'}
         );
     }
-    fixbx('.t1') // 박스가 멈추면 스크롤이 안내려감 
+    fixbx('.t1')
     fixbx('.t2')
     fixbx('.t3')
 
