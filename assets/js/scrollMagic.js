@@ -69,7 +69,7 @@ $(()=>{
         트리거 시작점 : '.txtwrap2'
 
     */
-    function silhum(){
+    function silhum(trigger,startN,endN){
         // 트리거 - 각 화면멈처구간에서 트리거훅 1줘서 맨밑에서실행
         // onStart로 사진 넣는공간 dib 
         // onComplete 로 끝날때 dn
@@ -79,26 +79,28 @@ $(()=>{
                 display : 'block',
                 // duration : '100%',
                 // onStart : $('.bg-section').css({opacity : .5}),
-                onComplete : sq(".txtwrap2",1,176,$('.testimg'))
+                onComplete : sq(trigger,startN,endN,$('.testimg'))
             });
         
             let scene = new ScrollMagic.Scene({
-                triggerElement : ".txtwrap2",
+                triggerElement : trigger,
                 duration : '100%',
                 offset : wH,
                 triggerHook : 0
             })
             .setTween(tween_on)
             .addTo(controller2)
-            .addIndicators({
-                name : '제발'
-            })
+            // .addIndicators({
+            //     name : '제발'
+            // })
     }
 
 
 
 
-    silhum()
+    silhum(".txtwrap1",1,176)
+    silhum(".txtwrap2",176,351)
+    silhum(".txtwrap3",351,526)
     // silhum(트리거요소,시작수,끝수,)
 
 
