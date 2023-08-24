@@ -6,12 +6,10 @@ let scroll = {
   };
 $(()=>{
   // 새로고침시 맨위로
-  // setTimeout(()=>{
-  //   $(window).scrollTop(0)
-  // },100
-  // setTimeout(()=>{
-  //   gsap.to(window,{duration : 0, scrollTo : 0})
-  // },50)
+    
+  setTimeout(()=>{
+    $(window).scrollTop(0)
+  },100)
 
 // news 스크롤이벤트
 

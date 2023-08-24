@@ -1,12 +1,10 @@
 $(()=>{
-    console.log('하는중')
     let wH = $(window).height()
-    console.log(wH)
 
     // 스크롤매직을 이용한 이미지 시퀀스
     function sq(trele,start,end,next){
     // 트리거요소, 핀요소, 시작사진수,끝사진수
-    console.log('되는주웅~')
+
     // 1. 빈배열을 만들어서 배열안에 이미지 소스들을 넣어줌 for문활용했음
     let image = [] 
     // TweenMax는 모든 객체의 속성을 구분할 수 있다. 이 객체를 사용하여 배열을 순환한다
@@ -34,7 +32,6 @@ $(()=>{
         onComplete : ()=>{
             $('.bg-section').css({display : 'none'});
             $(window).scrollTop(next.offset().top - 50)
-            console.log('끝남');
         }
     })
     
@@ -50,9 +47,9 @@ $(()=>{
     // 요소 고정가능하다고함 특정지점이후로는 따라오지않게 하려면 속성에서 duration지정
     // pushFollowers : false 하면 핀-스페이서 안생긴다고함
     .addTo(controller) // 컨트롤러 장착 - 무슨역할인지모름
-    .addIndicators({
-        name : 'ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ'
-    }); // trigger위치 표시
+    // .addIndicators({
+    //     name : 'ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ'
+    // }); // trigger위치 표시
     
     }
 
@@ -140,7 +137,6 @@ $(()=>{
     function fixbx(target){ // 박스멈춰!
         let controller = new ScrollMagic.Controller();
         let tween = TweenMax.to(target, .001, { // 요소, 애니시간, 속성
-            onStart : ()=>{console.log('박스멈춰!')},
             onComplete : ()=>{
                 $(".txt").removeClass('on');
 
@@ -154,9 +150,9 @@ $(()=>{
         .setTween(tween)
         .addTo(controller)
         .setPin(target) // 핀플로워안쓰는게낫다
-        .addIndicators(
-            {name : '박스멈춰!'}
-        );
+        // .addIndicators(
+        //     {name : '박스멈춰!'}
+        // );
     }
     fixbx('.t1')
     fixbx('.t2')
@@ -177,40 +173,36 @@ $(window).scroll(function(){
         let c = target.height() // 타겟요소의 본연의 높이값
         let d = deop.offset().top // 타겟요소를 덮고있는 요소의 DOM에서의 거리
         let e = a - d; // 글씨 바뀌는 기준이 될 변수
-        // console.log(wH,a,b,c,d,e)
-        // console.log(deop.offset().top,wH)
-        if(b == 0){
-            // 여기가 1차조건 = 박스멈춰! 가 되는 구역
 
+        // 여기가 1차조건 = 박스멈춰! 가 되는 구역
+        if(b == 0){
+
+            // 여기가 시작후 첫글씨색바뀌어야 되는부분
             if(e > 0 && e < c / 3 * 1){
-                // 여기가 시작후 첫글씨색바뀌어야 되는부분
-                // console.log('첫글씨바낌')
                target.find('.txt1').siblings().removeClass('on')
                target.find('.txt1').addClass('on')
             }
+            // 첫글씨가 회색이되면서 두번째 글씨가 바뀌어야 하는부분
             else if(e > c / 3 * 1 && e < c / 3 * 2){
-                // 첫글씨가 회색이되면서 두번째 글씨가 바뀌어야 하는부분
-                // console.log('두번째글씨바낌')
                 target.find('.txt2').siblings().removeClass('on')
                 target.find('.txt2').addClass('on')
             }
+            // 첫글씨가 회색이되면서 두번째 글씨가 바뀌어야 하는부분
             else if (e > c / 3 * 2 && e !== 0){
-                // 첫글씨가 회색이되면서 두번째 글씨가 바뀌어야 하는부분
-                // console.log('세번째글씨바낌')
                 target.find('.txt3').siblings().removeClass('on')
                 target.find('.txt3').addClass('on')
             }
-            else if (e > c / 3 * 2 && e !== 0){
-                // 첫글씨가 회색이되면서 두번째 글씨가 바뀌어야 하는부분
-                // console.log('세번째글씨바낌')
-                target.find('.txt3').siblings().removeClass('on')
-                target.find('.txt3').addClass('on')
-            }
-            // 마지막글씨부분 100vh넘어가면 회색되기
+            // 첫글씨가 회색이되면서 두번째 글씨가 바뀌어야 하는부분 - 왜중복
+            // else if (e > c / 3 * 2 && e !== 0){
+            //     target.find('.txt3').siblings().removeClass('on')
+            //     target.find('.txt3').addClass('on')
+            // }
+
+            // 마지막글씨부분 100vh넘어가면 회색되기 - 글씨 한번씩 다 번쩎고나서 회색되게하기
             if ( e > c ){
                 target.find('.txt').removeClass('on')
             }
-
+            // 박스멈추는게 끝나면 글씨 회색
             if( e == 0 ){
                 target.find('.txt3').find('.txt').removeClass('on')
             }
@@ -219,6 +211,7 @@ $(window).scroll(function(){
                 target.find('.txt').removeClass('on')
             }
         }
+        // 이벤트가 아닐때는 기본글씨색 회색
         else {
             target.find('.txt3').find('.txt').removeClass('on')
             
@@ -226,7 +219,7 @@ $(window).scroll(function(){
     }
 
 
-
+    // 실행코드
     chgColor($('.t1'),$('.txtwrap1'))
     chgColor($('.t2'),$('.txtwrap2'))
     chgColor($('.t3'),$('.txtwrap3'))
