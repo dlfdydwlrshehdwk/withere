@@ -9,7 +9,7 @@ let ani = {
     let suchi = $('.headerwrap').width();
     $(window).resize(function(){
       suchi = $('.headerwrap').width()
-      if (suchi > 1440) {
+      if (suchi >= 1440) {
         $('.sub-menu').removeClass('open');
         initArrow()
         $('.gnb').removeClass('mobile')
@@ -18,7 +18,7 @@ let ani = {
       // 네비게이션 오버시 
       $('.nav').hover(
       function(){
-        if(suchi > 1440){
+        if(suchi >= 1440){
           $('.sub-menu').css({
             height : '180px'
           })
@@ -29,7 +29,7 @@ let ani = {
       },
       // 네비게이션 오버 뗐을때
       function(){
-        if(suchi > 1440){
+        if(suchi >= 1440){
           $('.sub-menu').css({
             height : ''
           })
