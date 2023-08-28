@@ -1166,7 +1166,7 @@ body {
   top: 0px;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 111;
   background-color: #fff;
 }
 
@@ -1223,6 +1223,10 @@ body {
 @media (max-width: 1440px) {
   .headerwrap #header .gnb .nav .main-menu {
     width: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .headerwrap #header .gnb .nav .main-menu:nth-child(1) {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -1366,17 +1370,6 @@ body {
   position: relative;
 }
 
-.main .intro .txt {
-  transition: color 0.3s;
-  font-size: 12.5rem;
-  font-weight: 700;
-  color: #f3f3f3;
-}
-
-.main .intro .txt.on {
-  color: #1E1E1E;
-}
-
 .main .intro .txt-set {
   width: 1440px;
   height: 100vh;
@@ -1384,6 +1377,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.main .intro .txt-set .txt {
+  transition: color 0.3s;
+  font-size: 12.5rem;
+  font-weight: 700;
+  color: #f3f3f3;
+}
+
+.main .intro .txt-set .txt.on {
+  color: #1E1E1E;
 }
 
 .main .intro .bg-section {
@@ -1412,6 +1416,12 @@ body {
   text-align: center;
 }
 
+.main .startbanner img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5);
+}
+
 .main .startbanner .startbanner-txtbx {
   position: absolute;
   top: 50%;
@@ -1431,15 +1441,9 @@ body {
   font-size: 100px;
 }
 
-.main .startbanner .startbanner-txtbx p {
+.main .startbanner .startbanner-txtbx > p {
   font-size: 48px;
   margin-top: 120px;
-}
-
-.main .startbanner img {
-  width: 100%;
-  height: 100%;
-  filter: brightness(0.5);
 }
 
 .main .product {
@@ -1476,7 +1480,7 @@ body {
   gap: 60px;
 }
 
-.main .product .product-topbx .product-txtbx h3 {
+.main .product .product-topbx .product-txtbx > h3 {
   font-size: 4rem;
   font-weight: 700;
   background-image: linear-gradient(to right, #6c93ea, #e5bfc3, #9ae5dc);
@@ -1484,7 +1488,7 @@ body {
   color: transparent;
 }
 
-.main .product .product-topbx .product-txtbx p {
+.main .product .product-topbx .product-txtbx > p {
   color: #6D6D6D;
   font-size: 2rem;
 }
@@ -1528,16 +1532,13 @@ body {
   padding: 40px;
 }
 
-.main .product .product-bottombx .product-libx ul li h4 {
+.main .product .product-bottombx .product-libx ul li > h4 {
   margin-bottom: 24px;
-}
-
-.main .product .product-bottombx h4 {
   font-size: 2.125rem;
   font-weight: 700;
 }
 
-.main .product .product-bottombx p {
+.main .product .product-bottombx .product-libx ul li > p {
   color: #6D6D6D;
   font-size: 1.75rem;
 }
@@ -1561,25 +1562,18 @@ body {
   color: #fff;
 }
 
-.main .news .news-content {
-  position: sticky;
-  top: 120px;
-  left: 0;
-  height: 100vh;
-}
-
 .main .news .news-slide {
   margin-top: 120px;
   margin-bottom: 120px;
 }
 
-.main .news .news-slide ul {
+.main .news .news-slide > ul {
   position: relative;
   display: flex;
   gap: 40px;
 }
 
-.main .news .news-slide ul li {
+.main .news .news-slide > ul > li {
   background-color: #fff;
   width: 400px;
   height: 480px;
@@ -1588,27 +1582,27 @@ body {
   border-radius: 20px;
 }
 
-.main .news .news-slide ul li > div:nth-child(1) {
+.main .news .news-slide > ul > li > div:nth-child(1) {
   flex: 1;
   font-size: 1.75rem;
 }
 
-.main .news .news-slide ul li > div:nth-child(2) {
+.main .news .news-slide > ul > li > div:nth-child(2) {
   height: 260px;
 }
 
-.main .news .news-slide-textbx {
+.main .news .news-slide > ul > li .news-slide-textbx {
   padding: 32px;
   display: flex;
   flex-direction: column;
 }
 
-.main .news .news-slide-textbx > div {
+.main .news .news-slide > ul > li .news-slide-textbx > div {
   flex: 1;
   font-weight: 500;
 }
 
-.main .news .news-slide-textbx > p {
+.main .news .news-slide > ul > li .news-slide-textbx > p {
   font-size: 0.875rem;
   color: #6D6D6D;
 }
@@ -1665,18 +1659,18 @@ body {
   animation: marquee2 20s linear infinite;
 }
 
-.main .contact .contact-cont .flowbx {
+.main .contact .contact-cont .flowbx-wrap .flowbx {
   display: flex;
   flex-basis: 50%;
   gap: 60px;
   padding-right: 160px;
 }
 
-.main .contact .contact-cont .flowbx > div:nth-child(1) {
+.main .contact .contact-cont .flowbx-wrap .flowbx > div:nth-child(1) {
   width: 200px;
 }
 
-.main .contact .contact-cont .flowbx > div:nth-child(2) p {
+.main .contact .contact-cont .flowbx-wrap .flowbx > div:nth-child(2) > p {
   margin-top: 20px;
   font-size: 2.25rem;
   font-weight: 700;
@@ -1774,16 +1768,16 @@ body {
   gap: 20px;
 }
 
-.footer .footer-info .contact .email a {
+.footer .footer-info .contact .email > a {
   color: black;
   text-decoration: underline;
 }
 
-.footer .footer-info .contact .email a span {
+.footer .footer-info .contact .email > a > span {
   padding-right: 5px;
 }
 
-.footer .footer-info .contact .tel span {
+.footer .footer-info .contact .tel > span {
   padding-right: 5px;
 }
 

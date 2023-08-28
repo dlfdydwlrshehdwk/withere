@@ -10,7 +10,7 @@ body {
   top: 0px;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 111;
   background-color: $white;
   img {
     width: 100%;
@@ -49,6 +49,10 @@ body {
           width: 172px;
 					@media (max-width : 1440px) {
 						width: auto;
+            &:nth-child(1){
+              border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 					}
           a {
             color: $black-1e;
@@ -169,16 +173,6 @@ body {
   position: relative;
   .intro {
     position: relative;
-
-    .txt {
-      transition: color 0.3s;
-      font-size: calcRem(200px);
-      font-weight: $fw-bold;
-      color: #f3f3f3;
-    }
-    .txt.on {
-      color: $black-1e;
-    }
     .txt-set {
       width: 1440px;
       height: 100vh;
@@ -186,6 +180,15 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
+			.txt {
+				transition: color 0.3s;
+				font-size: calcRem(200px);
+				font-weight: $fw-bold;
+				color: #f3f3f3;
+			}
+			.txt.on {
+				color: $black-1e;
+			}
     }
     .bg-section {
       position: fixed;
@@ -210,6 +213,11 @@ body {
     margin: 0 auto;
     text-align: center;
     // height: 100vh;
+		img {
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.5);
+    }
     .startbanner-txtbx {
       position: absolute;
       top: 50%;
@@ -225,16 +233,12 @@ body {
         font-weight: $fw-bold;
         font-size: 100px;
       }
-      p {
+      > p {
         font-size: 48px;
         margin-top: 120px;
       }
     }
-    img {
-      width: 100%;
-      height: 100%;
-      filter: brightness(0.5);
-    }
+    
   }
   .product {
     display: flex;
@@ -256,15 +260,13 @@ body {
     .product-topbx {
       display: flex;
       gap: 0 80px;
-
       .product-txtbx {
         position: relative;
         width: 780px;
         display: flex;
         flex-direction: column;
         gap: 60px;
-
-        h3 {
+        > h3 {
           font-size: calcRem(64px);
           font-weight: $fw-bold;
           background-image: linear-gradient(
@@ -276,7 +278,7 @@ body {
           -webkit-background-clip: text;
           color: transparent;
         }
-        p {
+        > p {
           color: $gray-6d;
           font-size: calcRem(32px);
         }
@@ -311,21 +313,18 @@ body {
           background: $white;
           box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
           padding: 40px;
-          h4 {
+          > h4 {
             margin-bottom: 24px;
+						font-size: calcRem(34px);
+        		font-weight: $fw-bold;
           }
+					> p {
+						color: $gray-6d;
+						font-size: calcRem(28px);
+					}
         }
       }
-      h4 {
-        // 박스 오버하면 이색으로되는가봄
-        // color: $primary;
-        font-size: calcRem(34px);
-        font-weight: $fw-bold;
-      }
-      p {
-        color: $gray-6d;
-        font-size: calcRem(28px);
-      }
+      
     }
   }
   .news {
@@ -344,49 +343,43 @@ body {
       font-size: calcRem(64px);
       color: $white;
     }
-    .news-content {
-      position: sticky;
-      top: 120px;
-      left: 0;
-      height: 100vh;
-    }
     .news-slide {
       margin-top: 120px;
       margin-bottom: 120px;
-    }
-    .news-slide ul {
-      position: relative;
-      // width: calc(3800px + 100vw);
-      display: flex;
-      gap: 40px;
-    }
-    .news-slide ul li {
-      background-color: $white;
-      width: 400px;
-      height: 480px;
-      display: flex;
-      flex-direction: column;
-      border-radius: 20px;
-      > div:nth-child(1) {
-        flex: 1;
-        font-size: calcRem(28px);
-      }
-      > div:nth-child(2) {
-        height: 260px;
-      }
-    }
-    .news-slide-textbx {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      > div {
-        flex: 1;
-        font-weight: $fw-medium;
-      }
-      > p {
-        font-size: calcRem(14px);
-        color: $gray-6d;
-      }
+			> ul {
+				position: relative;
+				// width: calc(3800px + 100vw);
+				display: flex;
+				gap: 40px;
+				> li {
+					background-color: $white;
+					width: 400px;
+					height: 480px;
+					display: flex;
+					flex-direction: column;
+					border-radius: 20px;
+					> div:nth-child(1) {
+						flex: 1;
+						font-size: calcRem(28px);
+					}
+					> div:nth-child(2) {
+						height: 260px;
+					}
+					.news-slide-textbx {
+						padding: 32px;
+						display: flex;
+						flex-direction: column;
+						> div {
+							flex: 1;
+							font-weight: $fw-medium;
+						}
+						> p {
+							font-size: calcRem(14px);
+							color: $gray-6d;
+						}
+					}
+				}
+			}
     }
     .newsbtn {
       line-height: 32px;
@@ -397,15 +390,15 @@ body {
       i {
         padding-left: 5px;
       }
-    }
-    .newsbtn:hover {
-      transition: 0.3s;
-      border: 1px solid $white;
-      border-radius: 60px;
-      padding: 20px 40px;
-      color: $primary;
-      background-color: $white;
-      font-weight: $fw-bold;
+			&:hover {
+				transition: 0.3s;
+				border: 1px solid $white;
+				border-radius: 60px;
+				padding: 20px 40px;
+				color: $primary;
+				background-color: $white;
+				font-weight: $fw-bold;
+			}
     }
   }
   .contact {
@@ -421,30 +414,31 @@ body {
         display: flex;
         width: 200%;
         position: relative;
-      }
-      .flowbx-wrap:nth-child(1) {
-        animation: marquee 20s linear infinite;
-      }
-      .flowbx-wrap:nth-child(2) {
-        margin-top: 80px;
-        left: 15%;
-        animation: marquee2 20s linear infinite;
-      }
-      .flowbx {
-        display: flex;
-        flex-basis: 50%;
-        gap: 60px;
-        padding-right: 160px;
-      }
-      .flowbx > div:nth-child(1) {
-        width: 200px;
-      }
-      .flowbx > div:nth-child(2) {
-        p {
-          margin-top: 20px;
-          font-size: calcRem(36px);
-          font-weight: $fw-bold;
-        }
+				&:nth-child(1) {
+					animation: marquee 20s linear infinite;
+				}
+				&:nth-child(2) {
+					margin-top: 80px;
+					left: 15%;
+					animation: marquee2 20s linear infinite;
+				}
+				.flowbx {
+					display: flex;
+					flex-basis: 50%;
+					gap: 60px;
+					padding-right: 160px;
+					> div:nth-child(1) {
+						width: 200px;
+					}
+					> div:nth-child(2) {
+						> p {
+							margin-top: 20px;
+							font-size: calcRem(36px);
+							font-weight: $fw-bold;
+						}
+					}
+				}
+
       }
     }
     @keyframes marquee {
@@ -477,7 +471,6 @@ body {
     color: $white;
     text-align: center;
     flex-direction: column;
-
     .banner-txtbx {
       > div:nth-child(1) {
         font-size: calcRem(56px);
@@ -496,13 +489,13 @@ body {
       i {
         padding-left: 5px;
       }
-    }
-    .bannerbtn:hover {
-      transition: 0.3s;
-      border: 1px solid $black-1e;
-      background-color: $white;
-      color: $black-1e;
-      font-weight: $fw-bold;
+			&:hover {
+				transition: 0.3s;
+				border: 1px solid $black-1e;
+				background-color: $white;
+				color: $black-1e;
+				font-weight: $fw-bold;
+			}
     }
   }
 }
@@ -529,17 +522,20 @@ body {
     .contact {
       display: flex;
       gap: 20px;
-      .email a {
-        color: black;
-        text-decoration: underline;
-
-        span {
-          padding-right: 5px;
-        }
+      .email  {
+				> a {
+					color: black;
+					text-decoration: underline;
+					> span {
+						padding-right: 5px;
+					}
+				}
       }
-      .tel span {
-        padding-right: 5px;
-      }
+      .tel {
+				> span {
+					padding-right: 5px;
+				}
+			}
     }
   }
 }
