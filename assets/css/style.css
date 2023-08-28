@@ -1808,6 +1808,112 @@ body {
   color: #fff;
 }
 
+#service-container img {
+  width: 100%;
+  height: 100%;
+}
+
+#service-container .fisrt-sec {
+  position: relative;
+}
+
+#service-container .fisrt-sec .txtbx {
+  padding: 120px 240px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+#service-container .fisrt-sec .txtbx > h2 {
+  font-size: 120px;
+}
+
+#service-container .fisrt-sec .txtbx > p {
+  font-size: 56px;
+}
+
+#service-container .fisrt-sec .bg {
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+#service-container .second-sec .wrap {
+  padding: 180px 240px;
+}
+
+#service-container .second-sec .wrap .txtbx {
+  font-size: 48px;
+}
+
+#service-container .second-sec .wrap .imgbx {
+  margin-top: 120px;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #3848A2 0%, purple 60%, aqua 100%);
+  background-origin: border-box;
+  background-clip: content-box,border-box;
+}
+
+#service-container .second-sec .wrap .imgbx .wrap {
+  padding: 80px 80px 120px 80px;
+}
+
+#service-container .second-sec .wrap .imgbx .sublogo {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#service-container .second-sec .wrap .imgbx .contentbx {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#service-container .second-sec .wrap .imgbx .contentbx > h4 {
+  color: #3848A2;
+  font-size: 32px;
+}
+
+#service-container .second-sec .wrap .imgbx .contentbx > h4:nth-child(1) {
+  margin-top: 60px;
+}
+
+#service-container .second-sec .wrap .imgbx .contentbx > h4:nth-child(2) {
+  margin-top: 120px;
+}
+
+#service-container .second-sec .wrap .imgbx .contentbx > ul {
+  display: flex;
+  margin-top: 32px;
+}
+
+#service-container .second-sec .wrap .imgbx .contentbx > ul > li {
+  position: relative;
+  flex-basis: 100%;
+  aspect-ratio: 400/240;
+}
+
+#service-container .second-sec .wrap .imgbx .contentbx > ul > li > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 40px;
+  z-index: 1;
+  text-align: center;
+}
+
+#service-container .second-sec .wrap .imgbx .contentbx > ul > li > img {
+  filter: brightness(60%);
+}
+
 /*! jQuery UI - v1.13.2 - 2022-12-19
 * http://jqueryui.com
 * Includes: draggable.css, core.css, resizable.css, selectable.css, sortable.css, accordion.css, autocomplete.css, menu.css, button.css, controlgroup.css, checkboxradio.css, datepicker.css, dialog.css, progressbar.css, selectmenu.css, slider.css, spinner.css, tabs.css, tooltip.css, theme.css

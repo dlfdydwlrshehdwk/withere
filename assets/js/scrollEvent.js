@@ -1,9 +1,6 @@
 let scrollEvent = {
     init: function () {
-    // 새로고침시 맨위로
-    setTimeout(()=>{
-      $(window).scrollTop(0);
-    },100)
+    
     // 윈도우 스크롤이벤트
     $(window).on('scroll',function(){
       // 윈도우의 스크롤값

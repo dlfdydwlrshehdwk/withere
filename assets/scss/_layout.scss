@@ -563,3 +563,98 @@ body {
     }
   }
 }
+
+
+// service
+#service-container{
+  img{
+    width: 100%;
+    height: 100%;
+  }
+  .fisrt-sec{
+    position: relative;
+    .txtbx{
+      padding: 120px 240px;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      color: $white;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      > h2{
+        font-size: 120px;
+      }
+      > p {
+        font-size: 56px;
+      }
+    }
+    .bg{
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(60%);
+    }
+  }
+  .second-sec{
+    .wrap {
+      padding: 180px 240px;
+      .txtbx{
+        font-size: 48px;
+      }
+      .imgbx{
+        margin-top: 120px;
+        border: 3px solid transparent;
+        border-radius: 40px;
+        background-image: linear-gradient(#fff,#fff),
+        linear-gradient(to right,$primary 0%, purple 60%,aqua 100%);
+        background-origin: border-box;
+        background-clip: content-box,border-box;
+        .wrap{
+          padding: 80px 80px 120px 80px;
+        }
+        .sublogo{
+          width: 400px;
+          margin: 0 auto;
+        }
+        .contentbx{
+          width: 1200px;
+          margin: 0 auto;
+          > h4 {
+            color : $primary;
+            font-size: 32px;
+            &:nth-child(1){
+              margin-top: 60px;
+            }
+            &:nth-child(2){
+              margin-top: 120px;
+            }
+          }
+          > ul{
+            display: flex;
+            margin-top: 32px;
+            >li {
+              position: relative;
+              flex-basis: 100%;
+              aspect-ratio: 400/240;
+              >span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                color: $white;
+                font-weight: $fw-bold;
+                font-size: 40px;
+                z-index: 1;
+                text-align: center;
+              }
+              > img{
+                filter :brightness(60%)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

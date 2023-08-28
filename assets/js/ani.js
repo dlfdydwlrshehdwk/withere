@@ -1,5 +1,10 @@
 let ani = {
   init: function () {
+    // 새로고침시 맨위로
+    // setTimeout(()=>{
+    //   $(window).scrollTop(0);
+    // },100)
+
     // .scrolltop 을 누르면 맨위로
     $('.scrolltop').click(function(){
       $(window).scrollTop(0)
