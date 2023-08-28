@@ -71,7 +71,6 @@
     <script type="text/javascript" src="../assets/js/common.js"></script>
     <script type="text/javascript" src="../assets/js/ani.js"></script>
     <script type="text/javascript" src="../assets/js/scrollEvent.js"></script>
-    <script type="text/javascript" src="../assets/js/scrolltriger.js"></script>
     <script type="text/javascript" src="../assets/js/scrollMagic.js"></script>
     <script type="text/javascript">
       $(function () {});
@@ -95,7 +94,7 @@
               </ul>
             </li>
             <li class="main-menu">
-              <a href="#" class="toggle">Service</a>
+              <a href="#" class="toggle">Service<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
               <ul class="sub-menu">
                 <li>
                   <a href="service/neul_silver_care.html" class="toggle-sub">NEUL Silver Care</a>
@@ -106,7 +105,7 @@
               </ul>
             </li>
             <li class="main-menu">
-              <a href="#" class="toggle">Product</a>
+              <a href="#" class="toggle">Product<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
               <ul class="sub-menu">
                 <li>
                   <a href="#" class="toggle-sub">NEUL Band</a>
@@ -114,7 +113,7 @@
               </ul>
             </li>
             <li class="main-menu">
-              <a href="#" class="toggle">Work</a>
+              <a href="#" class="toggle">Work<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
               <ul class="sub-menu">
                 <li>
                   <a href="#" class="toggle-sub">요양병원</a>
@@ -122,7 +121,7 @@
               </ul>
             </li>
             <li class="main-menu">
-              <a href="#" class="toggle">News</a>
+              <a href="#" class="toggle">News<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
               <ul class="sub-menu">
                 <li>
                   <a href="news/press_release.html" class="toggle-sub">보도자료</a>
@@ -133,7 +132,7 @@
               </ul>
             </li>
             <li class="main-menu">
-              <a href="#" class="toggle">Help</a>
+              <a href="#" class="toggle">Help<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
               <ul class="sub-menu">
                 <li>
                   <a href="help/notice_list.html" class="toggle-sub">공지사항</a>
@@ -151,121 +150,17 @@
             </li>
           </ul>
           <div class="etc-menu">
-            <button type="button" class="btn btn-round demo" onclick="common.openModalPopup('pop-inquiry');"><img style="width: 18px; height: auto;" src="../assets/images/icon/(ICON) Free Trial.png" alt=""> DEMO 신청</button>
+            <button type="button" class="btn btn-round demo" onclick="common.openModalPopup('pop-inquiry');"><img style="width: 18px; height: auto;" src="../assets/images/icon/(ICON) Free Trial.png" alt=""><span>DEMO 신청</span></button>
             <div class="lang">
               <!-- [D]: 활성화일 경우 .active 추가 -->
               <button type="button" class="btn btn-lang active">KO</button>
               <button type="button" class="btn btn-lang">EN</button>
             </div>
           </div>
-          <!-- 모바일 버튼 -->
-          <div class="btn-drawer"><span><i class="fa-solid fa-bars"></i></span></div>
         </div>
+        <!-- 모바일 버튼 -->
+        <div class="btn-drawer"><span><i class="fa-solid fa-bars"></i></span></div>
       </div>
-      <aside id="aside">
-        <div class="aside-wrap">
-          <div class="aside">
-            <div class="aside-close">×</div>
-              <div class="logo">
-                <a href="main.html"><img src="../assets/images/logo.svg" alt="NEUL" /></a>
-              </div>
-                <ul class="mobile-nav">
-                  <li>
-                    <a href="" onclick="event.preventDefault()" style="padding: 15px 15px;">NEUL</a>
-                  </li>
-                  <li>
-                    <div class="mobile-nav-list">
-                      <div>
-                        <a href="">Service</a>
-                      </div>
-                      <div class="mobile-state db">▼</div>
-                      <div class="mobile-state">▲</div>
-                    </div>
-                    <ul class="mobile-submenu">
-                      <li>
-                        <a href="">NEUL Silver Care</a>
-                      </li>
-                      <li>
-                        <a href="">적정성 평가</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="mobile-nav-list">
-                      <div>
-                        <a href="">Product</a>
-                      </div>
-                      <div class="mobile-state db">▼</div>
-                      <div class="mobile-state">▲</div>
-                    </div>
-                    <ul class="mobile-submenu">
-                      <li>
-                        <a href="">NEUL Silver Care</a>
-                      </li>
-                      <li>
-                        <a href="">적정성 평가</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="mobile-nav-list">
-                      <div>
-                        <a href="">Work</a>
-                      </div>
-                      <div class="mobile-state db">▼</div>
-                      <div class="mobile-state">▲</div>
-                    </div>
-                    <ul class="mobile-submenu">
-                      <li>
-                        <a href="">NEUL Silver Care</a>
-                      </li>
-                      <li>
-                        <a href="">적정성 평가</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="mobile-nav-list">
-                      <div>
-                        <a href="">News</a>
-                      </div>
-                      <div class="mobile-state db">▼</div>
-                      <div class="mobile-state">▲</div>
-                    </div>
-                    <ul class="mobile-submenu">
-                      <li>
-                        <a href="">NEUL Silver Care</a>
-                      </li>
-                      <li>
-                        <a href="">적정성 평가</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="mobile-nav-list">
-                      <div>
-                        <a href="">Help</a>
-                      </div>
-                      <div class="mobile-state db">▼</div>
-                      <div class="mobile-state">▲</div>
-                    </div>
-                    <ul class="mobile-submenu">
-                      <li>
-                        <a href="">NEUL Silver Care</a>
-                      </li>
-                      <li>
-                        <a href="">적정성 평가</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                <div class="mobile-etc-menu">
-                  <button type="button" class="mobile-demo" onclick="common.openModalPopup('pop-inquiry');"><img style="width: 18px; height: auto;" src="../assets/images/icon/(ICON) Free Trial.png" alt=""> DEMO 신청</button>
-                </div>
-          </div>
-        </div>
-
-      </aside>
     </div>
       <div id="container">
         <div class="main">

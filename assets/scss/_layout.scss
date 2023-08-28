@@ -1,619 +1,569 @@
 /*******************************************************************
 	Layout
 ********************************************************************/
-body{
-	overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 .headerwrap {
-	height: 100px;
-	position: fixed;
-	top: 0px;
-	left: 0;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: $white;
+  img {
     width: 100%;
-	z-index: 1;
-}
-#header{
-	@include center(horizontal);
-	max-width: 1920px;
+    height: 100%;
+  }
+  #header {
+    @include center(horizontal);
+    max-width: 1920px;
     display: flex;
     height: 100px;
     justify-content: space-between;
     position: fixed;
     width: 100%;
     top: 000px;
-	padding: 0 20px;
-	
-	.nav{
-		display: flex;
-
-		@media screen and (max-width : 1440px) {
-			display: none;
-		}
-	}
-	// 메인메뉴들 가로폭맞추려고 어쩔수없는 width사용
-	.main-menu {
-		width: 172px;
-	}
-	.main-menu a{
-		color : $black-1e;
-		font-weight: $fw-bold;
-	}
-	.main-menu:hover > a {
-		color: $white;
-	}
-	.main-menu:hover {
-		background-color : $primary;
-	}
-	.main-menu:hover .sub-menu{
-		background-color : $primary;
-	}
-	.main-menu:hover .sub-menu a{
-		color : $secondary;
-	}
-	.main-menu .sub-menu li:hover a{
-		color : $white
-	}
-	.main-menu > a{
-		display: block;
-		line-height: 100px;
-		padding: 0 20px;
-	}
-	.sub-menu{
-		height: 0;
-		overflow: hidden;
-		a{
-			padding: 10px 20px;
-			display: block;
-		}
-	}
-	.gnb{
-		display: flex;
-		gap: 20px;
-	}
-	.logo{
-		width: 146px;
-		aspect-ratio: 146/32;
-	}
-	img{
-		width: 100%;
-		height: 100%;
-	}
-
-
-	.etc-menu{
-		display: flex;
-		align-items: center;
-		gap: 0 20px;
-		padding-left: 20px;
-		.btn-round { 
-			height: 48px;
-			padding: 5px 10px;
-			border-radius: 16px;
-			color: $white;
-			background-color: $primary;
-			font-weight: $fw-bold;
-		}
-	}
-	.lang{
-		background-color: $bg-ea;
-		display: flex;
-		gap: 0 8px;
-		border-radius: 278px;
-		font-size: calcRem(14px);
-		align-items: center;
-		.btn-lang{
-			padding: 4px 8px;
-		}
-	}
-	.active{
-		background-color: $gray-85;
-		color: $white;
-		font-weight: $fw-bold;
-		border-radius: 28px;
-	}
-	.btn-drawer{
-		display: none;
-		
-		i {
-			line-height: 100px;
-			font-size: calcRem(30px);
-		}
-		@media screen and (max-width : 1440px) {
-			display: block;
-		}
-	}
-	
-}
-#aside { 
-	display: none;
-	background-color: $white;
-	border-left: 1px solid #000;
-	@media screen and (max-width : 1440px) {
-		display: block;
-		position: fixed;
-		top: 0;
-		right: -400px;
-		bottom: 0;
-		width: 400px;
-		opacity: 0;
-		transition: .3s;
-	}
-	.aside-close{
-		position: absolute;
-		top: 0%;
-		right: 3%;
-		font-size: calcRem(50px);
-		cursor: pointer;
-	}
-	.aside {
-		position: relative;
-		height: 100vh;
-		display: flex;
-    	flex-direction: column;
-		gap: 40px;
-		padding: 20px 0;
-
-		a {
-			color : $primary;
-		}
-	}
-	.mobile-etc-menu{
-		margin-bottom: 40px;
-		margin-top: auto;
-	}
-	.logo {
-		width: 146px;
-		display: flex;
-		height: 100px;
-		align-items: center;
-		margin-left: 10px;
-	}
-	.mobile-nav > li {
-		border-bottom: 1px solid ;
-		> a {
-			font-weight: $fw-bold;
-		}
-	}
-	.mobile-nav > li:nth-child(1) {
-		border-top: 1px solid;
-	}
-	.mobile-nav li a {
-		display: block;
-		padding: 15px 0;
-	}
-	.mobile-nav-list{
-		font-weight: $fw-bold;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0 15px;
-	}
-	.mobile-subclose{
-		display: none;
-	}
-	.mobile-submenu > li {
-		border-top: 1px solid rgba(0, 0, 0, 0.2);
-	}
-	.mobile-submenu > li > a{
-		color: $primary;
-		padding:  15px;
-	}
-	.mobile-submenu{
-		display: none;
-	}
-	.mobile-state{
-		display: none;
-	}
-	.mobile-state.db {
-		display: block;
-	}
-	.mobile-demo{
-		height: 48px;
-		padding: 5px 10px;
-		border-radius: 16px;
-		color: $white;
-		background-color: $primary;
-		font-weight: $fw-bold;
-		margin-left: 20px;
-	}
-}
-#aside.on{
-	right: 0;
-	opacity: 1;
-}
-.main{
-	position: relative;
-	.intro{
-		position: relative;
-
-		.txt{
-			transition: color .3s;
-			font-size: calcRem(200px);
-			font-weight: $fw-bold;
-			color: #f3f3f3;
-		}
-		.txt.on{
-			color : $black-1e;
-		}
-		.txt-set{
-			width: 1440px;
-			height: 100vh;
-			margin: 0 auto;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
-		.bg-section{
-			position: fixed;
+    padding: 0 20px;
+    .logo {
+      position: relative;
+      z-index: 2;
+      width: 146px;
+      aspect-ratio: 146/32;
+    }
+    .gnb {
+      display: flex;
+      gap: 20px;
+			@media (max-width:1440px) {
+				gap: 0;
+				display: none;
+				&.mobile{
+					display: flex;
+				}
+			}
+      .nav {
+        display: flex;
+        // 메인메뉴들 가로폭맞추려고 어쩔수없는 width사용
+        .main-menu {
+          width: 172px;
+					@media (max-width : 1440px) {
+						width: auto;
+					}
+          a {
+            color: $black-1e;
+            font-weight: $fw-bold;
+						.arrow {
+							display: none;
+							padding-left: 10px;
+							@media (max-width : 1440px) {
+								&.show{
+									display: inline;
+								}
+							}
+						}
+          }
+          > a {
+            display: block;
+            line-height: 100px;
+            padding: 0 20px;
+          }
+          &:hover > a {
+            color: $white;
+          }
+          &:hover {
+            background-color: $primary;
+          }
+          &:hover .sub-menu {
+            background-color: $primary;
+          }
+          &:hover .sub-menu a {
+            color: $secondary;
+          }
+          .sub-menu li:hover a {
+            color: $white;
+          }
+          .sub-menu {
+            height: 0;
+            overflow: hidden;
+						&.open {
+							height: auto;
+							padding-bottom: 20px;
+						}
+            a {
+              padding: 10px 20px;
+              display: block;
+            }
+          }
+        }
+      }
+      .etc-menu {
+        display: flex;
+        align-items: center;
+        gap: 0 20px;
+        padding-left: 20px;
+        .btn-round {
+          height: 48px;
+          padding: 5px 10px;
+          border-radius: 16px;
+          color: $white;
+          background-color: $primary;
+          font-weight: $fw-bold;
+        }
+        .lang {
+          background-color: $bg-ea;
+          display: flex;
+          gap: 0 8px;
+          border-radius: 278px;
+          font-size: calcRem(14px);
+          align-items: center;
+          .btn-lang {
+            padding: 4px 8px;
+          }
+          .active {
+            background-color: $gray-85;
+            color: $white;
+            font-weight: $fw-bold;
+            border-radius: 28px;
+          }
+        }
+      }
+    }
+    .btn-drawer {
+      display: none;
+      i {
+        line-height: 100px;
+        font-size: calcRem(30px);
+      }
+      @media screen and (max-width: 1440px) {
+        display: block;
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    .gnb {
+      flex-direction: column;
 			top: 0;
-			left: 0;
+			position: fixed;
+			height: 100vh;
 			right: 0;
 			bottom: 0;
-			z-index: -1;
-			display: none;
-			.img-set{
-				width: 100%;
-				height: 100%;
-			}
-			img{
-				width: 100%;
-				height: 100%;
-			}
-		}
-	}
-	.startbanner {
-		position: relative;
-		margin: 0 auto;
-		text-align: center;
-		// height: 100vh;
-		.startbanner-txtbx {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%,-50%);
-			color : $white;
-			z-index: 1;
-			opacity: 1;
-			> div {
-				font-size: 64px;
-			}
-			> h2 {
-				font-weight: $fw-bold;
-				font-size: 100px;
-			}
-			p{
-				font-size: 48px;
-				margin-top: 120px;
-			}
-		}
-		img {
-			width: 100%;
-			height: 100%;
-			filter: brightness(.5);
-		}
-	}
-	.product{
-		display: flex;
-		flex-direction: column;
-		gap: 120px;
-		align-items: center;
-		padding: 180px 240px;
-		img { width: 100%; height: 100%;}
-		.product-sc{
-			padding: 80px;
-			max-width: 1280px;
-			margin: 0 auto; 
-			background-color: #f5f7f9;
-			border-radius: 40px;
-		}
-		.product-topbx{
-			display: flex;
-			gap: 0 80px;
-
-			.product-txtbx{
-				position: relative;
-				width: 780px;
-				display: flex;
-				flex-direction: column;
-				gap: 60px;
-
-				h3 {
-					font-size: calcRem(64px);
-					font-weight: $fw-bold;
-					background-image: linear-gradient(to right, #6C93EA, #E5BFC3, #9AE5DC);
-					-webkit-background-clip: text;
-					color: transparent;
-				}
-				p {
-					color: $gray-6d;
-					font-size: calcRem(32px)
-				}
-				.barogagi {
-					position: absolute;
-					top: 5%;
-					right: 0;
-					cursor: pointer;
-					> a {
-						display: flex;
-						align-items: center;
-						font-size: 16px;
-						> div:nth-child(1){
-							padding-right: 16px;
-						}
-					} 
-				}
-			}
-			.product-imgbx{
-				width: 428px;
-				height: 276px;
-			}
-		}
-		.product-bottombx{
-			margin-top: 80px;
-			.product-libx ul {
-				display: flex;
-				gap: 40px;
-				li {
-					flex: 1;
-					border-radius: 20px;
-					background: $white;
-					box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
-					padding: 40px;
-					h4{
-						margin-bottom: 24px;
-					}
-				}
-			}
-			h4{
-				// 박스 오버하면 이색으로되는가봄
-				// color: $primary;
-				font-size: calcRem(34px);
-				font-weight: $fw-bold;
-			}
-			p{
-				color: $gray-6d;
-				font-size: calcRem(28px)
-			}
-		}
-	}
-	.news{
-		position: relative;
-		display: flex;
-		// 가로스크롤 높이값 임의지정
-		height: 100vh;
-		background-color: $primary;
-		padding: 180px 240px;
-		img{
-			width: 100%;
-			height: 100%;
-			object-fit: fill;
-		}
-		h3{
-			font-size:calcRem(64px);
-			color: $white;
-		}
-		.news-content{
-			position : sticky;
-			top: 120px;
+			background-color: $white;
+			padding-top: 100px;
 			left: 0;
-			height: 100vh;
-		}
-		.news-slide{
-			margin-top: 120px;
-			margin-bottom: 120px;
-		}
-		.news-slide ul{
-			position: relative;
-			// width: calc(3800px + 100vw);
-			display: flex;
-			gap: 40px;
-		}
-		.news-slide ul li {
-			background-color: $white;
-			width: 400px;
-			height: 480px;
-			display: flex;
-			flex-direction: column;
-			border-radius: 20px;
-			> div:nth-child(1){
-				flex : 1;
-				font-size: calcRem(28px);
-			}
-			> div:nth-child(2){
-				height: 260px;
-			}
-		}
-		.news-slide-textbx{
-			padding: 32px;
-			display: flex;
-			flex-direction: column;
-			> div {
-				flex : 1;
-				font-weight: $fw-medium;
-			}
-			> p {
-				font-size: calcRem(14px);
-				color : $gray-6d;
-			}
-		}
-		.newsbtn{
-			line-height: 32px;
-			border: 1px solid $white;
-			border-radius: 60px;
-			padding: 20px 40px;
-			color: $white;
-			i {
-				padding-left: 5px;
-			}
-		}
-		.newsbtn:hover {
-			transition: .3s;
-			border: 1px solid $white;
-			border-radius: 60px;
-			padding: 20px 40px;
-			color: $primary;
-			background-color: $white;
-			font-weight: $fw-bold;
-		}
-	}
-	.contact{
-		padding: 180px 240px;
-		h2 {
-			font-size: calcRem(64px);
-			font-weight: $fw-bold;
-		}
-		.contact-cont{
-			overflow: hidden;
-			margin-top: 120px;
-			.flowbx-wrap{
-				display: flex;
-				width: 200%;
-				position: relative;
-			}
-			.flowbx-wrap:nth-child(1){
-				animation: marquee 20s linear infinite;
-			}
-			.flowbx-wrap:nth-child(2){
-				margin-top: 80px;
-				left: 15%;
-				animation: marquee2 20s linear infinite;
-			}
-			.flowbx {
-				display: flex;
-				flex-basis: 50%;
-				gap: 60px;
-				padding-right: 160px;
-			}
-			.flowbx > div:nth-child(1) {
-				width: 200px;
-			}
-			.flowbx > div:nth-child(2) {
-				p {
-					margin-top: 20px;
-					font-size: calcRem(36px);
-					font-weight: $fw-bold;
-				}
-			}
-		}
-		@keyframes marquee {
-			0%{left : 0}
-			100%{left : -100%}
-		}
-		@keyframes marquee2 {
-			0%{left : 15%}
-			100%{left : -85%}
-		}
-	}
-	.banner {
-		width: 1920px;
-		height: 480px;
-		margin: 0 auto;
-		background: url(../images/contact.png) no-repeat;
-		display: flex;
-		align-items: center;
-		padding: 80px 240px;
-		gap: 40px;
-		justify-content: center;
-		color : $white;
-		text-align: center;
-		flex-direction: column;
-
-		.banner-txtbx{
-			> div:nth-child(1) { 
-				font-size: calcRem(56px);
-				font-weight: $fw-bold;
-			}
-			button { 
-				color : $white;
-				border: 1px solid $white;
-			}
-		}
-		.bannerbtn{
-			line-height: 32px;
-			border: 1px solid $white;
-			border-radius: 60px;
-			padding: 20px 40px;
-			i{
-				padding-left: 5px;
-			}
-		}
-		.bannerbtn:hover {
-			transition: .3s;
-			border: 1px solid $black-1e;
-			background-color: $white;
-			color : $black-1e;
-			font-weight: $fw-bold;
-		}
-		
-	}
+      .nav {
+        display: flex;
+        flex-direction: column;
+      }
+      .etc-menu {
+        margin-bottom: 40px;
+        margin-top: auto;
+      }
+    }
+  }
 }
 
+.main {
+  position: relative;
+  .intro {
+    position: relative;
 
-
-
-
-
-
-
-.footer{
-	height: 100px;
-	background-color: $bg-f5;
-	display: flex;
-	align-items: center;
-	padding: 40px;
-	gap: 40px;
-
-	.footer-logo{
-		width: 146px;
-		aspect-ratio: 146/32;
-		img{
-			width: 100%;
-			height: 100%;
-		}
-	}
-	.footer-info{
-		display: flex;
-		flex: 1;
-		gap: 40px;
-		.contact {
-			display: flex;
-			gap: 20px;
-
-			.email a{
-				color : black;
-				text-decoration: underline;
-
-				span {
-					padding-right: 5px;
-				}
-			}
-			.tel span{
-				padding-right: 5px;
-			}
-		}
-	}
-}
-.scrolltop{
-	position: fixed;
-    width: 60px;
-    bottom: 5%;
-    right: 3%;
-    height: 60px;
-    border: 1px solid black;
+    .txt {
+      transition: color 0.3s;
+      font-size: calcRem(200px);
+      font-weight: $fw-bold;
+      color: #f3f3f3;
+    }
+    .txt.on {
+      color: $black-1e;
+    }
+    .txt-set {
+      width: 1440px;
+      height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .bg-section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      display: none;
+      .img-set {
+        width: 100%;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .startbanner {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    // height: 100vh;
+    .startbanner-txtbx {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      z-index: 1;
+      opacity: 1;
+      > div {
+        font-size: 64px;
+      }
+      > h2 {
+        font-weight: $fw-bold;
+        font-size: 100px;
+      }
+      p {
+        font-size: 48px;
+        margin-top: 120px;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.5);
+    }
+  }
+  .product {
     display: flex;
-    border-radius: 50%;
+    flex-direction: column;
+    gap: 120px;
     align-items: center;
+    padding: 180px 240px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .product-sc {
+      padding: 80px;
+      max-width: 1280px;
+      margin: 0 auto;
+      background-color: #f5f7f9;
+      border-radius: 40px;
+    }
+    .product-topbx {
+      display: flex;
+      gap: 0 80px;
+
+      .product-txtbx {
+        position: relative;
+        width: 780px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        h3 {
+          font-size: calcRem(64px);
+          font-weight: $fw-bold;
+          background-image: linear-gradient(
+            to right,
+            #6c93ea,
+            #e5bfc3,
+            #9ae5dc
+          );
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+        p {
+          color: $gray-6d;
+          font-size: calcRem(32px);
+        }
+        .barogagi {
+          position: absolute;
+          top: 5%;
+          right: 0;
+          cursor: pointer;
+          > a {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            > div:nth-child(1) {
+              padding-right: 16px;
+            }
+          }
+        }
+      }
+      .product-imgbx {
+        width: 428px;
+        height: 276px;
+      }
+    }
+    .product-bottombx {
+      margin-top: 80px;
+      .product-libx ul {
+        display: flex;
+        gap: 40px;
+        li {
+          flex: 1;
+          border-radius: 20px;
+          background: $white;
+          box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+          padding: 40px;
+          h4 {
+            margin-bottom: 24px;
+          }
+        }
+      }
+      h4 {
+        // 박스 오버하면 이색으로되는가봄
+        // color: $primary;
+        font-size: calcRem(34px);
+        font-weight: $fw-bold;
+      }
+      p {
+        color: $gray-6d;
+        font-size: calcRem(28px);
+      }
+    }
+  }
+  .news {
+    position: relative;
+    display: flex;
+    // 가로스크롤 높이값 임의지정
+    height: 100vh;
+    background-color: $primary;
+    padding: 180px 240px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+    h3 {
+      font-size: calcRem(64px);
+      color: $white;
+    }
+    .news-content {
+      position: sticky;
+      top: 120px;
+      left: 0;
+      height: 100vh;
+    }
+    .news-slide {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+    .news-slide ul {
+      position: relative;
+      // width: calc(3800px + 100vw);
+      display: flex;
+      gap: 40px;
+    }
+    .news-slide ul li {
+      background-color: $white;
+      width: 400px;
+      height: 480px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      > div:nth-child(1) {
+        flex: 1;
+        font-size: calcRem(28px);
+      }
+      > div:nth-child(2) {
+        height: 260px;
+      }
+    }
+    .news-slide-textbx {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      > div {
+        flex: 1;
+        font-weight: $fw-medium;
+      }
+      > p {
+        font-size: calcRem(14px);
+        color: $gray-6d;
+      }
+    }
+    .newsbtn {
+      line-height: 32px;
+      border: 1px solid $white;
+      border-radius: 60px;
+      padding: 20px 40px;
+      color: $white;
+      i {
+        padding-left: 5px;
+      }
+    }
+    .newsbtn:hover {
+      transition: 0.3s;
+      border: 1px solid $white;
+      border-radius: 60px;
+      padding: 20px 40px;
+      color: $primary;
+      background-color: $white;
+      font-weight: $fw-bold;
+    }
+  }
+  .contact {
+    padding: 180px 240px;
+    h2 {
+      font-size: calcRem(64px);
+      font-weight: $fw-bold;
+    }
+    .contact-cont {
+      overflow: hidden;
+      margin-top: 120px;
+      .flowbx-wrap {
+        display: flex;
+        width: 200%;
+        position: relative;
+      }
+      .flowbx-wrap:nth-child(1) {
+        animation: marquee 20s linear infinite;
+      }
+      .flowbx-wrap:nth-child(2) {
+        margin-top: 80px;
+        left: 15%;
+        animation: marquee2 20s linear infinite;
+      }
+      .flowbx {
+        display: flex;
+        flex-basis: 50%;
+        gap: 60px;
+        padding-right: 160px;
+      }
+      .flowbx > div:nth-child(1) {
+        width: 200px;
+      }
+      .flowbx > div:nth-child(2) {
+        p {
+          margin-top: 20px;
+          font-size: calcRem(36px);
+          font-weight: $fw-bold;
+        }
+      }
+    }
+    @keyframes marquee {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: -100%;
+      }
+    }
+    @keyframes marquee2 {
+      0% {
+        left: 15%;
+      }
+      100% {
+        left: -85%;
+      }
+    }
+  }
+  .banner {
+    width: 1920px;
+    height: 480px;
+    margin: 0 auto;
+    background: url(../images/contact.png) no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 80px 240px;
+    gap: 40px;
     justify-content: center;
-	background-color: $white;
-	display: none;
-	// opacity: 0;
-	> i {
-		font-size: 30px;
-	}
+    color: $white;
+    text-align: center;
+    flex-direction: column;
+
+    .banner-txtbx {
+      > div:nth-child(1) {
+        font-size: calcRem(56px);
+        font-weight: $fw-bold;
+      }
+      button {
+        color: $white;
+        border: 1px solid $white;
+      }
+    }
+    .bannerbtn {
+      line-height: 32px;
+      border: 1px solid $white;
+      border-radius: 60px;
+      padding: 20px 40px;
+      i {
+        padding-left: 5px;
+      }
+    }
+    .bannerbtn:hover {
+      transition: 0.3s;
+      border: 1px solid $black-1e;
+      background-color: $white;
+      color: $black-1e;
+      font-weight: $fw-bold;
+    }
+  }
 }
-.scrolltop:hover {
-	background-color: black;
-	> i {
-		color: $white;
-	}
+
+.footer {
+  height: 100px;
+  background-color: $bg-f5;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .footer-logo {
+    width: 146px;
+    aspect-ratio: 146/32;
+  }
+  .footer-info {
+    display: flex;
+    flex: 1;
+    gap: 40px;
+    .contact {
+      display: flex;
+      gap: 20px;
+      .email a {
+        color: black;
+        text-decoration: underline;
+
+        span {
+          padding-right: 5px;
+        }
+      }
+      .tel span {
+        padding-right: 5px;
+      }
+    }
+  }
+}
+.scrolltop {
+  position: fixed;
+  width: 60px;
+  bottom: 5%;
+  right: 3%;
+  height: 60px;
+  border: 1px solid black;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  display: none;
+  // opacity: 0;
+  > i {
+    font-size: 30px;
+  }
+  &:hover {
+    background-color: black;
+    > i {
+      color: $white;
+    }
+  }
 }
