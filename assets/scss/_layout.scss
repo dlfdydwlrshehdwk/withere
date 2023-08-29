@@ -71,6 +71,11 @@ body {
             display: block;
             line-height: 100px;
             padding: 0 20px;
+
+            @media (max-width : 1440px) {
+              // 작은화면 aside나올때 클릭으로하면 펼칠때 넘어가져서 일단 이걸로해놈
+              display: inline-block;
+            }
           }
           &:hover > a {
             color: $white;

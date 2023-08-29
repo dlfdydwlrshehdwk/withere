@@ -1252,6 +1252,12 @@ body {
   padding: 0 20px;
 }
 
+@media (max-width: 1440px) {
+  .headerwrap #header .gnb .nav .main-menu > a {
+    display: inline-block;
+  }
+}
+
 .headerwrap #header .gnb .nav .main-menu:hover > a {
   color: #fff;
 }
