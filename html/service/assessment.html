@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>NEUL Digital Care Platform</title>
+    <meta charset="utf-8" />
+    <meta name="title" content="NEUL Digital Care Platform" />
+    <meta name="Description" content="NEUL Digital Care Platform" />
+    <meta name="keywords" content="NEUL Digital Care Platform" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta property="og:title" content="늘 마음 놓고 돌봄을 시작하다. 늘 NEUL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.neulcare.com/" />
+    <meta property="og:image" content="../../assets/images/neul_opengraph.png" />
+    <link rel="icon" href="../../assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../assets/images/favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon-16x16.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+    <!-- 플러그인 순서중요-->
+    <script type="text/javascript" src="../../assets/js/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/greensock/gsap.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/greensock/TweenMax.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/greensock/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/animation.gsap.js"></script>
+    <script type="text/javascript" src="../../assets/js/debug.addIndicators.min.js"></script>
+    <!-- 자체 자스 -->
+    <script type="text/javascript" src="../../assets/js/common.js"></script>
+    <script type="text/javascript" src="../../assets/js/ani.js"></script>
+    <script type="text/javascript">
+      $(function () {});
+    </script>
+  </head>
+  <body>
+    <!-- #wrap -->
+    <div id="wrap">
+      <!-- header -->
+      <div class="headerwrap">  
+      <div id="header">
+        <h1 class="logo">
+          <a href="../main.html"><img src="../../assets/images/logo.svg" alt="NEUL" /></a>
+        </h1>
+        <div class="gnb">
+          <ul class="nav">
+            <li class="main-menu">
+              <a href="neul/company.html" class="toggle none">NEUL</a>
+              <ul class="sub-menu">
+              </ul>
+            </li>
+            <li class="main-menu">
+              <a href="service.html" class="toggle">Service<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="neul_silver_care.html" class="toggle-sub">NEUL Silver Care</a>
+                </li>
+                <li>
+                  <a href="assessment.html" class="toggle-sub">적정성 평가</a>
+                </li>
+              </ul>
+            </li>
+            <li class="main-menu">
+              <a href="#" class="toggle">Product<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="#" class="toggle-sub">NEUL Band</a>
+                </li>
+              </ul>
+            </li>
+            <li class="main-menu">
+              <a href="#" class="toggle">Work<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="#" class="toggle-sub">요양병원</a>
+                </li>
+              </ul>
+            </li>
+            <li class="main-menu">
+              <a href="../news/press_release.html" class="toggle">News<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="../news/press_release.html" class="toggle-sub">보도자료</a>
+                </li>
+                <li>
+                  <a href="../news/data_list.html" class="toggle-sub">자료실</a>
+                </li>
+              </ul>
+            </li>
+            <li class="main-menu">
+              <a href="#" class="toggle">Help<i class="fa-solid arrow show fa-caret-down"></i><i class="fa-solid arrow fa-caret-up"></i></a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="help/notice_list.html" class="toggle-sub">공지사항</a>
+                </li>
+                <li>
+                  <a href="help/faq_list.html" class="toggle-sub">FAQ</a>
+                </li>
+                <li>
+                  <a href="#" class="toggle-sub">문의</a>
+                </li>
+                <li>
+                  <a href="#" class="toggle-sub">Contact Us</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="etc-menu">
+            <button type="button" class="btn btn-round demo" onclick="common.openModalPopup('pop-inquiry');"><img style="width: 18px; height: auto;" src="../../assets/images/icon/(ICON) Free Trial.png" alt=""><span>DEMO 신청</span></button>
+            <div class="lang">
+              <!-- [D]: 활성화일 경우 .active 추가 -->
+              <button type="button" class="btn btn-lang active">KO</button>
+              <button type="button" class="btn btn-lang">EN</button>
+            </div>
+          </div>
+        </div>
+        <!-- 모바일 버튼 -->
+        <div class="btn-drawer"><span><i class="fa-solid fa-bars"></i></span></div>
+      </div>
+    </div>
+      <!-- 메인컨텐츠 -->
+      <div id="service-assessment-container">
+        <div class="main">
+          <div class="fisrt-sec">
+            <div class="txtbx">
+              <h2>
+                매년 변경되는<br>요양병원 적정성 평가,<br>아직도 힘들게 관리하시나요?
+              </h2>
+              <p>
+                늘 실버케어는 요양병원 전용 AI 디지털 케어 서비스로<br>
+              자동화된 적정성 평가관리가 가능합니다
+            </p>
+            </div>
+            <img class="bg" src="../../assets/images/assessment/bg.png" alt="메인이미지">
+          </div>
+          <div class="second-sec">
+            <div class="wrap">
+              <h3>요양병원 적정성 평가,<br>숫자가 아닌 프로세스 관리가<br>이뤄져야 합니다.</h3>
+              <div class="content">
+                <div class="listwrap">
+                  <div class="topbox">
+                    <div class="txtbx">
+                      <div>
+                        <img src="../../assets/images/assessment/(ICON).png" alt="">
+                      </div>
+                      <h4>적정성 평가<br>목표수립</h4>
+                    </div>
+                  </div>
+                  <div class="bottombox">
+                    <ul>
+                      <li>
+                        <span>1</span><span>평가지표 자동 업데이트</span>
+                      </li>
+                      <li>
+                        <span>2</span><span>평가 지표별 관리 포인트 확인</span>
+                      </li>
+                      <li>
+                        <span>3</span><span>데이터 기반 목표 설정 지원</span>
+                      </li>
+                      <li>
+                        <span>4</span><span>목표에 따른 예상 등급 확인</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="listwrap">
+                  <div class="topbox">
+                    <div class="txtbx">
+                      <div>
+                        <img src="../../assets/images/assessment/(ICON) (1).png" alt="">
+                      </div>
+                      <h4>월별 결과 분석 및<br>시뮬레이션</h4>
+                    </div>
+                  </div>
+                  <div class="bottombox">
+                    <ul>
+                      <li>
+                        <span>5</span><span>데이터 연동으로 결과 입력 자동화</span>
+                      </li>
+                      <li>
+                        <span>6</span><span>매월 결과 분석 및 등급 시뮬레이션</span>
+                      </li>
+                      <li>
+                        <span>7</span><span>등급 향상을 위한 Action Plan 지원</span>
+                      </li>
+                      <li>
+                        <span>8</span><span>프로세스 관리로 목표 등급 달성</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="third-sec">
+            <div class="wrap">
+              <div class="content">
+                <div class="txtbx">
+                  <h3>매년 적용되는 적정성 평가 항목 시스템 자동 반영</h3>
+                  <ul>
+                    <li>평가 및 모니터링 총17개 지표에 대한 산출 로직 및 필요 데이터 분석</li>
+                    <li>서비스 플랫폼 내 분석된 평가 항목 적용</li>
+                  </ul>
+                </div>
+                <div class="imgbx">
+                  <img src="../../assets/images/assessment/content1.png" alt="">
+                </div>
+              </div>
+              <div class="content">
+                <div class="txtbx">
+                  <h3>시스템 기반 자동 데이터 수접 </h3>
+                  <ul>
+                    <li>매년 달라지는 심평원 평가지표 및 데이터 요건 자동 반영</li>
+                    <li>심사 데이터 및 EMR시스템 연동 등을 통한 자동화된 데이터 수집</li>
+                  </ul>
+                </div>
+                <div class="imgbx">
+                  <img src="../../assets/images/assessment/content2.png" alt="">
+                </div>
+              </div>
+              <div class="content">
+                <div class="txtbx">
+                  <h3>목표 등급 달성을 위한 지표별 목표 수립 지원</h3>
+                  <ul>
+                    <li>과거 데이터 기반 차수별 목표 수립</li>
+                    <li>목표 달성을 위한 Action Plan 수립 지원</li>
+                  </ul>
+                </div>
+                <div class="imgbx">
+                  <div>
+                    <img src="../../assets/images/assessment/content3.png" alt="">
+                  </div>
+                  <div>
+                    <img src="../../assets/images/assessment/content4.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <div class="txtbx">
+                  <h3>월별 실적 진단 및 결과 분석</h3>
+                  <ul>
+                    <li>데이터 연동을 통한 결과 입력 자동화</li>
+                    <li>환자 단위 상세 분석을 통한 대응 지원</li>
+                    <li>지표별 관리 대상 환자 리스트 제공</li>
+                  </ul>
+                </div>
+                <div class="imgbx">
+                  <img src="../../assets/images/assessment/content5.png" alt="">
+                </div>
+              </div>
+              <div class="content">
+                <div class="txtbx">
+                  <h3>시뮬레이션을 통한 목표관리</h3>
+                  <ul>
+                    <li>목표대비 월 별 및 누적 실적 달성율 등 모니터링</li>
+                    <li>현실적 기준 예상점수 및 등급 시뮬레이션</li>
+                    <li>환자 관리에 따른 예상 점수 및 등급 시뮬레이션</li>
+                  </ul>
+                </div>
+                <div class="imgbx">
+                  <img src="../../assets/images/assessment/content6.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="middle-sec mobileOnly">
+            <div class="txtbx">
+              <h3>가격 안내</h3>
+              <p>가볍게 상담 받아보세요.</p>
+            </div>
+            <div class="content">
+              <div class="box">
+                <div>
+                  <a href="">
+                    <div>문의하기</div>
+                    <div>＞</div>
+                  </a>
+                </div>
+                <img src="../../assets/images/silvercare/price1.png" alt="">
+              </div>
+              <div class="box">
+                <div>
+                  <a href="">
+                    <div>무료 체험하기</div>
+                    <div>＞</div>
+                  </a>
+                </div>
+                <img src="../../assets/images/silvercare/price2.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="forth-sec">
+            <div class="wrap">
+              <div class="txtbx">
+                <div>
+                  <h3>연관 서비스</h3>
+                  <div class="dtOnly">
+                    <a href="#">
+                      <span>소개서 다운로드</span>
+                      <span>
+                        <img style="width: 24px;height: 24px;" src="../../assets/images/icon/Vector.png" alt="">
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <p>NEUL서비스는 인공지능 전문기업 비투엔이 선보이는 첫 플랫폼 서비스입니다.</p>
+              </div>
+              <div class="content">
+                <ul>
+                  <li>
+                    <div class="imgbx">
+                      <img style="object-position: 20px 40px;" src="../../assets/images/silvercare/suv1.png" alt="">
+                    </div>
+                    <div class="txtbx">
+                      <h4>늘 적정성 평가</h4>
+                      <p>
+                        요양병원 적정성 평가.<br>
+                        숫자가 아닌, 프로세스 관리가 필요.
+                      </p>
+                      <a>
+                        <span>바로가기</span>
+                        <span><img style="width: 32px;" src="../../assets/images/icon/(ICON) ARROW.png" alt="화살표"></span>
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="imgbx">
+                      <img src="../../assets/images/silvercare/suv2.png" alt="">
+                    </div>
+                    <div class="txtbx">
+                      <h4>늘 스마트밴드</h4>
+                      <p>
+                        작지만 다양한 정보 수집 및 환자를<br>
+                        고려한 친환경 소재와 디자인.<br>
+                        응급 호출 기능.
+                      </p> 
+                      <a>
+                        <span>바로가기</span>
+                        <span><img style="width: 32px;" src="../../assets/images/icon/(ICON) ARROW.png" alt="화살표"></span>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 메인컨텐츠 -->
+
+
+
+
+      <!-- footer 시작 -->
+      <div class="footer">
+        <div class="footer-logo"><img src="../../assets/images/logo.svg" alt="NEUL" /></div>
+        <div class="footer-info">
+          <p class="address">07255 서울특별시 영등포구 선유로 146 이앤씨드림타워 2층</p>|
+          <ul class="contact">
+            <li class="email"><a href="mailto:b2en@b2en.com"><span><i class="fa-regular fa-envelope"></i></span>b2en@b2en.com</a></li>
+            <li class="tel"><span><i class="fa-solid fa-phone"></i></span>02. 2636. 0090</li>
+          </ul>
+        </div>
+        <p class="copyright">ⓒb2en. All Rights Reserved.</p>
+      </div>
+      <!-- footer끝 -->
+    </div>
+    <!-- //#wrap -->
+
+    <!-- [D]: DEMO 신청 팝업 -->
+    <div class="popup pop-demo-app">
+      <div class="popup-header">
+        <button type="button" class="popup-close" onclick="common.closeModalPopup();"></button>
+        <h1 class="tit">
+          <strong>NEUL 실버 케어</strong>를<br />
+          <strong>무료로 체험</strong>해 보세요!
+        </h1>
+        <div class="stit">웹사이트에 설치하거나 다운로드 없이 <br />무료로 이용할 수 있습니다.</div>
+      </div>
+      <div class="popup-content">
+        <div class="inp-set type-btn">
+          <input type="text" class="inp" placeholder="안내 받으실 이메일을 입력해 주세요." />
+          <button type="button" class="btn btn-rect black sm">무료 체험하기</button>
+        </div>
+        <div class="con-box">
+          <h2 class="tit">이런 기관에 추천드립니다.</h2>
+          <ul class="reco-list">
+            <li>
+              <div class="txt">요양병원/실버타운 등<br /><strong>환자가 많아 더 효율적인 관리</strong>가 필요한 기관</div>
+            </li>
+            <li>
+              <div class="txt"><strong>요양병원 적정성 평가</strong>에 대한<br />대응이 어려운 기관</div>
+            </li>
+            <li>
+              <div class="txt">요양병원/실버타운 등<br /><strong>고객 유치를 위한 적극적인 활동</strong>이 필요한 기관</div>
+            </li>
+          </ul>
+        </div>
+        <div class="con-box">
+          <h2 class="tit">무료 체험은 어떻게 진행되나요?</h2>
+          <ol class="order-list">
+            <li><strong>1. </strong>안내 받을 이메일 주소 입력</li>
+            <li><strong>2. </strong>안내 메일을 통해 체험을 위한 부가 정보 입력</li>
+            <li><strong>3. </strong>체험 URL 및 계정정보 발급</li>
+            <li><strong>4. </strong>체험하기</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- [D]: 문의하기 팝업 -->
+    <div class="popup pop-inquiry">
+      <div class="popup-header">
+        <button type="button" class="popup-close" onclick="common.closeModalPopup();">×</button>
+        <h1 class="tit"><strong>NEUL Service</strong><br />무엇이든 물어보세요.</h1>
+      </div>
+      <div class="popup-content">
+        <div class="form-wrap">
+          <div class="con-box">
+            <ul class="form-list">
+              <li>
+                <div class="tit necessary"><strong>이름</strong></div>
+                <div class="con">
+                  <input type="text" name="" id="" class="inp" placeholder="홍길동" />
+                </div>
+              </li>
+              <li>
+                <div class="tit necessary"><strong>회사명</strong><span class="cmt">기관/단체명</span></div>
+                <div class="con">
+                  <input type="text" name="" id="" class="inp" placeholder="" />
+                </div>
+              </li>
+              <li>
+                <div class="tit necessary"><strong>이메일</strong></div>
+                <div class="con">
+                  <input type="text" name="" id="" class="inp" placeholder="" />
+                </div>
+              </li>
+              <li>
+                <div class="tit necessary"><strong>전화번호</strong></div>
+                <div class="con">
+                  <input type="text" name="" id="" class="inp" placeholder="" />
+                </div>
+              </li>
+              <li>
+                <div class="tit necessary"><strong>유입경로</strong></div>
+                <div class="con">
+                  <div class="slct">
+                    <select>
+                      <option>유입경로를 선택하세요.</option>
+                      <option>인터넷</option>
+                      <option>지인</option>
+                      <option>길다가다</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="tit necessary"><strong>문의유형</strong></div>
+                <div class="con">
+                  <div class="slct">
+                    <select>
+                      <option>문의유형를 선택하세요.</option>
+                      <option>문의유형1</option>
+                      <option>문의유형2</option>
+                      <option>문의유형3</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="tit necessary"><strong>문의내용</strong></div>
+                <div class="con">
+                  <textarea name="" id="" cols="" rows=""></textarea>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- 약관 전체 동의 -->
+          <div class="terms-agree">
+            <div class="chk-box">
+              <input type="checkbox" name="agree" id="all" checked />
+              <label for="all"></label>
+              <label for="all">약관 전체 동의</label>
+            </div>
+            <div class="chk-set">
+              <div class="chk-box link">
+                <input type="checkbox" name="agree" id="chk1" />
+                <label for="chk1">개인정보 수집 및 이용 동의 (필수)<a href="#" target="_blank"></a></label>
+              </div>
+              <div class="chk-box link">
+                <input type="checkbox" name="agree" id="chk2" />
+                <label for="chk2">홍보 및 마케팅 활용 동의 (선택)<a href="#" target="_blank"></a></label>
+                <span class="cmt">업계 주요 트렌드 및 동향을 받아보실 수 있습니다.</span>
+              </div>
+            </div>
+          </div>
+          <div class="btn-area">
+            <button type="button" class="btn btn-rect md navy">바로 문의하기</button>
+          </div>
+        </div>
+        <div class="contact">
+          <h2 class="tit">오시는 길</h2>
+          <div class="map"><img src="../../assets/images/temp/temp_map.png" alt="임시 이미지" /></div>
+          <ul class="contact-info">
+            <li>
+              <strong>주소</strong>
+              서울시 선유로 146 이앤씨드림타워 210호 (07255)
+            </li>
+            <li>
+              <strong>이메일</strong>
+              neulcare@b2en.com
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="scrolltop">
+      <i class="fa-solid fa-angles-up"></i>
+    </div>
+
+    <div class="loading">
+      <div class="bg">
+        <span class="bar"></span>
+      </div>
+    </div>
+  </body>
+</html>
