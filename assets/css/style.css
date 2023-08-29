@@ -2695,7 +2695,199 @@ body {
 }
 
 #news-container .main {
+  margin-top: 100px;
   padding: 120px 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+#news-container .main .topbx > h2 {
+  font-size: 64px;
+  color: #1E1E1E;
+  font-weight: 700;
+  letter-spacing: -1;
+}
+
+#news-container .main .topbx > ul {
+  display: flex;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+#news-container .main .topbx > ul > li {
+  padding: 12px 24px;
+  border-radius: 48px;
+  border: 2px solid rgba(30, 30, 30, 0.1);
+  background: #FFF;
+}
+
+#news-container .main .topbx > ul > li.active {
+  background: #3848A2;
+}
+
+#news-container .main .topbx > ul > li.active > a {
+  color: #fff;
+}
+
+#news-container .main .topbx > ul > li > a {
+  font-size: 20px;
+  color: #1E1E1E;
+}
+
+#news-container .main .middlebx {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+  padding: 0 80px;
+}
+
+#news-container .main .middlebx .column > a {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 516px;
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+}
+
+#news-container .main .middlebx .column > a .txtbx {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1 0 0;
+}
+
+#news-container .main .middlebx .column > a .txtbx > div:nth-child(1), #news-container .main .middlebx .column > a .txtbx div:nth-child(3) {
+  color: #6D6D6D;
+  font-size: 14px;
+  line-height: 142%;
+}
+
+#news-container .main .middlebx .column > a .txtbx > div:nth-child(2) {
+  flex: 1 0 0;
+  color: #1E1E1E;
+  font-size: 28px;
+  line-height: 142%;
+}
+
+#news-container .main .middlebx .column > a .imgbx {
+  flex-shrink: 0;
+}
+
+#news-container .main .bottombx {
+  display: flex;
+}
+
+#news-container .main .bottombx .pagenation {
+  display: flex;
+  gap: 48px;
+  flex: 1 0 0;
+  align-items: center;
+}
+
+#news-container .main .bottombx .pagenation > div {
+  width: 56px;
+  height: 56px;
+}
+
+#news-container .main .bottombx .pagenation > ul {
+  display: flex;
+  gap: 48px;
+}
+
+#news-container .main .bottombx .pagenation > ul > li > a {
+  color: #AAA;
+}
+
+#news-container .main .bottombx .pagenation > ul > li.now a {
+  color: #1E1E1E;
+}
+
+#news-container .main .bottombx .numofnum {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+#news-container .main .bottombx .numofnum > div:nth-child(1) {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  padding: 12px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 48px;
+  border: 2px solid rgba(30, 30, 30, 0.1);
+  background: #F5F7F9;
+}
+
+#news-container .main .bottombx .numofnum > div:nth-child(2) {
+  color: #AAA;
+}
+
+#news-container .main .bottombx .numofnum > button {
+  padding: 12px 24px;
+  border-radius: 48px;
+  background-color: #3848A2;
+  color: #fff;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: -1px;
+}
+
+#news-container .main .bottombx .numofnum > button i {
+  padding-left: 8px;
+}
+
+#press_release_detail-container .main {
+  margin-top: 100px;
+}
+
+#press_release_detail-container .main > article {
+  padding: 120px 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+}
+
+#press_release_detail-container .main > article .txtbx {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#press_release_detail-container .main > article .txtbx > h2 {
+  color: #1E1E1E;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 84px;
+  letter-spacing: -1px;
+}
+
+#press_release_detail-container .main > article .txtbx > div {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 20px;
+  line-height: 160%;
+  color: #1E1E1E;
+}
+
+#press_release_detail-container .main > article .txtbx > div > div:nth-child(2) {
+  color: #6D6D6D;
+}
+
+#press_release_detail-container .main > article .imgbx {
+  min-width: 1440px;
 }
 
 /*! jQuery UI - v1.13.2 - 2022-12-19
