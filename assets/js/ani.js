@@ -7,10 +7,9 @@ let ani = {
 
     // .scrolltop 을 누르면 맨위로
     $('.scrolltop').click(function(){
-      $(window).scrollTop(0)
-      $('.headerwrap').css({top:'0'})
-      $('#header').css({top:0})
+      ani.scrollTop();
     })
+
     let suchi = $('.headerwrap').width();
     $(window).resize(function(){
       suchi = $('.headerwrap').width()
@@ -111,7 +110,48 @@ let ani = {
         $('.btn-lang').removeClass('active')
         $(this).addClass('active')
       })
+
+      // news 
+      // 버튼클릭하면 파란불들어오기
+      ani.blueCircle('#news-container .divide li')
+      ani.blueCircle('#data_list-container .divide li')
+      ani.blueCircle('#notice_list-container .divide li')
+      ani.blueCircle('#faq_list-container .divide li')
+
+      // help
+      // slide 열고 닫기 클래스 on주면 열림
+      $('#faq_list-container .faq-slide li').click(function(){
+        let li = $('#faq_list-container .faq-slide li')
+        let allListOn = li.hasClass('on')
+        let thisOn = $(this).hasClass('on')
+        if(allListOn){
+          li.removeClass('on')
+          $(this).addClass('on')
+        }
+        else{
+          $(this).addClass('on')
+        }
+        if(thisOn){
+          $(this).toggleClass('on')
+        }
+        
+
+
+      })
+      
   },
+  scrollTop : function(){
+    $(window).scrollTop(0);
+  },
+  blueCircle : function( target ){
+    let tg = $(target)
+    
+    tg.click(function(e){
+        e.preventDefault()
+        $(this).parent().find('li').removeClass('active');
+        $(this).addClass('active');
+      })
+  }
 };
 
 $(function () {
