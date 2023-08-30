@@ -19,7 +19,7 @@ let common = {
 	// 모달 팝업 닫기
 	closeModalPopup:function(){
 		$(".modal").remove();
-		$("body").css("position", "relative").css("overflow", "auto");
+		$("body").css("position", "relative").css({overflowX : 'hidden',overflowY : 'auto'});
 		$(".popup").hide();
 	}
 
