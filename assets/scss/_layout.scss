@@ -35,7 +35,7 @@ body {
     .gnb {
       display: flex;
       gap: 20px;
-			@media (max-width:1440px) {
+			@media (max-width:1600px) {
 				gap: 0;
 				display: none;
 				&.mobile{
@@ -47,7 +47,7 @@ body {
         // 메인메뉴들 가로폭맞추려고 어쩔수없는 width사용
         .main-menu {
           width: 172px;
-					@media (max-width : 1440px) {
+					@media (max-width : 1600px) {
 						width: auto;
             &:nth-child(1){
               border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -60,7 +60,7 @@ body {
 						.arrow {
 							display: none;
 							padding-left: 10px;
-							@media (max-width : 1440px) {
+							@media (max-width : 1600px) {
 								&.show{
 									display: inline;
 								}
@@ -139,14 +139,14 @@ body {
         line-height: 100px;
         font-size: calcRem(30px);
       }
-      @media screen and (max-width: 1440px) {
+      @media screen and (max-width: 1600px) {
         display: block;
         position: relative;
         z-index: 2;
       }
     }
   }
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1600px) {
     .gnb {
       flex-direction: column;
 			top: 0;
@@ -572,9 +572,10 @@ body {
     height: 100%;
   }
   .fisrt-sec{
+    margin-top: 100px;
+    height: calc(100vh - 100px);
     position: relative;
     .txtbx{
-      padding: 120px 240px;
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -583,15 +584,63 @@ body {
       top: 50%;
       transform: translateY(-50%);
       z-index: 1;
+      padding: 120px 240px;
+      @media (max-width : 1600px) {
+        padding: 120px 200px;
+      }
+      @media (max-width : 1400px) {
+        padding: 120px 180px;
+      }
+      @media (max-width : 1200px) {
+        padding: 120px 140px;
+      }
+      @media (max-width : 1020px) {
+        padding: 120px 80px;
+      }
+      @media (max-width : 767px) {
+        padding: 80px 24px;
+      }
       > h2{
         font-size: 120px;
+        letter-spacing: -1px;
+        @media (max-width : 1600px) {
+          font-size: 100px;
+        }
+        @media (max-width : 1400px) {
+          font-size: 80px;
+        }
+        @media (max-width : 1200px) {
+          font-size: 70px;
+        }
+        @media (max-width : 1020px) {
+          font-size: 60px;
+        }
+        @media (max-width : 767px) {
+          font-size: 48px;
+        }
       }
       > p {
         font-size: 56px;
+        letter-spacing: -1px;
+        @media (max-width : 1600px) {
+          font-size: 48px;
+        }
+        @media (max-width : 1400px) {
+          font-size: 40px;
+        }
+        @media (max-width : 1200px) {
+          font-size: 32px;
+        }
+        @media (max-width : 1020px) {
+          font-size: 28px;
+        }
+        @media (max-width : 767px) {
+          font-size: 24px;
+        }
       }
     }
     .bg{
-      height: 100vh;
+      height: 100%;
       object-fit: cover;
       object-position: center;
       filter: brightness(60%);
@@ -600,11 +649,34 @@ body {
   .second-sec{
     .wrap {
       padding: 180px 240px;
+      @media (max-width : 1600px) {
+        padding: 120px 200px;
+      }
+      @media (max-width : 1400px) {
+        padding: 120px 180px;
+      }
+      @media (max-width : 1200px) {
+        padding: 120px 140px;
+      }
+      @media (max-width : 1020px) {
+        padding: 120px 80px;
+      }
+      @media (max-width : 767px) {
+        padding: 40px 24px;
+      }
       .txtbx{
         font-size: 48px;
+        letter-spacing: -1px;
+        line-height: 171%;
+        @media (max-width : 767px) {
+          font-size: 28px;
+        }
       }
       .imgbx{
         margin-top: 120px;
+        @media (max-width : 767px) {
+          margin-top: 40px;
+        }
         border: 3px solid transparent;
         border-radius: 40px;
         background-image: linear-gradient(#fff,#fff),

@@ -1202,7 +1202,7 @@ body {
   gap: 20px;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   .headerwrap #header .gnb {
     gap: 0;
     display: none;
@@ -1220,7 +1220,7 @@ body {
   width: 172px;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   .headerwrap #header .gnb .nav .main-menu {
     width: auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -1240,7 +1240,7 @@ body {
   padding-left: 10px;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   .headerwrap #header .gnb .nav .main-menu a .arrow.show {
     display: inline;
   }
@@ -1332,7 +1332,7 @@ body {
   font-size: 1.875rem;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1600px) {
   .headerwrap #header .btn-drawer {
     display: block;
     position: relative;
@@ -1340,7 +1340,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1600px) {
   .headerwrap .gnb {
     flex-direction: column;
     top: 0;
@@ -1814,11 +1814,12 @@ body {
 }
 
 #company-container .fisrt-sec {
+  margin-top: 100px;
+  height: calc(100vh - 100px);
   position: relative;
 }
 
 #company-container .fisrt-sec .txtbx {
-  padding: 120px 240px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -1827,18 +1828,111 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
+  padding: 120px 240px;
+}
+
+@media (max-width: 1600px) {
+  #company-container .fisrt-sec .txtbx {
+    padding: 120px 200px;
+  }
+}
+
+@media (max-width: 1400px) {
+  #company-container .fisrt-sec .txtbx {
+    padding: 120px 180px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #company-container .fisrt-sec .txtbx {
+    padding: 120px 140px;
+  }
+}
+
+@media (max-width: 1020px) {
+  #company-container .fisrt-sec .txtbx {
+    padding: 120px 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  #company-container .fisrt-sec .txtbx {
+    padding: 80px 24px;
+  }
 }
 
 #company-container .fisrt-sec .txtbx > h2 {
   font-size: 120px;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 1600px) {
+  #company-container .fisrt-sec .txtbx > h2 {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 1400px) {
+  #company-container .fisrt-sec .txtbx > h2 {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #company-container .fisrt-sec .txtbx > h2 {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 1020px) {
+  #company-container .fisrt-sec .txtbx > h2 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  #company-container .fisrt-sec .txtbx > h2 {
+    font-size: 48px;
+  }
 }
 
 #company-container .fisrt-sec .txtbx > p {
   font-size: 56px;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 1600px) {
+  #company-container .fisrt-sec .txtbx > p {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 1400px) {
+  #company-container .fisrt-sec .txtbx > p {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #company-container .fisrt-sec .txtbx > p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1020px) {
+  #company-container .fisrt-sec .txtbx > p {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  #company-container .fisrt-sec .txtbx > p {
+    font-size: 24px;
+  }
 }
 
 #company-container .fisrt-sec .bg {
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   filter: brightness(60%);
@@ -1848,8 +1942,46 @@ body {
   padding: 180px 240px;
 }
 
+@media (max-width: 1600px) {
+  #company-container .second-sec .wrap {
+    padding: 120px 200px;
+  }
+}
+
+@media (max-width: 1400px) {
+  #company-container .second-sec .wrap {
+    padding: 120px 180px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #company-container .second-sec .wrap {
+    padding: 120px 140px;
+  }
+}
+
+@media (max-width: 1020px) {
+  #company-container .second-sec .wrap {
+    padding: 120px 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  #company-container .second-sec .wrap {
+    padding: 40px 24px;
+  }
+}
+
 #company-container .second-sec .wrap .txtbx {
   font-size: 48px;
+  letter-spacing: -1px;
+  line-height: 171%;
+}
+
+@media (max-width: 767px) {
+  #company-container .second-sec .wrap .txtbx {
+    font-size: 28px;
+  }
 }
 
 #company-container .second-sec .wrap .imgbx {
@@ -1859,6 +1991,12 @@ body {
   background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #3848A2 0%, purple 60%, aqua 100%);
   background-origin: border-box;
   background-clip: content-box,border-box;
+}
+
+@media (max-width: 767px) {
+  #company-container .second-sec .wrap .imgbx {
+    margin-top: 40px;
+  }
 }
 
 #company-container .second-sec .wrap .imgbx .wrap {
