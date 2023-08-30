@@ -2851,7 +2851,7 @@ body {
 }
 
 #press_release_detail-container .main > article {
-  padding: 120px 240px;
+  padding: 120px 240px 180px 240px;
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -2886,8 +2886,39 @@ body {
   color: #6D6D6D;
 }
 
-#press_release_detail-container .main > article .imgbx {
-  min-width: 1440px;
+#press_release_detail-container .main > article .imgbx img {
+  aspect-ratio: 1440/640;
+  object-fit: cover;
+}
+
+#press_release_detail-container .main > article .imgbx figcaption {
+  margin-top: 24px;
+  padding: 0 24px;
+  font-size: 20px;
+  color: #6D6D6D;
+}
+
+#press_release_detail-container .main > article .text {
+  padding: 0 240px;
+  color: #1E1E1E;
+}
+
+#press_release_detail-container .main > article .text p {
+  margin-top: 24px;
+  font-size: 24px;
+}
+
+#press_release_detail-container .main > article .text p:nth-child(1) {
+  margin-top: 0;
+}
+
+#press_release_detail-container .main > article button {
+  color: #1E1E1E;
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 60px;
+  border: 2px solid #1E1E1E;
+  margin-top: 40px;
 }
 
 /*! jQuery UI - v1.13.2 - 2022-12-19
