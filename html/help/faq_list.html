@@ -26,6 +26,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon-16x16.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/swiper/swiper.css">
+    <link rel="stylesheet" href="../../assets/css/swiper/swiper.min.css">
+    <link rel="stylesheet" href="../../assets/css/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
     
     <!-- 폰트어썸 -->
@@ -33,6 +36,9 @@
     <!-- 플러그인 순서중요-->
     <script type="text/javascript" src="../../assets/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="../../assets/js/swiper/swiper.min.js"></script>
+
     <script type="text/javascript" src="../../assets/js/greensock/gsap.min.js"></script>
     <script type="text/javascript" src="../../assets/js/greensock/TweenMax.min.js"></script>
     <script type="text/javascript" src="../../assets/js/greensock/ScrollTrigger.min.js"></script>
@@ -42,6 +48,7 @@
     <!-- 자체 자스 -->
     <script type="text/javascript" src="../../assets/js/common.js"></script>
     <script type="text/javascript" src="../../assets/js/ani.js"></script>
+    <script type="text/javascript" src="../../assets/js/swiper.js"></script>
     <script type="text/javascript">
       $(function () {});
     </script>
@@ -136,7 +143,7 @@
         <div class="main">
           <div class="topbx">
             <h2>FAQ</h2>
-            <ul class="divide">
+            <!-- <ul class="divide">
               <li class="active">
                 <a href="">전체</a>
               <li> 
@@ -149,7 +156,18 @@
               <li>
                 <a href="">제휴</a>
               </li>
-            </ul>
+            </ul> -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper divide">
+                <!-- Slides -->
+                <div class="swiper-slide active">전체</div>
+                <div class="swiper-slide">NEUL 서비스</div>
+                <div class="swiper-slide">스마트밴드</div>
+                <div class="swiper-slide">적정성 평가</div>
+                <div class="swiper-slide">제휴</div>
+              </div>
+            </div>
            </div>
            <div class="middlebx">
             <ul class="faq-slide">

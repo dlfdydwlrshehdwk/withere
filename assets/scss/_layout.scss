@@ -2962,7 +2962,7 @@ body {
         font-size: 64px;
         color: $black-1e;
         font-weight: $fw-bold;
-        letter-spacing: -1;
+        letter-spacing: -1px;
         line-height: 131%;
         @media (max-width : 1600px) {
           font-size: 60px;
@@ -2981,11 +2981,16 @@ body {
           line-height: 125%;
         }
       }
-      > ul{
+      > .swiper{
         display: flex;
         gap: 24px;
         margin-top: 40px;
-        > li{
+        width: 600px;
+        // 여기부분을 dt일땐 100퍼해서 드래그안되게
+        // mb 일땐 원통이 살짝 넘거가게해서 드래그가되게 
+        margin: auto auto auto 0;
+        .swiper-slide{
+          width: 100px !important;
           padding: 12px 24px;
           border-radius: 48px;
           border: 2px solid rgba(30, 30, 30, 0.10);

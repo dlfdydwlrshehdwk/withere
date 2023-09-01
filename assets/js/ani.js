@@ -134,11 +134,7 @@ let ani = {
         if(thisOn){
           $(this).toggleClass('on')
         }
-        
-
-
       })
-      
   },
   scrollTop : function(){
     $(window).scrollTop(0);
@@ -151,7 +147,7 @@ let ani = {
         $(this).parent().find('li').removeClass('active');
         $(this).addClass('active');
       })
-  }
+  },
 };
 
 $(function () {
