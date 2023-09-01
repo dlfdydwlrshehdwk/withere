@@ -4422,12 +4422,14 @@ body {
 @media (max-width: 1400px) {
   #data_list-container .main {
     padding: 120px 150px 180px;
+    gap: 100px;
   }
 }
 
 @media (max-width: 1200px) {
   #data_list-container .main {
     padding: 120px 100px 180px;
+    gap: 80px;
   }
 }
 
@@ -4441,6 +4443,7 @@ body {
 @media (max-width: 767px) {
   #data_list-container .main {
     gap: 40px;
+    padding: 40px 24px 80px;
   }
 }
 
@@ -4521,6 +4524,25 @@ body {
   padding: 40px;
   align-items: center;
   border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+}
+
+@media (max-width: 767px) {
+  #data_list-container .main .middlebx > ul > li {
+    gap: 20px;
+    padding: 20px 0;
+  }
+}
+
+#data_list-container .main .middlebx > ul > li .imgbx {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 767px) {
+  #data_list-container .main .middlebx > ul > li .imgbx {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 #data_list-container .main .middlebx > ul > li > .txtbx {

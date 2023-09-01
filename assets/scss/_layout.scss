@@ -2328,9 +2328,11 @@ body {
      }
      @media (max-width : 1400px) {
      padding: 120px 150px 180px;
+     gap: 100px;
    }
    @media (max-width : 1200px) {
      padding: 120px 100px 180px;
+     gap: 80px;
    }
    @media (max-width : 1020px) {
      padding: 80px 40px 100px;
@@ -2338,6 +2340,7 @@ body {
    }
    @media (max-width : 767px) {
      gap: 40px;
+     padding: 40px 24px 80px;
    }
     .topbx{
       > h2{
@@ -2396,6 +2399,26 @@ body {
           padding: 40px;
           align-items: center;
           border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+          @media (max-width : 1600px) {
+          }
+          @media (max-width : 1400px) {
+          }
+          @media (max-width : 1200px) {
+          }
+          @media (max-width : 1020px) {
+          }
+          @media (max-width : 767px) {
+            gap: 20px;
+            padding: 20px 0;
+          }
+          .imgbx{
+            width: 100px;
+            height: 100px;
+            @media (max-width : 767px) {
+              width: 80px;
+              height: 80px;
+            }
+          }
           >.txtbx{
             position: relative;
             flex : 1 0 0;
