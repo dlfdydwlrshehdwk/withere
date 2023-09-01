@@ -2399,14 +2399,6 @@ body {
           padding: 40px;
           align-items: center;
           border-bottom: 1px solid rgba(30, 30, 30, 0.10);
-          @media (max-width : 1600px) {
-          }
-          @media (max-width : 1400px) {
-          }
-          @media (max-width : 1200px) {
-          }
-          @media (max-width : 1020px) {
-          }
           @media (max-width : 767px) {
             gap: 20px;
             padding: 20px 0;
@@ -2487,11 +2479,6 @@ body {
         }
       }
     }
-
-
-
-
-
     .bottombx{
       display: flex;
       @media (max-width : 1400px) {
@@ -2589,12 +2576,48 @@ body {
     display: flex;
     flex-direction: column;
     gap: 120px;
+    @media (max-width : 1600px) {
+      padding: 120px 200px 180px;
+     }
+     @media (max-width : 1400px) {
+     padding: 120px 150px 180px;
+     gap: 100px;
+   }
+   @media (max-width : 1200px) {
+     padding: 120px 100px 180px;
+     gap: 80px;
+   }
+   @media (max-width : 1020px) {
+     padding: 80px 40px 100px;
+     gap: 60px;
+   }
+   @media (max-width : 767px) {
+     gap: 40px;
+     padding: 40px 24px 80px;
+   }
     .topbx{
       > h2{
         font-size: 64px;
         color: $black-1e;
         font-weight: $fw-bold;
         letter-spacing: -1;
+        line-height: 131%;
+        @media (max-width : 1600px) {
+          font-size: 60px;
+        }
+        @media (max-width : 1400px) {
+          font-size: 56px;
+        }
+        @media (max-width : 1200px) {
+          font-size: 52px;
+        }
+        @media (max-width : 1020px) {
+          font-size: 48px;
+        }
+        @media (max-width : 767px) {
+          font-size: 32px;
+          line-height: 125%;
+        }
       }
       > ul{
         display: flex;
@@ -2632,41 +2655,86 @@ body {
           font-size: 20px;
           letter-spacing: -1px;
           line-height: 160%;
+          @media (max-width : 767px) {
+            font-size: 16px;
+            line-height: 150%
+          }
           a{
             color: $black-1e;
             font-size: 28px;
             letter-spacing: -1px;
             line-height: 142%;
             font-weight: $fw-medium;
+            @media (max-width : 767px) {
+              font-size: 20px;
+              line-height: 160%;
+            }
           }
-          > div:nth-child(1),div:nth-child(2){
-            width: 80px;
+          .numdev{
+            display: flex;
+            gap: 60px;
+            > div:nth-child(1),div:nth-child(2){
+              width: 80px;
+            }
+            @media (max-width : 767px) {
+              flex-direction: column;
+              gap: 4px;
+            }
           }
-          > div:nth-child(3){
-            flex : 1 0 0;
-          }
-          > div:nth-child(4){
-            font-size: 14px;
-            color: $gray-6d;
-            line-height: 142%;
-          }
+          .titdate {
+            display: flex;
+            flex: 1 0 0;
+            align-items: center;
+            gap: 60px;
+            @media (max-width : 767px) {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 4px;
+            }
+            > div:nth-child(1){
+              flex : 1 0 0;
+            }
+            > div:nth-child(2){
+              font-size: 14px;
+              color: $gray-6d;
+              line-height: 142%;
+            }
+          } 
         }
       }
     }
     .bottombx{
       display: flex;
+      @media (max-width : 1400px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+      }
+      @media (max-width : 767px) {
+      }
       .pagenation{
         display: flex;
         gap: 48px;
         flex: 1 0 0;
         align-items: center;
+        @media (max-width : 767px) {
+          gap: 32px;
+        }
         > div{
           width: 56px;
           height: 56px;
+          @media (max-width:767px) {
+            gap: 32px;
+            width: 40px;
+            height: 40px;
+          }
         }
         > ul{
           display: flex;
           gap: 48px;
+          @media (max-width:767px) {
+            gap: 32px;
+          }
           > li {
             > a{
               color: $gray-a;
@@ -2693,6 +2761,10 @@ body {
             border-radius: 48px;
             border: 2px solid rgba(30, 30, 30, 0.10);
             background: #F5F7F9;
+            @media (max-width : 767px) {
+              width: 60px;
+              height: 40px;
+            }
           }
           &:nth-child(2){
             color: $gray-a;
@@ -2706,12 +2778,17 @@ body {
           font-size: 20px;
           line-height: 160%;
           letter-spacing: -1px;
+          @media (max-width:767px) {
+            font-size: 16px;
+            padding: 8px 20px;
+          }
           i {
             padding-left: 8px;
+            width: 32px;
           }
         }
       }
-    }
+    } 
   }
 }
 // help - notice_detail
@@ -2724,17 +2801,54 @@ body {
       flex-direction: column;
       gap: 80px;
       align-items: center;
+      @media (max-width : 1600px) {
+        padding: 120px 200px 180px;
+       }
+       @media (max-width : 1400px) {
+       padding: 120px 150px 180px;
+     }
+     @media (max-width : 1200px) {
+       padding: 120px 100px 180px;
+     }
+     @media (max-width : 1020px) {
+       padding: 80px 40px 100px;
+     }
+     @media (max-width : 767px) {
+       padding: 40px 0;
+       gap: 40px;
+     }
       .txtbx{
         text-align: center;
         display: flex;
         flex-direction: column;
         gap: 20px;
+        @media (max-width:767px) {
+          padding: 0 24px;
+          
+        }
         > h2{
           color: $black-1e;
           font-size: 64px;
           font-weight: $fw-bold;
           line-height: 84px;
           letter-spacing: -1px;
+          line-height: 131%;font-size: 64px;
+          @media (max-width : 1600px) {
+            font-size: 60px;
+          }
+          @media (max-width : 1400px) {
+            font-size: 56px;
+          }
+          @media (max-width : 1200px) {
+            font-size: 52px;
+          }
+          @media (max-width : 1020px) {
+            font-size: 48px;
+          }
+          @media (max-width : 767px) {
+            font-size: 32px;
+            line-height: 125%;
+          }
         }
         > div{
           display: flex;
@@ -2743,6 +2857,22 @@ body {
           font-size: 20px;
           line-height: 160%;
           color: $black-1e;
+          @media (max-width : 1600px) {
+            font-size: 19px;
+          }
+          @media (max-width : 1400px) {
+            font-size: 18px;
+          }
+          @media (max-width : 1200px) {
+            font-size: 17px;
+          }
+          @media (max-width : 1020px) {
+            font-size: 16px;
+          }
+          @media (max-width : 767px) {
+            font-size: 14px;
+            line-height: 142%;
+          }
           > div:nth-child(2){
             color: $gray-6d;
           }
@@ -2751,6 +2881,28 @@ body {
       .imgbx{
         max-width: 1440px;
         max-height: 1280px ;
+      }
+      .desc{
+        color: $black-1e;
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: -1px;
+        @media (max-width : 1600px) {
+          font-size: 23px;
+        }
+        @media (max-width : 1400px) {
+          font-size: 22px;
+        }
+        @media (max-width : 1200px) {
+          font-size: 21px;
+        }
+        @media (max-width : 1020px) {
+          font-size: 20px;
+        }
+        @media (max-width:767px) {
+          padding: 0 24px;
+          font-size: 16px;
+        }
       }
       
       button{
@@ -2762,6 +2914,10 @@ body {
           color: $black-1e;
           padding: 20px 40px;
           border: 2px solid #1E1E1E;
+          @media (max-width : 767px) {
+            padding: 12px 24px;
+            font-size: 18px;
+          }
         }
         &:hover{
           > a{
@@ -2782,12 +2938,48 @@ body {
     display: flex;
     flex-direction: column;
     gap: 120px;
+    @media (max-width : 1600px) {
+      padding: 120px 200px 180px;
+     }
+     @media (max-width : 1400px) {
+     padding: 120px 150px 180px;
+     gap: 100px;
+   }
+   @media (max-width : 1200px) {
+     padding: 120px 100px 180px;
+     gap: 80px;
+   }
+   @media (max-width : 1020px) {
+     padding: 80px 40px 100px;
+     gap: 60px;
+   }
+   @media (max-width : 767px) {
+     gap: 40px;
+     padding: 40px 24px 80px;
+   }
     .topbx{
       > h2{
         font-size: 64px;
         color: $black-1e;
         font-weight: $fw-bold;
         letter-spacing: -1;
+        line-height: 131%;
+        @media (max-width : 1600px) {
+          font-size: 60px;
+        }
+        @media (max-width : 1400px) {
+          font-size: 56px;
+        }
+        @media (max-width : 1200px) {
+          font-size: 52px;
+        }
+        @media (max-width : 1020px) {
+          font-size: 48px;
+        }
+        @media (max-width : 767px) {
+          font-size: 32px;
+          line-height: 125%;
+        }
       }
       > ul{
         display: flex;
@@ -2816,6 +3008,9 @@ body {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        @media (max-width : 767px) {
+          gap: 12px;
+        }
         > li{
           display: flex;
           flex-direction: column;
@@ -2823,6 +3018,9 @@ body {
           gap: 16px;
           background-color: $bg-f5;
           border-radius: 20px;
+          @media (max-width : 767px) {
+            padding: 20px;
+          }
           &.on{
             .topslide{
               >div:nth-child(2){
@@ -2847,6 +3045,21 @@ body {
               font-weight: $fw-medium;
               letter-spacing: -1px;
               line-height: 142%;
+              @media (max-width : 1600px) {
+                font-size: 27px;
+              }
+              @media (max-width : 1400px) {
+                font-size: 26px;
+              }
+              @media (max-width : 1200px) {
+                font-size: 25px;
+              }
+              @media (max-width : 1020px) {
+                font-size: 24px;
+              }
+              @media (max-width : 767px) {
+                font-size: 20px;
+              }
             }
             > div:nth-child(2){
               width: 32px;
@@ -2865,24 +3078,57 @@ body {
             letter-spacing: -1px;
             color: $gray-6d;
             line-height: 150%;
+            @media (max-width : 1600px) {
+              font-size: 23px;
+            }
+            @media (max-width : 1400px) {
+              font-size: 22px;
+            }
+            @media (max-width : 1200px) {
+              font-size: 21px;
+            }
+            @media (max-width : 1020px) {
+              font-size: 20px;
+            }
+            @media (max-width : 767px) {
+              font-size: 16px;
+            }
           }
         }
       }
     }
     .bottombx{
       display: flex;
+      @media (max-width : 1400px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+      }
+      @media (max-width : 767px) {
+      }
       .pagenation{
         display: flex;
         gap: 48px;
         flex: 1 0 0;
         align-items: center;
+        @media (max-width : 767px) {
+          gap: 32px;
+        }
         > div{
           width: 56px;
           height: 56px;
+          @media (max-width:767px) {
+            gap: 32px;
+            width: 40px;
+            height: 40px;
+          }
         }
         > ul{
           display: flex;
           gap: 48px;
+          @media (max-width:767px) {
+            gap: 32px;
+          }
           > li {
             > a{
               color: $gray-a;
@@ -2909,6 +3155,10 @@ body {
             border-radius: 48px;
             border: 2px solid rgba(30, 30, 30, 0.10);
             background: #F5F7F9;
+            @media (max-width : 767px) {
+              width: 60px;
+              height: 40px;
+            }
           }
           &:nth-child(2){
             color: $gray-a;
@@ -2922,8 +3172,13 @@ body {
           font-size: 20px;
           line-height: 160%;
           letter-spacing: -1px;
+          @media (max-width:767px) {
+            font-size: 16px;
+            padding: 8px 20px;
+          }
           i {
             padding-left: 8px;
+            width: 32px;
           }
         }
       }
