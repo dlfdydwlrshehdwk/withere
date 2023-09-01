@@ -503,10 +503,20 @@ body {
 .footer {
   height: 100px;
   background-color: $bg-f5;
+  color: $gray-6d;
   display: flex;
   align-items: center;
   padding: 40px;
   gap: 40px;
+  font-size: 12px; 
+  @media (max-width:1020px) {
+    padding: 40px 24px 40px 24px;
+    height: auto;
+    align-items: flex-start;
+    gap: 24px;
+    flex-direction: column;
+    font-size: 14px;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -514,17 +524,24 @@ body {
   .footer-logo {
     width: 146px;
     aspect-ratio: 146/32;
+    @media (max-width : 1440px) {
+      width: 80px;
+    }
   }
   .footer-info {
     display: flex;
     flex: 1;
     gap: 40px;
+    @media (max-width : 767px) {
+      gap: 16px;
+      flex-direction: column;
+    }
     .contact {
       display: flex;
       gap: 20px;
       .email  {
 				> a {
-					color: black;
+					color: $gray-6d;
 					text-decoration: underline;
 					> span {
 						padding-right: 5px;
@@ -536,6 +553,12 @@ body {
 					padding-right: 5px;
 				}
 			}
+    }
+  }
+  .copyright{
+    line-height: 133%;
+    @media (max-width : 767px) {
+      margin-top: 16px;
     }
   }
 }
@@ -653,13 +676,13 @@ body {
         padding: 120px 200px;
       }
       @media (max-width : 1400px) {
-        padding: 120px 180px;
+        padding: 100px 150px;
       }
       @media (max-width : 1200px) {
-        padding: 120px 140px;
+        padding: 80px 100px;
       }
       @media (max-width : 1020px) {
-        padding: 120px 80px;
+        padding: 60px 40px;
       }
       @media (max-width : 767px) {
         padding: 40px 24px;
@@ -668,6 +691,21 @@ body {
         font-size: 48px;
         letter-spacing: -1px;
         line-height: 171%;
+        @media (max-width:1600px) {
+          font-size: 44px;
+        }
+        @media (max-width:1600px) {
+          font-size: 42px;
+        }
+        @media (max-width:1400px) {
+          font-size: 40px;
+        }
+        @media (max-width:1200px) {
+          font-size: 40px;
+        }
+        @media (max-width:1020px) {
+          font-size: 38px;
+        }
         @media (max-width : 767px) {
           font-size: 28px;
         }
@@ -685,10 +723,23 @@ body {
         background-clip: content-box,border-box;
         .wrap{
           padding: 80px 80px 120px 80px;
+          @media (max-width : 1600px) {
+            padding: 60px 60px 100px 60px;
+          }
+          @media (max-width : 1200px) {
+            padding: 40px 40px 80px 40px;
+          }
+          @media (max-width : 767px) {
+            padding: 40px 24px 24px 24px;
+          }
         }
         .sublogo{
-          width: 400px;
+          // width: 400px;
+          max-width: 400px;
           margin: 0 auto;
+          @media (max-width:767px) {
+            width: 200px;
+          }
         }
         .contentbx{
           max-width: 1200px;
@@ -696,17 +747,26 @@ body {
           > h4 {
             color : $primary;
             font-size: 32px;
+            @media (max-width:767px) {
+              font-size: 20px;
+            }
             &:nth-child(1){
               margin-top: 60px;
+              @media (max-width:767px) {
+                margin-top: 40px;
+              }
             }
             &:nth-child(2){
               margin-top: 120px;
+              @media (max-width:767px) {
+                margin-top: 80px;
+              }
             }
           }
           > ul{
             display: flex;
             margin-top: 32px;
-            @media (max-width : 1440px) {
+            @media (max-width : 1020px) {
               flex-direction: column;
             }
             >li {
@@ -723,6 +783,21 @@ body {
                 font-size: 40px;
                 z-index: 1;
                 text-align: center;
+                @media (max-width : 1600px) {
+                  font-size: 38px;
+                }
+                @media (max-width : 1400px) {
+                  font-size: 34px;
+                }
+                @media (max-width : 1200px) {
+                  font-size: 30px;
+                }
+                @media (max-width : 1020px) {
+                  font-size: 40px;
+                }
+                @media (max-width : 767px) {
+                  font-size: 24px;
+                }
               }
               > img{
                 filter :brightness(60%)
@@ -739,15 +814,53 @@ body {
       display: flex;
       flex-direction: column;
       gap: 120px;
+      @media (max-width : 1600px) {
+        padding: 120px 200px;
+      }
+      @media (max-width : 1400px) {
+        padding: 120px 150px;
+      }
+      @media (max-width : 1200px) {
+        padding: 120px 100px;
+      }
+      @media (max-width : 1020px) {
+        padding: 120px 40px;
+      }
+      @media (max-width : 767px) {
+        padding: 40px 24px;
+        gap: 40px;
+      }
       .txtbx{
         > h3 {
           color: $black-1e;
           font-size: 48px;
+          letter-spacing: -1px;
+          line-height: 171%;
+          @media (max-width : 1600px) {
+            font-size: 46px;
+          }
+          @media (max-width : 1400px) {
+            font-size: 44px;
+          }
+          @media (max-width : 1200px) {
+            font-size: 42px;
+          }
+          @media (max-width : 1020px) {
+            font-size: 40px;
+          }
+          @media (max-width : 767px) {
+            font-size: 26px;
+          }
         }
         > p {
           margin-top: 20px;
           font-size: 36px;
           color: $gray-6d;
+          letter-spacing: -1px;
+          line-height: 160%;
+          @media (max-width : 767px) {
+            font-size: 20px;
+          }
         } 
       }
       .content{
@@ -755,6 +868,9 @@ body {
           display: flex;
           flex-direction: column;
           gap: 40px;
+          @media (max-width:767px) {
+            gap: 24px;
+          }
           > li {
             display: flex;
             padding: 80px;
@@ -766,6 +882,10 @@ body {
               flex-direction: column;
               align-items: start;
             }
+            @media (max-width:767px) {
+              padding: 40px;
+              gap: 24px;
+            }
             > div{
               flex-basis: 100%;
             }
@@ -775,6 +895,9 @@ body {
               font-weight: $fw-bold;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
+              @media (max-width:767px) {
+                font-size: 40px;
+              }
               &.imgtxtbx1 {
                 background-image: url(../images/neul/linear1.png);
               }
@@ -788,6 +911,9 @@ body {
             .txtbx{
               font-size: 36px;
               font-weight: $fw-bold;
+              @media (max-width:767px) {
+                font-size: 20px;
+              }
             }
           }
         }
@@ -798,17 +924,6 @@ body {
 // service - neul_silver_care
 #service-neul_silver_care-container{
   margin-top: 100px;
-  .dtOnly {
-    @media (max-width : 1440px) {
-      display: none;
-    }
-  }
-  .mobileOnly{
-    display: none;
-    @media (max-width : 1440px) {
-      display: block;
-    }
-  }
   img{
     width: 100%;
     height: 100%;
@@ -817,7 +932,19 @@ body {
     position: relative;
     height: calc(100vh - 100px);
     padding: 120px 240px;
+    @media (max-width : 1600px) {
+      padding: 120px 200px;
+    }
     @media (max-width : 1440px) {
+      padding: 120px 180px;
+    }
+    @media (max-width : 1200px) {
+      padding: 120px 140px;
+    }
+    @media (max-width : 1020px) {
+      padding: 120px 80px;
+    }
+    @media (max-width : 767px) {
       padding: 80px 24px;
     }
     .txtbx{
@@ -829,12 +956,45 @@ body {
       top: 50%;
       transform: translateY(-50%);
       z-index: 1;
+      letter-spacing: -1px;
       > h2{
         font-size: 120px;
+        line-height: 125%;
+        @media (max-width : 1600px) {
+          font-size: 100px;
+        }
+        @media (max-width : 1400px) {
+          font-size: 80px;
+        }
+        @media (max-width : 1200px) {
+          font-size: 70px;
+        }
+        @media (max-width : 1020px) {
+          font-size: 60px;
+        }
+        @media (max-width : 767px) {
+          font-size: 48px;
+        }
       }
       > p {
         font-weight: $fw-bold;
         font-size: 56px;
+        line-height: 150%;
+        @media (max-width : 1600px) {
+          font-size: 48px;
+        }
+        @media (max-width : 1400px) {
+          font-size: 40px;
+        }
+        @media (max-width : 1200px) {
+          font-size: 32px;
+        }
+        @media (max-width : 1020px) {
+          font-size: 28px;
+        }
+        @media (max-width : 767px) {
+          font-size: 24px;
+        }
       }
     }
     .bg{
@@ -853,17 +1013,67 @@ body {
       display: flex;
       flex-direction: column;
       gap: 120px;
-      @media (max-width : 1440px) {
+      @media (max-width : 1600px) {
+        padding: 120px 200px;
+      }
+      @media (max-width : 1400px) {
+        padding: 100px 150px;
+        gap: 100px;
+      }
+      @media (max-width : 1200px) {
+        padding: 80px 100px;
+      }
+      @media (max-width : 1020px) {
+        padding: 60px 40px;
+        gap: 80px;
+      }
+      @media (max-width : 767px) {
         padding: 40px 24px 80px 24px;
+        gap: 40px;
       }
       .txtbx{
         > h3 {
+          font-weight: $fw-bold;
+          letter-spacing: -1px;
+          line-height: 125%;
           font-size: 64px;
+          @media (max-width : 1600px) {
+            font-size: 60px;
+          }
+          @media (max-width : 1400px) {
+            font-size: 56px;
+          }
+          @media (max-width : 1200px) {
+            font-size: 52px;
+          }
+          @media (max-width : 1020px) {
+            font-size: 48px;
+          }
+          @media (max-width : 767px) {
+            font-size: 32px;
+          }
         }
         > p {
+          letter-spacing: -1px;
           margin-top: 40px;
           color: $gray-6d;
           font-size: 36px;
+          line-height: 160%;
+          @media (max-width : 1600px) {
+            font-size: 34px;
+          }
+          @media (max-width : 14400px) {
+            font-size: 32px;
+          }
+          @media (max-width : 1200px) {
+            font-size: 30px;
+          }
+          @media (max-width : 1020px) {
+            font-size: 28px;
+          }
+          @media (max-width : 767px) {
+            font-size: 20px;
+          }
         }
       }
       .imgbx{
@@ -880,20 +1090,6 @@ body {
           border-radius: 40px;
           background-color: $bg-f5;
           padding: 40px 40px 0 40px;
-          // 추후 미디어쿼리 어떻게 할지 내려오면 ㄱㄱ
-          // height: 340px;
-          // &:nth-child(1) > img{
-          //   width: 594px;
-          //   height: 343px;
-          // }
-          // &:nth-child(2) > img{
-          //   width: 236px;
-          //   height: 475px;
-          // }
-          // &:nth-child(3) > img{
-          //   width: 236px;
-          //   height: 475px;
-          // }
         }
       }
     }
@@ -904,13 +1100,41 @@ body {
       display: flex;
       flex-direction: column;
       gap: 120px;
-      @media (max-width : 1440px) {
+      @media (max-width : 1600px) {
+        padding: 120px 200px;
+      }
+      @media (max-width : 1400px) {
+        padding: 100px 150px;
+        gap: 100px;
+      }
+      @media (max-width : 1200px) {
+        padding: 80px 100px;
+      }
+      @media (max-width : 1020px) {
+        padding: 80px 40px;
+        gap: 80px;
+      }
+      @media (max-width : 767px) {
         padding: 64px 24px;
+        gap: 40px;
       }
       > .txtbx{
         h3 {
           color: $black-1e;
           font-size: 48px;
+          letter-spacing: -1px;
+          line-height: 171%;
+          @media (max-width : 1600px) {
+          }
+          @media (max-width : 14400px) {
+          }
+          @media (max-width : 1200px) {
+          }
+          @media (max-width : 1020px) {
+          }
+          @media (max-width : 767px) {
+            font-size: 28px;
+          }
         }
         > div{
           display: flex;
@@ -966,15 +1190,48 @@ body {
               flex-direction: column;
               gap: 20px;
               height: 100%;
+              letter-spacing: -1px;
               > h4 {
                 font-size: 36px;
                 font-weight: $fw-bold;
                 color: $primary;
+                line-height: 150%;
+                @media (max-width : 1600px) {
+                  font-size: 34px;
+                }
+                @media (max-width : 1400px) {
+                  font-size: 32px;
+                }
+                @media (max-width : 1200px) {
+                  font-size: 30px;
+                }
+                @media (max-width : 1020px) {
+                  font-size: 28px;
+                }
+                @media (max-width : 767px) {
+                  font-size: 24px;
+                }
               }
               > p {
                 font-size: 28px;
                 color: $gray-6d;
                 flex: 1 0 0;
+                line-height: 150%;
+                @media (max-width : 1600px) {
+                  font-size: 26px;
+                }
+                @media (max-width : 1400px) {
+                  font-size: 24px;
+                }
+                @media (max-width : 1200px) {
+                  font-size: 22px;
+                }
+                @media (max-width : 1020px) {
+                  font-size: 20px;
+                }
+                @media (max-width : 767px) {
+                  font-size: 16px;
+                }
               }
               span {
                 line-height: 32px;
@@ -1028,6 +1285,8 @@ body {
             justify-content: space-between;
             display: flex;
             gap: 40px;
+            letter-spacing: -1px;
+            line-height: 128%;
           }
         }
       }
@@ -2078,4 +2337,23 @@ body {
       }
     }
   }
+}
+
+// 공용미디어쿼리
+.mobileOnly{
+  display: none;
+  @media (max-width : 767px) {
+    display: block;
+  }
+}
+.mobileOnly-i{
+  display: none;
+  @media (max-width:767px) {
+    display: inline;
+  }
+}
+@media (max-width : 767px) {
+      .dtOnly{
+        display: none;
+      }
 }
