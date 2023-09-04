@@ -33,6 +33,7 @@
     <!-- 플러그인 순서중요-->
     <script type="text/javascript" src="../../assets/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/swiper/swiper.min.js"></script>
     <script type="text/javascript" src="../../assets/js/greensock/gsap.min.js"></script>
     <script type="text/javascript" src="../../assets/js/greensock/TweenMax.min.js"></script>
     <script type="text/javascript" src="../../assets/js/greensock/ScrollTrigger.min.js"></script>
@@ -42,6 +43,7 @@
     <!-- 자체 자스 -->
     <script type="text/javascript" src="../../assets/js/common.js"></script>
     <script type="text/javascript" src="../../assets/js/ani.js"></script>
+    <script type="text/javascript" src="../../assets/js/swiper.js"></script>
     <script type="text/javascript">
       $(function () {});
     </script>
@@ -136,17 +138,14 @@
         <div class="main">
           <div class="topbx">
             <h2>자료실</h2>
-            <ul class="divide">
-              <li class="active">
-                <a href="">전체</a>
-              <li>
-                <a href="">DEMO</a>
-              <li>
-                <a href="">설명서</a>
-              <li>
-                <a href="">펌웨어</a>
-              </li>
-            </ul>
+            <div class="swiper">
+              <div class="swiper-wrapper divide">
+                <div class="swiper-slide active">전체</div>
+                <div class="swiper-slide">DEMO</div>
+                <div class="swiper-slide">설명서</div>
+                <div class="swiper-slide">펌웨어</div>
+              </div>
+            </div>
            </div>
            <div class="middlebx">
             <ul>
