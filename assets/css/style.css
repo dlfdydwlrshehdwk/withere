@@ -2622,11 +2622,6 @@ img {
   color: #fff;
 }
 
-#company-container img {
-  width: 100%;
-  height: 100%;
-}
-
 #company-container .fisrt-sec {
   margin-top: 100px;
   height: calc(100vh - 100px);
@@ -3142,11 +3137,6 @@ img {
 
 #service-neul_silver_care-container {
   margin-top: 100px;
-}
-
-#service-neul_silver_care-container img {
-  width: 100%;
-  height: 100%;
 }
 
 #service-neul_silver_care-container .fisrt-sec {
@@ -3706,11 +3696,6 @@ img {
 
 #service-assessment-container {
   margin-top: 100px;
-}
-
-#service-assessment-container img {
-  width: 100%;
-  height: 100%;
 }
 
 #service-assessment-container .fisrt-sec {
