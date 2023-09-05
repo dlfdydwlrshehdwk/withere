@@ -2382,10 +2382,10 @@ img {
           width: 400px;
           height: 516px;
           border-radius: 20px;
-          @media (max-width: 767px) {
+          @media (max-width: 1600px) {
             width: auto;
             height: auto;
-            max-width: 400px;
+            max-width: 400px; 
             max-height: 516px;
             aspect-ratio: 400/516;
           }
