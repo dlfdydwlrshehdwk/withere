@@ -42,21 +42,10 @@ let scrollEvent = {
         $('.scrolltop').stop().animate({opacity : 0},100);
       }
     });
-
-    // startbanner 부분 가운데 텍스트박스가 스크롤에 맞춰 올라오게 설정
-    let ex2 = gsap.timeline({
-      scrollTrigger:{
-        trigger : ".startbanner",
-        // pin : true, // 활성상태에서 트리거 요소 고정
-        duration : 10000,
-        start : "-=200", // 트리거 상단이 뷰포트 상단에 닿을 때
-        end : "+=300", // 시작부분에서 x px 까지 스크롤 한 후 종료
-        scrub : 1, // 부드러운 스크러빙, 스크롤바를 잡는데 1초가 걸린다.
-      }
-    })
-    ex2.from(".startbanner-txtbx", {  y: 100, opacity : 0 ,duration : 1});
-
-      scrollEvent.horizontalScroll()
+    
+    
+    scrollEvent.gsapAni()
+    scrollEvent.horizontalScroll()
 
     },
 
@@ -80,8 +69,20 @@ let scrollEvent = {
           });
       }
     })
-
-      
+    },
+    gsapAni : function(){
+      // startbanner 부분 가운데 텍스트박스가 스크롤에 맞춰 올라오게 설정
+      let ex2 = gsap.timeline({
+        scrollTrigger:{
+          trigger : ".startbanner",
+          // pin : true, // 활성상태에서 트리거 요소 고정
+          duration : 10000,
+          start : "-=200", // 트리거 상단이 뷰포트 상단에 닿을 때
+          end : "+=300", // 시작부분에서 x px 까지 스크롤 한 후 종료
+          scrub : 1, // 부드러운 스크러빙, 스크롤바를 잡는데 1초가 걸린다.
+        }
+      })
+      ex2.from(".startbanner-txtbx", {  y: 100, opacity : 0 ,duration : 1});
     }
   };
 

@@ -1698,7 +1698,6 @@ img {
 }
 
 .main .product .product-sc {
-  padding: 80px;
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
@@ -1706,32 +1705,37 @@ img {
   border-radius: 40px;
 }
 
+.main .product .product-sc .productwrap {
+  color: #1E1E1E;
+  padding: 80px;
+}
+
 @media (max-width: 1600px) {
-  .main .product .product-sc {
+  .main .product .product-sc .productwrap {
     padding: 60px;
   }
 }
 
 @media (max-width: 1400px) {
-  .main .product .product-sc {
+  .main .product .product-sc .productwrap {
     padding: 60px;
   }
 }
 
 @media (max-width: 1200px) {
-  .main .product .product-sc {
+  .main .product .product-sc .productwrap {
     padding: 40px;
   }
 }
 
 @media (max-width: 1020px) {
-  .main .product .product-sc {
+  .main .product .product-sc .productwrap {
     padding: 40px;
   }
 }
 
 @media (max-width: 767px) {
-  .main .product .product-sc {
+  .main .product .product-sc .productwrap {
     padding: 24px;
     width: 100%;
   }
@@ -1842,45 +1846,42 @@ img {
   top: 5%;
   right: 0;
   cursor: pointer;
-}
-
-@media (max-width: 1700px) {
-  .main .product .product-topbx .product-txtbx .barogagi {
-    position: static;
-  }
-}
-
-.main .product .product-topbx .product-txtbx .barogagi > a {
   display: flex;
   align-items: center;
   font-size: 16px;
 }
 
 @media (max-width: 767px) {
-  .main .product .product-topbx .product-txtbx .barogagi > a {
+  .main .product .product-topbx .product-txtbx .barogagi {
     font-size: 12px;
   }
 }
 
-.main .product .product-topbx .product-txtbx .barogagi > a > div:nth-child(1) {
+.main .product .product-topbx .product-txtbx .barogagi > div:nth-child(1) {
   padding-right: 16px;
 }
 
 @media (max-width: 767px) {
-  .main .product .product-topbx .product-txtbx .barogagi > a > div:nth-child(1) {
+  .main .product .product-topbx .product-txtbx .barogagi > div:nth-child(1) {
     padding-right: 4px;
   }
 }
 
-.main .product .product-topbx .product-txtbx .barogagi > a > div:nth-child(2) {
+.main .product .product-topbx .product-txtbx .barogagi > div:nth-child(2) {
   width: 20px;
   height: 20px;
 }
 
 @media (max-width: 767px) {
-  .main .product .product-topbx .product-txtbx .barogagi > a > div:nth-child(2) {
+  .main .product .product-topbx .product-txtbx .barogagi > div:nth-child(2) {
     width: 12px;
     height: 12px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .main .product .product-topbx .product-txtbx .barogagi {
+    position: static;
   }
 }
 
@@ -2829,7 +2830,7 @@ img {
   border-radius: 40px;
   background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #3848A2 0%, purple 60%, aqua 100%);
   background-origin: border-box;
-  background-clip: content-box,border-box;
+  background-clip: content-box, border-box;
 }
 
 @media (max-width: 767px) {
@@ -4262,7 +4263,7 @@ img {
 }
 
 #service-assessment-container .third-sec .content .txtbx li::before {
-  content: '•';
+  content: "•";
   padding-right: 10px;
   margin-left: 3px;
 }
@@ -4681,7 +4682,8 @@ img {
   padding: 12px 24px;
   border-radius: 48px;
   border: 2px solid rgba(30, 30, 30, 0.1);
-  background: #FFF;
+  background: #fff;
+  cursor: pointer;
 }
 
 #news-container .main .topbx > .swiper .swiper-slide.active {
@@ -4734,7 +4736,7 @@ img {
 #news-container .main .middlebx .column {
   border-radius: 20px;
   overflow: hidden;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
 }
 
@@ -4764,7 +4766,8 @@ img {
   flex: 1 0 0;
 }
 
-#news-container .main .middlebx .column > a .txtbx > div:nth-child(1), #news-container .main .middlebx .column > a .txtbx div:nth-child(3) {
+#news-container .main .middlebx .column > a .txtbx > div:nth-child(1),
+#news-container .main .middlebx .column > a .txtbx div:nth-child(3) {
   color: #6D6D6D;
   font-size: 14px;
   line-height: 142%;
@@ -4855,7 +4858,7 @@ img {
   align-items: center;
   border-radius: 48px;
   border: 2px solid rgba(30, 30, 30, 0.1);
-  background: #F5F7F9;
+  background: #f5f7f9;
 }
 
 @media (max-width: 767px) {
@@ -5159,7 +5162,7 @@ img {
   border-radius: 60px;
   color: #1E1E1E;
   padding: 20px 40px;
-  border: 2px solid #1E1E1E;
+  border: 2px solid #1e1e1e;
 }
 
 @media (max-width: 767px) {
@@ -5170,7 +5173,7 @@ img {
 }
 
 #press_release_detail-container .main > article button:hover > a {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   color: #fff;
 }
 
@@ -5274,7 +5277,8 @@ img {
   padding: 12px 24px;
   border-radius: 48px;
   border: 2px solid rgba(30, 30, 30, 0.1);
-  background: #FFF;
+  background: #fff;
+  cursor: pointer;
 }
 
 #data_list-container .main .topbx > .swiper .swiper-slide.active {
@@ -5496,7 +5500,7 @@ img {
   align-items: center;
   border-radius: 48px;
   border: 2px solid rgba(30, 30, 30, 0.1);
-  background: #F5F7F9;
+  background: #f5f7f9;
 }
 
 @media (max-width: 767px) {
@@ -5632,7 +5636,8 @@ img {
   padding: 12px 24px;
   border-radius: 48px;
   border: 2px solid rgba(30, 30, 30, 0.1);
-  background: #FFF;
+  background: #fff;
+  cursor: pointer;
 }
 
 #notice_list-container .main .topbx > .swiper .swiper-slide.active {
@@ -5689,7 +5694,8 @@ img {
   gap: 60px;
 }
 
-#notice_list-container .main .middlebx > ul > li .numdev > div:nth-child(1), #notice_list-container .main .middlebx > ul > li .numdev div:nth-child(2) {
+#notice_list-container .main .middlebx > ul > li .numdev > div:nth-child(1),
+#notice_list-container .main .middlebx > ul > li .numdev div:nth-child(2) {
   width: 80px;
 }
 
@@ -5798,7 +5804,7 @@ img {
   align-items: center;
   border-radius: 48px;
   border: 2px solid rgba(30, 30, 30, 0.1);
-  background: #F5F7F9;
+  background: #f5f7f9;
 }
 
 @media (max-width: 767px) {
@@ -6025,7 +6031,7 @@ img {
   border-radius: 60px;
   color: #1E1E1E;
   padding: 20px 40px;
-  border: 2px solid #1E1E1E;
+  border: 2px solid #1e1e1e;
 }
 
 @media (max-width: 767px) {
@@ -6036,7 +6042,7 @@ img {
 }
 
 #notice_detail-container .main > .content button:hover > a {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   color: #fff;
 }
 
@@ -6140,7 +6146,8 @@ img {
   padding: 12px 24px;
   border-radius: 48px;
   border: 2px solid rgba(30, 30, 30, 0.1);
-  background: #FFF;
+  background: #fff;
+  cursor: pointer;
 }
 
 #faq_list-container .main .topbx > .swiper .swiper-slide.active {
@@ -6359,7 +6366,7 @@ img {
   align-items: center;
   border-radius: 48px;
   border: 2px solid rgba(30, 30, 30, 0.1);
-  background: #F5F7F9;
+  background: #f5f7f9;
 }
 
 @media (max-width: 767px) {
