@@ -1,19 +1,17 @@
 let ani = {
   init: function () {
-    // 새로고침시 맨위로
-    // setTimeout(()=>{
-    //   $(window).scrollTop(0);
-    // },100)
 
-    // .scrolltop 을 누르면 맨위로
+    setTimeout(()=>{
+      ani.scrollTop();
+    },100)
+
     $(".scrolltop").click(function () {
       ani.scrollTop();
     });
 
-    let suchi = $(".headerwrap").width();
+    let width1600 = window.matchMedia('(max-width : 1600px)')
     $(window).resize(function () {
-      suchi = $(".headerwrap").width();
-      if (suchi >= 1600) {
+      if (width1600.matches == false) {
         $(".sub-menu").removeClass("open");
         initArrow();
         $(".gnb").removeClass("mobile");
@@ -22,7 +20,7 @@ let ani = {
     // 네비게이션 오버시
     $(".nav").hover(
       function () {
-        if (suchi >= 1600) {
+        if (width1600.matches == false) {
           $(".sub-menu").css({
             height: "180px",
           });
@@ -33,7 +31,7 @@ let ani = {
       },
       // 네비게이션 오버 뗐을때
       function () {
-        if (suchi >= 1600) {
+        if (width1600.matches == false) {
           $(".sub-menu").css({
             height: "",
           });
@@ -47,7 +45,7 @@ let ani = {
       $(".gnb").toggleClass("mobile");
     });
     // 모바일기준 1440px 아래일때 nav 클릭함수
-    $(".main-menu").click(function (event) {
+    $(".main-menu").click(function () {
       initList($(this));
       siblingsInitArrow($(this));
       arrow($(this));
@@ -140,20 +138,7 @@ let ani = {
 
     // help
     // slide 열고 닫기 클래스 on주면 열림
-    $("#faq_list-container .faq-slide li").click(function () {
-      let li = $("#faq_list-container .faq-slide li");
-      let allListOn = li.hasClass("on");
-      let thisOn = $(this).hasClass("on");
-      if (allListOn) {
-        li.removeClass("on");
-        $(this).addClass("on");
-      } else {
-        $(this).addClass("on");
-      }
-      if (thisOn) {
-        $(this).toggleClass("on");
-      }
-    });
+    ani.siblingsSlide("#faq_list-container .faq-slide li")
   },
   scrollTop: function () {
     $(window).scrollTop(0);
@@ -167,6 +152,22 @@ let ani = {
       $(this).addClass("active");
     });
   },
+  siblingsSlide : function(target){
+    $(target).click(function () {
+      let li = $(target);
+      let allListOn = li.hasClass("on");
+      let thisOn = $(this).hasClass("on");
+      if (allListOn) {
+        li.removeClass("on");
+        $(this).addClass("on");
+      } else {
+        $(this).addClass("on");
+      }
+      if (thisOn) {
+        $(this).toggleClass("on");
+      }
+    });
+  }
 };
 
 $(function () {
