@@ -94,32 +94,36 @@ let ani = {
       $(".arrow:even").addClass("show");
     }
 
-    // product 3개의 슬라이드 부분
-    let windowWidth = window.matchMedia("screen and (max-width:768px)");
-    let mSize = 0;
-    windowWidth.matches == true ? (mSize = 1) : (mSize = 0);
-    $(window).resize(function () {
-      windowWidth.matches == true ? (mSize = 1) : (mSize = 0);
-      product();
-    });
+    // product 3개의 슬라이드 부분 - 애니메이션을 주려고했는데 resize랑 slideup down이 겹칠때 에러가나서 gg..
+    // let windowWidth = window.matchMedia("screen and (max-width:768px)");
+    // let mSize = 0;
+    // windowWidth.matches == true ? (mSize = 1) : (mSize = 0);
+    // $(window).resize(function () {
+    //   windowWidth.matches == true ? (mSize = 1) : (mSize = 0);
+    //   // product();
+    // });
+
     
-    product();
-    function product() {
-      if (mSize) {
-        $(".product-bottombx").show();
-        $(".product-sc").off("mouseenter");
-        $(".product-sc").off("mouseleave");
-      } else if (mSize == !true) {
-        $(".product-bottombx").hide();
-        $(".product-sc").on("mouseenter", function () {
-          $(this).find(".product-bottombx").stop().slideDown();
-        });
-        $(".product-sc").on("mouseleave", function () {
-          console.log("dfk");
-          $(this).find(".product-bottombx").stop().slideUp();
-        });
-      }
-    }
+    // product();
+    // function product() {
+
+    //   // $(".product-bottombx").stop().slideUp()
+
+    //   if (mSize) {
+    //     $(".product-bottombx").show();
+    //     $(".product-sc").off("mouseenter");
+    //     $(".product-sc").off("mouseleave");
+    //   } else if (mSize == !true) {
+    //     $(".product-bottombx").hide();
+    //     $(".product-sc").on("mouseenter", function () {
+    //       $(this).find(".product-bottombx").stop().slideDown();
+    //     });
+    //     $(".product-sc").on("mouseleave", function () {
+    //       console.log("dfk");
+    //       $(this).find(".product-bottombx").stop().slideUp();
+    //     });
+    //   }
+    // }
 
     // ko en 버튼 누를시 회색 동그라미 옮겨가기
     $(".btn-lang").click(function () {

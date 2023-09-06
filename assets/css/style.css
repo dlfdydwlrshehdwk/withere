@@ -1705,6 +1705,10 @@ img {
   border-radius: 40px;
 }
 
+.main .product .product-sc:hover .product-bottombx {
+  height: auto;
+}
+
 .main .product .product-sc .productwrap {
   color: #1E1E1E;
   padding: 80px;
@@ -1897,11 +1901,22 @@ img {
 }
 
 .main .product .product-bottombx {
-  margin-top: 80px;
+  height: 0;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
   .main .product .product-bottombx {
+    height: auto;
+  }
+}
+
+.main .product .product-bottombx .product-libx {
+  margin-top: 80px;
+}
+
+@media (max-width: 767px) {
+  .main .product .product-bottombx .product-libx {
     margin-top: 8px;
   }
 }
