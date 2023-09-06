@@ -96,21 +96,18 @@ img {
               line-height: 100%;
               padding: 10px 20px;
             }
-            > svg {
-              display: inline-block;
-              width: 10px;
-              height: 16px;
+            svg {
+              width: 12px;
             }
           }
           &:hover {
             background-color: $primary;
             > a {
               color: $white;
-              img {
-                fill : $white;
+              path {
+                fill : $white
               }
             }
-
             .sub-menu {
               background-color: $primary;
               a {
@@ -163,6 +160,9 @@ img {
           color: $white;
           background-color: $primary;
           font-weight: $fw-bold;
+          > span{
+            margin-left: 5px;
+          }
         }
         .lang {
           background-color: $bg-ea;
@@ -185,14 +185,31 @@ img {
     }
     .btn-drawer {
       display: none;
-      i {
-        line-height: 100px;
-        font-size: calcRem(30px);
-      }
       @media screen and (max-width: 1600px) {
-        display: block;
         position: relative;
         z-index: 2;
+        display: flex;
+        align-items: center;
+      }
+      > span{
+        display: none;
+        &.show{
+          display: flex;
+        }
+        &:hover{
+          g rect{
+            &:nth-child(1){
+              stroke: $primary;
+              fill: $primary;
+            }
+            &:nth-child(2){
+              fill: $white;
+            }
+            &:nth-child(3){
+              fill: $white;
+            }
+          }
+        }
       }
     }
   }
@@ -680,7 +697,9 @@ img {
       border-radius: 60px;
       padding: 20px 40px;
       color: $white;
-      i {
+      svg {
+        width: 30px;
+        height: 15px;
         padding-left: 5px;
       }
       &:hover {
@@ -691,6 +710,11 @@ img {
         color: $primary;
         background-color: $white;
         font-weight: $fw-bold;
+        svg{
+          path{
+            fill: $primary;
+          }
+        }
       }
     }
   }
@@ -876,6 +900,7 @@ img {
       border: 1px solid $white;
       border-radius: 60px;
       padding: 20px 40px;
+      
       @media (max-width: 1600px) {
         padding: 18px 36px;
       }
@@ -891,15 +916,23 @@ img {
       @media (max-width: 767px) {
         padding: 10px 20px;
       }
-      i {
-        padding-left: 5px;
-      }
       &:hover {
         transition: 0.3s;
         border: 1px solid $black-1e;
         background-color: $white;
         color: $black-1e;
         font-weight: $fw-bold;
+        svg{
+          path {
+            transition: .3s;
+            fill: $black-1e;
+          }
+        }
+      }
+      span {
+        svg{
+          width: 30px;height: 14px;
+        }
       }
     }
   }
@@ -946,12 +979,14 @@ img {
           text-decoration: underline;
           > span {
             padding-right: 5px;
+            display: inline-block;
           }
         }
       }
       .tel {
         > span {
           padding-right: 5px;
+          display: inline-block;
         }
       }
     }
@@ -965,112 +1000,38 @@ img {
 }
 .scrolltop {
   position: fixed;
-  width: 60px;
   bottom: 5%;
   right: 3%;
-  height: 60px;
-  border: 1px solid black;
   display: flex;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background-color: $white;
   display: none;
-  @media (max-width: 767px) {
-    width: 40px;
-    height: 40px;
-  }
-  > i {
-    font-size: 30px;
+  svg{
+    width: 60px;
+    height: 60px;
     @media (max-width: 767px) {
-      font-size: 15px;
+      width: 30px;
+      height: 30px;
     }
   }
   &:hover {
-    background-color: black;
-    > i {
-      color: $white;
+    rect{
+      &:nth-child(1){
+        fill: $primary;
+      }
+      &:nth-child(2){
+        fill: $white;
+      }
+    }
+    path {
+      fill: $white;
     }
   }
 }
 
 // neul
 #company-container {
-  .fisrt-sec {
-    margin-top: 100px;
-    height: calc(100vh - 100px);
-    position: relative;
-    .txtbx {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      gap: 60px;
-      color: $white;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-      padding: 120px 240px;
-      @media (max-width: 1600px) {
-        padding: 120px 200px;
-      }
-      @media (max-width: 1400px) {
-        padding: 120px 180px;
-      }
-      @media (max-width: 1200px) {
-        padding: 120px 140px;
-      }
-      @media (max-width: 1020px) {
-        padding: 120px 80px;
-      }
-      @media (max-width: 767px) {
-        padding: 80px 24px;
-      }
-      > h2 {
-        font-size: 120px;
-        letter-spacing: -1px;
-        @media (max-width: 1600px) {
-          font-size: 100px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 80px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 70px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 60px;
-        }
-        @media (max-width: 767px) {
-          font-size: 48px;
-        }
-      }
-      > p {
-        font-size: 56px;
-        letter-spacing: -1px;
-        @media (max-width: 1600px) {
-          font-size: 48px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 40px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 32px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 28px;
-        }
-        @media (max-width: 767px) {
-          font-size: 24px;
-        }
-      }
-    }
-    .bg {
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(60%);
-    }
-  }
   .second-sec {
     .wrap {
       padding: 180px 240px;
@@ -1324,86 +1285,7 @@ img {
 }
 // service - neul_silver_care
 #service-neul_silver_care-container {
-  margin-top: 100px;
-  .fisrt-sec {
-    position: relative;
-    height: calc(100vh - 100px);
-    padding: 120px 240px;
-    @media (max-width: 1600px) {
-      padding: 120px 200px;
-    }
-    @media (max-width: 1400px) {
-      padding: 120px 180px;
-    }
-    @media (max-width: 1200px) {
-      padding: 120px 140px;
-    }
-    @media (max-width: 1020px) {
-      padding: 120px 80px;
-    }
-    @media (max-width: 767px) {
-      padding: 80px 24px;
-    }
-    .txtbx {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      gap: 60px;
-      color: $white;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-      letter-spacing: -1px;
-      > h2 {
-        font-size: 120px;
-        line-height: 125%;
-        @media (max-width: 1600px) {
-          font-size: 100px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 80px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 70px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 60px;
-        }
-        @media (max-width: 767px) {
-          font-size: 48px;
-        }
-      }
-      > p {
-        font-weight: $fw-bold;
-        font-size: 56px;
-        line-height: 150%;
-        @media (max-width: 1600px) {
-          font-size: 48px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 40px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 32px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 28px;
-        }
-        @media (max-width: 767px) {
-          font-size: 24px;
-        }
-      }
-    }
-    .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(60%);
-    }
-  }
+  
   .second-sec {
     .content {
       padding: 180px 240px;
@@ -1699,90 +1581,6 @@ img {
 }
 // service - assessment
 #service-assessment-container {
-  margin-top: 100px;
-  .fisrt-sec {
-    position: relative;
-    height: calc(100vh - 100px);
-    padding: 120px 240px;
-    @media (max-width: 1600px) {
-      padding: 120px 200px;
-    }
-    @media (max-width: 1400px) {
-      padding: 120px 150px;
-    }
-    @media (max-width: 1200px) {
-      padding: 120px 100px;
-    }
-    @media (max-width: 1020px) {
-      padding: 120px 40px;
-    }
-    @media (max-width: 767px) {
-      padding: 80px 24px;
-    }
-    .txtbx {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      gap: 60px;
-      color: $white;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-      letter-spacing: -1px;
-      @media (max-width: 767px) {
-        gap: 40px;
-      }
-      > h2 {
-        font-size: 120px;
-        line-height: 133%;
-        font-weight: $fw-bold;
-        @media (max-width: 1600px) {
-          font-size: 100px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 80px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 70px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 60px;
-        }
-        @media (max-width: 767px) {
-          font-size: 48px;
-          line-height: 125%;
-        }
-      }
-      > p {
-        font-weight: $fw-bold;
-        font-size: 56px;
-        @media (max-width: 1600px) {
-          font-size: 48px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 40px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 32px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 28px;
-        }
-        @media (max-width: 767px) {
-          font-size: 24px;
-        }
-      }
-    }
-    .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(60%);
-    }
-  }
   .second-sec {
     background-color: $primary;
     .wrap {
@@ -2303,56 +2101,7 @@ img {
       padding: 40px 24px 80px 24px;
       gap: 40px;
     }
-    .topbx {
-      > h2 {
-        font-size: 64px;
-        color: $black-1e;
-        font-weight: $fw-bold;
-        letter-spacing: -1px;
-        height: 131%;
-        @media (max-width: 1600px) {
-          font-size: 60px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 56px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 52px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 48px;
-        }
-        @media (max-width: 767px) {
-          font-size: 32px;
-          line-height: 125%;
-        }
-      }
-      .divide {
-        gap: 20px;
-        @media (max-width: 767px) {
-          gap: 8px;
-        }
-      }
-      > .swiper {
-        margin-top: 40px;
-        .swiper-slide {
-          width: auto;
-          padding: 12px 24px;
-          border-radius: 48px;
-          border: 2px solid rgba(30, 30, 30, 0.1);
-          background: #fff;
-          cursor: pointer;
-          &.active {
-            background: $primary;
-            color: $white;
-          }
-          > a {
-            font-size: 20px;
-            color: $black-1e;
-          }
-        }
-      }
-    }
+    
     .middlebx {
       width: 1440px;
       margin: 0 auto;
@@ -2499,7 +2248,7 @@ img {
             font-size: 16px;
             padding: 8px 20px;
           }
-          i {
+          svg {
             padding-left: 8px;
             width: 32px;
           }
@@ -2933,7 +2682,7 @@ img {
             font-size: 16px;
             padding: 8px 20px;
           }
-          i {
+          svg {
             padding-left: 8px;
             width: 32px;
           }
@@ -3163,9 +2912,10 @@ img {
             font-size: 16px;
             padding: 8px 20px;
           }
-          i {
+          svg {
             padding-left: 8px;
             width: 32px;
+
           }
         }
       }
@@ -3560,7 +3310,7 @@ img {
             font-size: 16px;
             padding: 8px 20px;
           }
-          i {
+          svg {
             padding-left: 8px;
             width: 32px;
           }
@@ -3570,7 +3320,7 @@ img {
   }
 }
 
-// 공용미디어쿼리
+// dt mobile 나누기 전역클래스
 .mobileOnly {
   display: none;
   @media (max-width: 767px) {
@@ -3593,5 +3343,138 @@ img {
   display: block;
   @media (max-width: 1400px) {
     display: none;
+  }
+}
+
+// 전역클래스
+.fisrt-sec {
+  position: relative;
+  height: calc(100vh - 100px);
+  padding: 120px 240px;
+  margin-top: 100px;
+  @media (max-width: 1600px) {
+    padding: 120px 200px;
+  }
+  @media (max-width: 1400px) {
+    padding: 120px 180px;
+  }
+  @media (max-width: 1200px) {
+    padding: 120px 140px;
+  }
+  @media (max-width: 1020px) {
+    padding: 120px 80px;
+  }
+  @media (max-width: 767px) {
+    padding: 80px 24px;
+  }
+  .txtbx {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    color: $white;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    letter-spacing: -1px;
+    font-weight: $fw-bold;
+    > h2 {
+      font-size: 120px;
+      line-height: 133%;
+      @media (max-width: 1600px) {
+        font-size: 100px;
+      }
+      @media (max-width: 1400px) {
+        font-size: 80px;
+      }
+      @media (max-width: 1200px) {
+        font-size: 70px;
+      }
+      @media (max-width: 1020px) {
+        font-size: 60px;
+      }
+      @media (max-width: 767px) {
+        font-size: 48px;
+      }
+    }
+    > p {
+      font-weight: $fw-bold;
+      font-size: 56px;
+      line-height: 142%;
+      @media (max-width: 1600px) {
+        font-size: 48px;
+      }
+      @media (max-width: 1400px) {
+        font-size: 40px;
+      }
+      @media (max-width: 1200px) {
+        font-size: 32px;
+      }
+      @media (max-width: 1020px) {
+        font-size: 28px;
+      }
+      @media (max-width: 767px) {
+        font-size: 24px;
+      }
+    }
+  }
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(60%);
+  }
+}
+.topbx {
+  > h2 {
+    font-size: 64px;
+    color: $black-1e;
+    font-weight: $fw-bold;
+    letter-spacing: -1px;
+    line-height: 131%;
+    @media (max-width: 1600px) {
+      font-size: 60px;
+    }
+    @media (max-width: 1400px) {
+      font-size: 56px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 52px;
+    }
+    @media (max-width: 1020px) {
+      font-size: 48px;
+    }
+    @media (max-width: 767px) {
+      font-size: 32px;
+      line-height: 125%;
+    }
+  }
+  .divide {
+    gap: 20px;
+    @media (max-width: 767px) {
+      gap: 8px;
+    }
+  }
+  > .swiper {
+    margin-top: 40px;
+    .swiper-slide {
+      width: auto;
+      padding: 12px 24px;
+      border-radius: 48px;
+      border: 2px solid rgba(30, 30, 30, 0.1);
+      background: #fff;
+      cursor: pointer;
+      &.active {
+        background: $primary;
+        color: $white;
+      }
+      > a {
+        font-size: 20px;
+        color: $black-1e;
+      }
+    }
   }
 }

@@ -17,15 +17,24 @@ let ani = {
         $(".gnb").removeClass("mobile");
       }
     });
+
+
+    let smenuLiHeight = $('.sub-menu li').height()
+    let smenuArr = [];
+    let headerwrapH = $('.headerwrap').height()
+    $('.sub-menu').each(function(idx,ele){
+      smenuArr.push($(this).find('li').length)
+    })
+    smenuArr = Math.max.apply(null,smenuArr)
     // 네비게이션 오버시
     $(".nav").hover(
       function () {
         if (width1600.matches == false) {
           $(".sub-menu").css({
-            height: "180px",
+            height: smenuLiHeight * smenuArr + 10 + "px",
           });
           $(".headerwrap").css({
-            height: "280px",
+            height: smenuLiHeight * smenuArr + headerwrapH + 10 + "px",
           });
         }
       },
@@ -43,6 +52,7 @@ let ani = {
     // 모바일기준 서브메뉴 띄우기 + 사라지기
     $(".btn-drawer").click(function () {
       $(".gnb").toggleClass("mobile");
+      $(this).find('span').toggleClass('show')
     });
     // 모바일기준 1440px 아래일때 nav 클릭함수
     $(".main-menu").click(function () {
