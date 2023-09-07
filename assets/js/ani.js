@@ -1,9 +1,9 @@
 let ani = {
   init: function () {
 
-    setTimeout(()=>{
-      ani.scrollTop();
-    },100)
+    // setTimeout(()=>{
+    //   ani.scrollTop();
+    // },100)
 
     $(".scrolltop").click(function () {
       ani.scrollTop();
