@@ -2171,90 +2171,7 @@ img {
         }
       }
     }
-    .bottombx {
-      display: flex;
-      @media (max-width: 1400px) {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-      }
-      .pagenation {
-        display: flex;
-        gap: 48px;
-        flex: 1 0 0;
-        align-items: center;
-        @media (max-width: 767px) {
-          gap: 32px;
-        }
-        > div {
-          width: 56px;
-          height: 56px;
-          @media (max-width: 767px) {
-            gap: 32px;
-            width: 40px;
-            height: 40px;
-          }
-        }
-        > ul {
-          display: flex;
-          gap: 48px;
-          @media (max-width: 767px) {
-            gap: 32px;
-          }
-          > li {
-            > a {
-              color: $gray-a;
-            }
-            &.now a {
-              color: $black-1e;
-            }
-          }
-        }
-      }
-      .numofnum {
-        display: flex;
-        gap: 18px;
-        align-items: center;
-        > div {
-          &:nth-child(1) {
-            display: flex;
-            width: 56px;
-            height: 56px;
-            padding: 12px 24px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 48px;
-            border: 2px solid rgba(30, 30, 30, 0.1);
-            background: #f5f7f9;
-            @media (max-width: 767px) {
-              width: 60px;
-              height: 40px;
-            }
-          }
-          &:nth-child(2) {
-            color: $gray-a;
-          }
-        }
-        > button {
-          padding: 12px 24px;
-          border-radius: 48px;
-          background-color: $primary;
-          color: $white;
-          font-size: 20px;
-          line-height: 160%;
-          letter-spacing: -1px;
-          @media (max-width: 767px) {
-            font-size: 16px;
-            padding: 8px 20px;
-          }
-          svg {
-            padding-left: 8px;
-            width: 32px;
-          }
-        }
-      }
-    }
+    
   }
 }
 // news - press_release_detail
@@ -2464,56 +2381,7 @@ img {
       gap: 40px;
       padding: 40px 24px 80px;
     }
-    .topbx {
-      > h2 {
-        font-size: 64px;
-        color: $black-1e;
-        font-weight: $fw-bold;
-        letter-spacing: -1;
-        line-height: 131%;
-        @media (max-width: 1600px) {
-          font-size: 60px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 56px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 52px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 48px;
-        }
-        @media (max-width: 767px) {
-          font-size: 32px;
-          line-height: 125%;
-        }
-      }
-      .divide {
-        gap: 20px;
-        @media (max-width: 767px) {
-          gap: 8px;
-        }
-      }
-      > .swiper {
-        margin-top: 40px;
-        .swiper-slide {
-          width: auto;
-          padding: 12px 24px;
-          border-radius: 48px;
-          border: 2px solid rgba(30, 30, 30, 0.1);
-          background: #fff;
-          cursor: pointer;
-          &.active {
-            background: $primary;
-            color: $white;
-          }
-          > a {
-            font-size: 20px;
-            color: $black-1e;
-          }
-        }
-      }
-    }
+    
     .middlebx {
       > ul {
         display: flex;
@@ -2605,90 +2473,7 @@ img {
         }
       }
     }
-    .bottombx {
-      display: flex;
-      @media (max-width: 1400px) {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-      }
-      .pagenation {
-        display: flex;
-        gap: 48px;
-        flex: 1 0 0;
-        align-items: center;
-        @media (max-width: 767px) {
-          gap: 32px;
-        }
-        > div {
-          width: 56px;
-          height: 56px;
-          @media (max-width: 767px) {
-            gap: 32px;
-            width: 40px;
-            height: 40px;
-          }
-        }
-        > ul {
-          display: flex;
-          gap: 48px;
-          @media (max-width: 767px) {
-            gap: 32px;
-          }
-          > li {
-            > a {
-              color: $gray-a;
-            }
-            &.now a {
-              color: $black-1e;
-            }
-          }
-        }
-      }
-      .numofnum {
-        display: flex;
-        gap: 18px;
-        align-items: center;
-        > div {
-          &:nth-child(1) {
-            display: flex;
-            width: 56px;
-            height: 56px;
-            padding: 12px 24px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 48px;
-            border: 2px solid rgba(30, 30, 30, 0.1);
-            background: #f5f7f9;
-            @media (max-width: 767px) {
-              width: 60px;
-              height: 40px;
-            }
-          }
-          &:nth-child(2) {
-            color: $gray-a;
-          }
-        }
-        > button {
-          padding: 12px 24px;
-          border-radius: 48px;
-          background-color: $primary;
-          color: $white;
-          font-size: 20px;
-          line-height: 160%;
-          letter-spacing: -1px;
-          @media (max-width: 767px) {
-            font-size: 16px;
-            padding: 8px 20px;
-          }
-          svg {
-            padding-left: 8px;
-            width: 32px;
-          }
-        }
-      }
-    }
+    
   }
 }
 
@@ -2719,57 +2504,7 @@ img {
       gap: 40px;
       padding: 40px 24px 80px;
     }
-    .topbx {
-      > h2 {
-        font-size: 64px;
-        color: $black-1e;
-        font-weight: $fw-bold;
-        letter-spacing: -1;
-        line-height: 131%;
-        @media (max-width: 1600px) {
-          font-size: 60px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 56px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 52px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 48px;
-        }
-        @media (max-width: 767px) {
-          font-size: 32px;
-          line-height: 125%;
-        }
-      }
-
-      .divide {
-        gap: 20px;
-        @media (max-width: 767px) {
-          gap: 8px;
-        }
-      }
-      > .swiper {
-        margin-top: 40px;
-        .swiper-slide {
-          width: auto;
-          padding: 12px 24px;
-          border-radius: 48px;
-          border: 2px solid rgba(30, 30, 30, 0.1);
-          background: #fff;
-          cursor: pointer;
-          &.active {
-            background: $primary;
-            color: $white;
-          }
-          > a {
-            font-size: 20px;
-            color: $black-1e;
-          }
-        }
-      }
-    }
+    
     .middlebx {
       > ul {
         display: flex;
@@ -2833,93 +2568,7 @@ img {
         }
       }
     }
-    .bottombx {
-      display: flex;
-      @media (max-width: 1400px) {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-      }
-      @media (max-width: 767px) {
-      }
-      .pagenation {
-        display: flex;
-        gap: 48px;
-        flex: 1 0 0;
-        align-items: center;
-        @media (max-width: 767px) {
-          gap: 32px;
-        }
-        > div {
-          width: 56px;
-          height: 56px;
-          @media (max-width: 767px) {
-            gap: 32px;
-            width: 40px;
-            height: 40px;
-          }
-        }
-        > ul {
-          display: flex;
-          gap: 48px;
-          @media (max-width: 767px) {
-            gap: 32px;
-          }
-          > li {
-            > a {
-              color: $gray-a;
-            }
-            &.now a {
-              color: $black-1e;
-            }
-          }
-        }
-      }
-      .numofnum {
-        display: flex;
-        gap: 18px;
-        align-items: center;
-        > div {
-          &:nth-child(1) {
-            display: flex;
-            width: 56px;
-            height: 56px;
-            padding: 12px 24px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 48px;
-            border: 2px solid rgba(30, 30, 30, 0.1);
-            background: #f5f7f9;
-            @media (max-width: 767px) {
-              width: 60px;
-              height: 40px;
-            }
-          }
-          &:nth-child(2) {
-            color: $gray-a;
-          }
-        }
-        > button {
-          padding: 12px 24px;
-          border-radius: 48px;
-          background-color: $primary;
-          color: $white;
-          font-size: 20px;
-          line-height: 160%;
-          letter-spacing: -1px;
-          @media (max-width: 767px) {
-            font-size: 16px;
-            padding: 8px 20px;
-          }
-          svg {
-            padding-left: 8px;
-            width: 32px;
-
-          }
-        }
-      }
-    }
+    
   }
 }
 // help - notice_detail
@@ -3231,92 +2880,7 @@ img {
         }
       }
     }
-    .bottombx {
-      display: flex;
-      @media (max-width: 1400px) {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-      }
-      @media (max-width: 767px) {
-      }
-      .pagenation {
-        display: flex;
-        gap: 48px;
-        flex: 1 0 0;
-        align-items: center;
-        @media (max-width: 767px) {
-          gap: 32px;
-        }
-        > div {
-          width: 56px;
-          height: 56px;
-          @media (max-width: 767px) {
-            gap: 32px;
-            width: 40px;
-            height: 40px;
-          }
-        }
-        > ul {
-          display: flex;
-          gap: 48px;
-          @media (max-width: 767px) {
-            gap: 32px;
-          }
-          > li {
-            > a {
-              color: $gray-a;
-            }
-            &.now a {
-              color: $black-1e;
-            }
-          }
-        }
-      }
-      .numofnum {
-        display: flex;
-        gap: 18px;
-        align-items: center;
-        > div {
-          &:nth-child(1) {
-            display: flex;
-            width: 56px;
-            height: 56px;
-            padding: 12px 24px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 48px;
-            border: 2px solid rgba(30, 30, 30, 0.1);
-            background: #f5f7f9;
-            @media (max-width: 767px) {
-              width: 60px;
-              height: 40px;
-            }
-          }
-          &:nth-child(2) {
-            color: $gray-a;
-          }
-        }
-        > button {
-          padding: 12px 24px;
-          border-radius: 48px;
-          background-color: $primary;
-          color: $white;
-          font-size: 20px;
-          line-height: 160%;
-          letter-spacing: -1px;
-          @media (max-width: 767px) {
-            font-size: 16px;
-            padding: 8px 20px;
-          }
-          svg {
-            padding-left: 8px;
-            width: 32px;
-          }
-        }
-      }
-    }
+    
   }
 }
 
@@ -3478,3 +3042,93 @@ img {
     }
   }
 }
+.bottombx {
+  display: flex;
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .pagenation {
+    display: flex;
+    gap: 48px;
+    flex: 1 0 0;
+    align-items: center;
+    @media (max-width: 767px) {
+      gap: 32px;
+    }
+    > div {
+      width: 56px;
+      height: 56px;
+      @media (max-width: 767px) {
+        gap: 32px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    > ul {
+      display: flex;
+      gap: 48px;
+      @media (max-width: 767px) {
+        gap: 32px;
+      }
+      > li {
+        > a {
+          color: $gray-a;
+        }
+        &.now a {
+          color: $black-1e;
+        }
+      }
+    }
+  }
+  .numofnum {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    > div {
+      &:nth-child(1) {
+        display: flex;
+        width: 56px;
+        height: 56px;
+        padding: 12px 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 48px;
+        border: 2px solid rgba(30, 30, 30, 0.1);
+        background: #f5f7f9;
+        @media (max-width: 767px) {
+          width: 60px;
+          height: 40px;
+        }
+      }
+      &:nth-child(2) {
+        color: $gray-a;
+      }
+    }
+    > button {
+      padding: 12px 24px;
+      border-radius: 48px;
+      background-color: $primary;
+      color: $white;
+      font-size: 20px;
+      line-height: 160%;
+      letter-spacing: -1px;
+      @media (max-width: 767px) {
+        font-size: 16px;
+        padding: 8px 20px;
+      }
+      svg {
+        padding-left: 8px;
+        width: 32px;
+      }
+    }
+  }
+}
+/* 
+div txtbx
+h3 p 
+64 48 있음
+
+*/
