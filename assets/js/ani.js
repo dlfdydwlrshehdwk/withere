@@ -19,16 +19,16 @@ let ani = {
     });
 
 
-    let smenuLiHeight = $('.sub-menu li').height()
-    let smenuArr = [];
-    let headerwrapH = $('.headerwrap').height()
-    $('.sub-menu').each(function(idx,ele){
-      smenuArr.push($(this).find('li').length)
-    })
-    smenuArr = Math.max.apply(null,smenuArr)
     // 네비게이션 오버시
     $(".nav").hover(
       function () {
+        let smenuLiHeight = $('.sub-menu li').height()
+        let smenuArr = [];
+        let headerwrapH = $('.headerwrap').height()
+        $('.sub-menu').each(function(idx,ele){
+          smenuArr.push($(this).find('li').length)
+        })
+        smenuArr = Math.max.apply(null,smenuArr)
         if (width1600.matches == false) {
           $(".sub-menu").css({
             height: smenuLiHeight * smenuArr + 10 + "px",
@@ -48,17 +48,21 @@ let ani = {
         }
       }
     );
-
+    
     // 모바일기준 서브메뉴 띄우기 + 사라지기
     $(".btn-drawer").click(function () {
       $(".gnb").toggleClass("mobile");
-      $(this).find('span').toggleClass('show')
+      $(this).find('span').toggleClass('show');
+
+      $('body').toggleClass('oh')
     });
-    // 모바일기준 1440px 아래일때 nav 클릭함수
+    // 1600px 아래일때 nav 클릭함수
     $(".main-menu").click(function () {
-      initList($(this));
-      siblingsInitArrow($(this));
-      arrow($(this));
+      if(width1600.matches == true){
+        initList($(this));
+        siblingsInitArrow($(this));
+        arrow($(this));
+      }
     });
     // 화살표 위로가르키기
     function arrowUp(target) {
@@ -101,37 +105,6 @@ let ani = {
       $(".arrow:odd").removeClass("show");
       $(".arrow:even").addClass("show");
     }
-
-    // product 3개의 슬라이드 부분 - 애니메이션을 주려고했는데 resize랑 slideup down이 겹칠때 에러가나서 gg..
-    // let windowWidth = window.matchMedia("screen and (max-width:768px)");
-    // let mSize = 0;
-    // windowWidth.matches == true ? (mSize = 1) : (mSize = 0);
-    // $(window).resize(function () {
-    //   windowWidth.matches == true ? (mSize = 1) : (mSize = 0);
-    //   // product();
-    // });
-
-    
-    // product();
-    // function product() {
-
-    //   // $(".product-bottombx").stop().slideUp()
-
-    //   if (mSize) {
-    //     $(".product-bottombx").show();
-    //     $(".product-sc").off("mouseenter");
-    //     $(".product-sc").off("mouseleave");
-    //   } else if (mSize == !true) {
-    //     $(".product-bottombx").hide();
-    //     $(".product-sc").on("mouseenter", function () {
-    //       $(this).find(".product-bottombx").stop().slideDown();
-    //     });
-    //     $(".product-sc").on("mouseleave", function () {
-    //       console.log("dfk");
-    //       $(this).find(".product-bottombx").stop().slideUp();
-    //     });
-    //   }
-    // }
 
     // ko en 버튼 누를시 회색 동그라미 옮겨가기
     $(".btn-lang").click(function () {
@@ -177,7 +150,7 @@ let ani = {
         $(this).toggleClass("on");
       }
     });
-  }
+  },
 };
 
 $(function () {

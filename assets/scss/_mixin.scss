@@ -78,3 +78,193 @@ $font-size-base: 16px;
     color: $color;
   }
 }
+// 망작
+// @mixin fz($size, $fw:400, $color : false,){
+//   letter-spacing: -1px;
+//   font-weight: $fw;
+//   @include font($size + px,$color);
+
+//   @if $size == 120 {
+//     font-size: 120px;
+//     line-height: 133%;
+//     @media (max-width: 1600px) {
+//       font-size: 100px;
+//     }
+//     @media (max-width: 1400px) {
+//       font-size: 80px;
+//     }
+//     @media (max-width: 1200px) {
+//       font-size: 70px;
+//     }
+//     @media (max-width: 1020px) {
+//       font-size: 60px;
+//     }
+//     @media (max-width: 767px) {
+//       font-size: 48px;
+//       line-height: 125%;
+//     }
+//   }
+
+//   @if $size == 64 {
+//     line-height: 131%;
+//     @media (max-width: 1600px) {
+//       font-size: 60px;
+//     }
+//     @media (max-width: 1400px) {
+//       font-size: 56px;
+//     }
+//     @media (max-width: 1200px) {
+//       font-size: 52px;
+//     }
+//     @media (max-width: 1020px) {
+//       font-size: 48px;
+//     }
+//     @media (max-width: 767px) {
+//       font-size: 32px;
+//       line-height: 125%;
+//     }
+//   }
+
+//   @if $size == 56 {
+//     line-height: 142%;
+//     font-size: 56px;
+//     @media (max-width: 1600px) {
+//       font-size: 48px;
+//     }
+//     @media (max-width: 1400px) {
+//       font-size: 40px;
+//     }
+//     @media (max-width: 1200px) {
+//       font-size: 32px;
+//     }
+//     @media (max-width: 1020px) {
+//       font-size: 28px;
+//     }
+//     @media (max-width: 767px) {
+//       font-size: 24px;
+//       line-height: 150%;
+//     }
+//   }
+
+//   @if $size == 48 {
+//     font-size: 48px;
+//       line-height: 150%;
+//       @media (max-width: 1600px) {
+//         font-size: 44px;
+//       }
+//       @media (max-width: 1600px) {
+//         font-size: 42px;
+//       }
+//       @media (max-width: 1400px) {
+//         font-size: 40px;
+//       }
+//       @media (max-width: 1200px) {
+//         font-size: 40px;
+//       }
+//       @media (max-width: 1020px) {
+//         font-size: 38px;
+//       }
+//       @media (max-width: 767px) {
+//         font-size: 28px;
+//       }
+//   }
+
+//   @if $size == 36 {
+//     line-height: 155%;
+//     font-size: 36px;
+//     @media (max-width: 1600px) {
+//       font-size: 34px;
+//     }
+//     @media (max-width: 1400px) {
+//       font-size: 32px;
+//     }
+//     @media (max-width: 1200px) {
+//       font-size: 30px;
+//     }
+//     @media (max-width: 1020px) {
+//       font-size: 28px;
+//     }
+//     @media (max-width: 767px) {
+//       font-size: 24px;
+//       line-height: 160%;
+//     }
+//   }
+
+//   @if $size == 32 {
+//     font-size: 32px;
+//     @media (max-width: 1600px) {
+//       font-size: 30px;
+//     }
+//     @media (max-width: 1400px) {
+//       font-size: 28px;
+//     }
+//     @media (max-width: 1200px) {
+//       font-size: 26px;
+//     }
+//     @media (max-width: 1020px) {
+//       font-size: 24px;
+//     }
+//     @media (max-width: 767px) {
+//       font-size: 14px;
+//     }
+//   }
+// }
+
+// @mixin pdType($type){
+//   @if $type = 'typeBg' {
+//     padding: 120px 240px;
+//     @media (max-width: 1600px) {
+//       padding: 120px 200px;
+//     }
+//     @media (max-width: 1400px) {
+//       padding: 120px 180px;
+//     }
+//     @media (max-width: 1200px) {
+//       padding: 120px 140px;
+//     }
+//     @media (max-width: 1020px) {
+//       padding: 120px 80px;
+//     }
+//     @media (max-width: 767px) {
+//       margin-top: 68px;
+//       padding: 80px 24px;
+//       height: calc(100vh - 68px);
+//   }
+//   }
+//   @if $type = 'typeContent' {
+//     padding: 180px 240px;
+//     @media (max-width: 1600px) {
+//       padding: 120px 200px;
+//     }
+//     @media (max-width: 1400px) {
+//       padding: 100px 150px;
+//     }
+//     @media (max-width: 1200px) {
+//       padding: 80px 100px;
+//     }
+//     @media (max-width: 1020px) {
+//       padding: 60px 40px;
+//     }
+//     @media (max-width: 767px) {
+//       padding: 40px 24px;
+//     }
+//   }
+//   @if $type = "typeList" {
+//     padding: 120px 240px 180px 240px;
+//   @media (max-width: 1600px) {
+//     padding: 120px 200px 180px;
+//   }
+//   @media (max-width: 1400px) {
+//     padding: 120px 150px 180px;
+//   }
+//   @media (max-width: 1200px) {
+//     padding: 120px 100px 180px;
+//   }
+//   @media (max-width: 1020px) {
+//     padding: 80px 40px 100px;
+//   }
+//   @media (max-width: 767px) {
+//     padding: 40px 24px 80px;
+//   }
+//   }
+// }

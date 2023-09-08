@@ -2,7 +2,11 @@
 	Layout
 ********************************************************************/
 body {
+  position: relative;
   overflow-x: hidden;
+  &.oh {
+    overflow: hidden;
+  }
 }
 #wrap {
   overflow-x: hidden;
@@ -14,12 +18,13 @@ img {
 .headerwrap {
   height: 100px;
   position: fixed;
-  top: 0px;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 111;
   background-color: $white;
-  @media (max-width : 767px) {
+  border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+  @media (max-width: 767px) {
     height: 68px;
   }
   #header {
@@ -32,7 +37,8 @@ img {
     width: 100%;
     top: 000px;
     padding: 0 20px;
-    @media (max-width : 767px) {
+    
+    @media (max-width: 767px) {
       height: 68px;
     }
     .logo {
@@ -40,7 +46,7 @@ img {
       z-index: 2;
       width: 146px;
       aspect-ratio: 146/32;
-      @media (max-width:767px) {
+      @media (max-width: 767px) {
         width: 100px;
         aspect-ratio: 100/24;
       }
@@ -64,7 +70,7 @@ img {
           display: flex;
         }
       }
-      @media (max-width:767px) {
+      @media (max-width: 767px) {
         padding-top: 68px;
       }
       .nav {
@@ -118,7 +124,7 @@ img {
             > a {
               color: $white;
               path {
-                fill : $white
+                fill: $white;
               }
             }
             .sub-menu {
@@ -162,10 +168,10 @@ img {
         @media (max-width: 1600px) {
           margin-bottom: 40px;
           margin-top: auto;
-            margin-bottom: 0;
-            padding: 24px;
-            justify-content: space-between;
-          }
+          margin-bottom: 0;
+          padding: 24px;
+          justify-content: space-between;
+        }
         .btn-round {
           height: 48px;
           padding: 5px 10px;
@@ -173,7 +179,7 @@ img {
           color: $white;
           background-color: $primary;
           font-weight: $fw-bold;
-          > span{
+          > span {
             margin-left: 5px;
           }
         }
@@ -204,21 +210,21 @@ img {
         display: flex;
         align-items: center;
       }
-      > span{
+      > span {
         display: none;
-        &.show{
+        &.show {
           display: flex;
         }
-        &:hover{
-          g rect{
-            &:nth-child(1){
+        &:hover {
+          g rect {
+            &:nth-child(1) {
               stroke: $primary;
               fill: $primary;
             }
-            &:nth-child(2){
+            &:nth-child(2) {
               fill: $white;
             }
-            &:nth-child(3){
+            &:nth-child(3) {
               fill: $white;
             }
           }
@@ -306,11 +312,8 @@ img {
         filter: brightness(0.5);
       }
       .startbanner-txtbx {
-        position: absolute;
         width: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include center(both);
         color: $white;
         z-index: 1;
         opacity: 1;
@@ -386,10 +389,10 @@ img {
     flex-direction: column;
     gap: 120px;
     align-items: center;
-    @media (max-width : 1600px) {
+    @media (max-width: 1600px) {
       gap: 80px;
     }
-    @media (max-width : 1200px) {
+    @media (max-width: 1200px) {
       gap: 60px;
     }
     @media (max-width: 767px) {
@@ -401,8 +404,8 @@ img {
       margin: 0 auto;
       background-color: #f5f7f9;
       border-radius: 40px;
-      &:hover .product-bottombx{
-        height: auto; 
+      &:hover .product-bottombx {
+        height: auto;
       }
       .productwrap {
         color: $black-1e;
@@ -431,20 +434,19 @@ img {
     .product-topbx {
       display: flex;
       gap: 0 80px;
-      img{
+      img {
         object-fit: scale-down;
       }
-      @media (max-width : 1800px) {
+      @media (max-width: 1800px) {
         gap: 60px;
       }
-      @media (max-width : 1600px) {
+      @media (max-width: 1600px) {
         gap: 40px;
       }
-      @media (max-width : 1200px) {
+      @media (max-width: 1200px) {
         gap: 20px;
-
       }
-      @media (max-width : 1020px) {
+      @media (max-width: 1020px) {
       }
       @media (max-width: 767px) {
         flex-direction: column;
@@ -457,15 +459,15 @@ img {
         flex-direction: column;
         gap: 60px;
         width: 100%;
-        @media (max-width : 1600px) {
+        @media (max-width: 1600px) {
           gap: 40px;
         }
-        @media (max-width : 1400px) {
+        @media (max-width: 1400px) {
           gap: 20px;
         }
-        @media (max-width : 1200px) {
+        @media (max-width: 1200px) {
         }
-        @media (max-width : 1020px) {
+        @media (max-width: 1020px) {
         }
         @media (max-width: 767px) {
           width: auto;
@@ -475,12 +477,7 @@ img {
         > h3 {
           font-size: 64px;
           font-weight: $fw-bold;
-          background-image: linear-gradient(
-            to right,
-            #6c93ea,
-            #e5bfc3,
-            #9ae5dc
-          );
+          background-image: linear-gradient(to right, #6c93ea, #e5bfc3, #9ae5dc);
           -webkit-background-clip: text;
           color: transparent;
           @media (max-width: 1800px) {
@@ -522,23 +519,21 @@ img {
           }
         }
         .barogagi {
-          position: absolute;
-          top: 5%;
-          right: 0;
+          @include center(self,5%,0);
           cursor: pointer;
           display: flex;
           align-items: center;
           font-size: 16px;
-          @media (max-width : 1600px) {
+          @media (max-width: 1600px) {
             font-size: 15px;
           }
-          @media (max-width : 1400px) {
+          @media (max-width: 1400px) {
             font-size: 14px;
           }
-          @media (max-width : 1200px) {
+          @media (max-width: 1200px) {
             font-size: 13px;
           }
-          @media (max-width : 1020px) {
+          @media (max-width: 1020px) {
             font-size: 12px;
           }
           @media (max-width: 767px) {
@@ -547,14 +542,14 @@ img {
           }
           > div:nth-child(1) {
             padding-right: 16px;
-            @media (max-width : 1600px) {
+            @media (max-width: 1600px) {
             }
-            @media (max-width : 1400px) {
+            @media (max-width: 1400px) {
               padding-right: 8px;
             }
-            @media (max-width : 1200px) {
+            @media (max-width: 1200px) {
             }
-            @media (max-width : 1020px) {
+            @media (max-width: 1020px) {
               padding-right: 4px;
             }
             @media (max-width: 767px) {
@@ -564,13 +559,13 @@ img {
           > div:nth-child(2) {
             width: 20px;
             height: 20px;
-            @media (max-width : 1600px) {
+            @media (max-width: 1600px) {
             }
-            @media (max-width : 1400px) {
+            @media (max-width: 1400px) {
             }
-            @media (max-width : 1200px) {
+            @media (max-width: 1200px) {
             }
-            @media (max-width : 1020px) {
+            @media (max-width: 1020px) {
               width: 12px;
               height: 12px;
             }
@@ -588,15 +583,15 @@ img {
     .product-bottombx {
       height: 0;
       overflow: hidden;
-      @media (max-width:767px) {
+      @media (max-width: 767px) {
         height: auto;
       }
-      .product-libx{
+      .product-libx {
         margin-top: 80px;
-        @media (max-width : 1600px) {
+        @media (max-width: 1600px) {
           margin-top: 60px;
         }
-        @media (max-width : 1020px) {
+        @media (max-width: 1020px) {
           margin-top: 40px;
         }
         @media (max-width: 767px) {
@@ -605,17 +600,18 @@ img {
         > ul {
           display: flex;
           gap: 40px;
-          @media (max-width : 1600px) {
+          @media (max-width: 1600px) {
             gap: 32px;
           }
-          @media (max-width : 1400px) {
+          @media (max-width: 1400px) {
             gap: 24px;
           }
-          @media (max-width : 1020px) {
+          @media (max-width: 1020px) {
             padding: 20px;
           }
           @media (max-width: 767px) {
             flex-direction: column;
+            padding: 0;
             gap: 20px;
           }
           > li {
@@ -624,15 +620,15 @@ img {
             background: $white;
             box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
             padding: 40px;
-            @media (max-width : 1600px) {
+            @media (max-width: 1600px) {
             }
-            @media (max-width : 1400px) {
+            @media (max-width: 1400px) {
               padding: 32px;
             }
-            @media (max-width : 1200px) {
+            @media (max-width: 1200px) {
               padding: 24px;
             }
-            @media (max-width : 1020px) {
+            @media (max-width: 1020px) {
             }
             @media (max-width: 767px) {
               padding: 16px;
@@ -680,7 +676,6 @@ img {
             }
           }
         }
-
       }
     }
   }
@@ -746,19 +741,18 @@ img {
             max-width: 400px;
             aspect-ratio: 400/480;
             height: auto;
-            
           }
           > div:nth-child(1) {
             flex: 1;
             font-size: 28px;
             gap: 16px;
-            @media (max-width:767px) {
+            @media (max-width: 767px) {
               font-size: 24px;
             }
           }
           > div:nth-child(2) {
             height: 260px;
-            @media (max-width:767px) {
+            @media (max-width: 767px) {
               height: 100%;
             }
           }
@@ -802,8 +796,8 @@ img {
         color: $primary;
         background-color: $white;
         font-weight: $fw-bold;
-        svg{
-          path{
+        svg {
+          path {
             fill: $primary;
           }
         }
@@ -843,7 +837,7 @@ img {
         display: flex;
         width: 200%;
         position: relative;
-        @media (max-width:767px) {
+        @media (max-width: 767px) {
           width: 100%;
           gap: 20px;
           flex-direction: column;
@@ -881,12 +875,12 @@ img {
           }
           > div:nth-child(1) {
             width: 200px;
-            @media (max-width : 767px) {
+            @media (max-width: 767px) {
               width: 80px;
             }
           }
           > div:nth-child(2) {
-            @media (max-width:767px) {
+            @media (max-width: 767px) {
               flex: 1;
             }
             > p {
@@ -989,7 +983,7 @@ img {
       border: 1px solid $white;
       border-radius: 60px;
       padding: 20px 40px;
-      
+
       @media (max-width: 1600px) {
         padding: 18px 36px;
       }
@@ -1011,16 +1005,17 @@ img {
         background-color: $white;
         color: $black-1e;
         font-weight: $fw-bold;
-        svg{
+        svg {
           path {
-            transition: .3s;
+            transition: 0.3s;
             fill: $black-1e;
           }
         }
       }
       span {
-        svg{
-          width: 30px;height: 14px;
+        svg {
+          width: 30px;
+          height: 14px;
         }
       }
     }
@@ -1096,7 +1091,7 @@ img {
   align-items: center;
   justify-content: center;
   display: none;
-  svg{
+  svg {
     width: 60px;
     height: 60px;
     @media (max-width: 767px) {
@@ -1105,11 +1100,11 @@ img {
     }
   }
   &:hover {
-    rect{
-      &:nth-child(1){
+    rect {
+      &:nth-child(1) {
         fill: $primary;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         fill: $white;
       }
     }
@@ -1153,8 +1148,7 @@ img {
         }
         border: 3px solid transparent;
         border-radius: 40px;
-        background-image: linear-gradient(#fff, #fff),
-          linear-gradient(to right, $primary 0%, purple 60%, aqua 100%);
+        background-image: linear-gradient(#fff, #fff), linear-gradient(to right, $primary 0%, purple 60%, aqua 100%);
         background-origin: border-box;
         background-clip: content-box, border-box;
         .wrap {
@@ -1210,10 +1204,7 @@ img {
               flex-basis: 100%;
               aspect-ratio: 400/240;
               > span {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                @include center(both);
                 color: $white;
                 font-weight: $fw-bold;
                 font-size: 40px;
@@ -1258,7 +1249,7 @@ img {
         }
         > p {
           margin-top: 20px;
-        } 
+        }
       }
       .content {
         > ul {
@@ -1275,19 +1266,19 @@ img {
             border-radius: 40px;
             box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
             align-items: center;
-            @media (max-width : 1800px) {
+            @media (max-width: 1800px) {
               padding: 60px;
               gap: 60px;
             }
-            @media (max-width : 1600px) {
+            @media (max-width: 1600px) {
               padding: 50px;
               gap: 24px;
             }
-            @media (max-width : 1400px) {
+            @media (max-width: 1400px) {
               padding: 40px;
               gap: 12px;
             }
-            @media (max-width : 1200px) {
+            @media (max-width: 1200px) {
             }
             @media (max-width: 1020px) {
               flex-direction: column;
@@ -1306,15 +1297,15 @@ img {
               font-weight: $fw-bold;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
-              @media (max-width : 1800px) {
+              @media (max-width: 1800px) {
                 font-size: 80px;
               }
-              @media (max-width : 1600px) {
+              @media (max-width: 1600px) {
               }
-              @media (max-width : 1400px) {
+              @media (max-width: 1400px) {
                 font-size: 60px;
               }
-              @media (max-width : 1200px) {
+              @media (max-width: 1200px) {
               }
               @media (max-width: 767px) {
                 font-size: 40px;
@@ -1341,7 +1332,6 @@ img {
 }
 // service - neul_silver_care
 #service-neul_silver_care-container {
-  
   .second-sec {
     .content {
       padding: 180px 240px;
@@ -1367,7 +1357,7 @@ img {
         gap: 40px;
       }
       .txtbx {
-        h3{
+        h3 {
           font-weight: $fw-bold;
         }
         > p {
@@ -1388,13 +1378,13 @@ img {
           overflow: hidden;
           border-radius: 40px;
           padding: 40px 40px 0 40px;
-          &:nth-child(1){
+          &:nth-child(1) {
             background: $bg-f5 url(../../assets/images/neul_silver_care/silsigan.png) no-repeat center/cover;
           }
-          &:nth-child(2){
+          &:nth-child(2) {
             background: $bg-f5 url(../../assets/images/neul_silver_care/환자알림내역.png) no-repeat center/cover;
           }
-          &:nth-child(3){
+          &:nth-child(3) {
             background: $bg-f5 url(../../assets/images/neul_silver_care/환자응급호출.png) no-repeat center/cover;
           }
         }
@@ -1429,7 +1419,7 @@ img {
         > div {
           display: flex;
           justify-content: space-between;
-          a { 
+          a {
             color: $black-1e;
             font-size: 18px;
             border-bottom: 1px solid $black-1e;
@@ -1498,17 +1488,17 @@ img {
                   font-size: 16px;
                 }
               }
-              > div{
+              > div {
                 display: flex;
                 align-items: center;
                 gap: 8px;
-                > div{
-                  &:nth-child(1){
+                > div {
+                  &:nth-child(1) {
                     font-size: 18px;
                     font-weight: $fw-medium;
                     line-height: 155%;
                   }
-                  &:nth-child(2){
+                  &:nth-child(2) {
                     display: inline-block;
                     width: 32px;
                     height: 32px;
@@ -1551,9 +1541,7 @@ img {
         > div {
           width: 100%;
           padding: 40px 24px 24px 40px;
-          position: absolute;
-          top: 0%;
-          left: 0%;
+          @include center(def);
           > a {
             font-size: 28px;
             font-weight: $fw-bold;
@@ -1897,17 +1885,17 @@ img {
                   font-size: 16px;
                 }
               }
-              > div{
+              > div {
                 display: flex;
                 align-items: center;
                 gap: 8px;
-                > div{
-                  &:nth-child(1){
+                > div {
+                  &:nth-child(1) {
                     font-size: 18px;
                     font-weight: $fw-medium;
                     line-height: 155%;
                   }
-                  &:nth-child(2){
+                  &:nth-child(2) {
                     display: inline-block;
                     width: 32px;
                     height: 32px;
@@ -1947,11 +1935,9 @@ img {
         border-radius: 40px;
         overflow: hidden;
         > div {
+          @include center(def);
           width: 100%;
           padding: 40px 24px 24px 40px;
-          position: absolute;
-          top: 0%;
-          left: 0%;
           > a {
             font-size: 28px;
             font-weight: $fw-bold;
@@ -1995,7 +1981,7 @@ img {
       gap: 40px;
       margin-top: 68px;
     }
-    
+
     .middlebx {
       width: 1440px;
       margin: 0 auto;
@@ -2041,7 +2027,7 @@ img {
           @media (max-width: 1600px) {
             width: auto;
             height: auto;
-            max-width: 400px; 
+            max-width: 400px;
             max-height: 516px;
             aspect-ratio: 400/516;
           }
@@ -2062,19 +2048,19 @@ img {
               color: $black-1e;
               font-size: 28px;
               line-height: 142%;
-              @media (max-width : 1600px) {
+              @media (max-width: 1600px) {
                 font-size: 24px;
               }
-              @media (max-width : 1400px) {
+              @media (max-width: 1400px) {
                 // font-size: 22px;
               }
-              @media (max-width : 1200px) {
+              @media (max-width: 1200px) {
                 font-size: 24px;
               }
-              @media (max-width : 767px) {
+              @media (max-width: 767px) {
                 font-size: 24px;
               }
-              span{
+              span {
                 white-space: normal;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
@@ -2082,7 +2068,6 @@ img {
                 overflow: hidden;
                 text-overflow: ellipsis;
               }
-              
             }
           }
           .imgbx {
@@ -2091,14 +2076,13 @@ img {
         }
       }
     }
-    
   }
 }
 // news - press_release_detail
 #press_release_detail-container {
   .main {
     margin-top: 100px;
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       margin-top: 68px;
     }
     > article {
@@ -2305,7 +2289,7 @@ img {
       padding: 40px 24px 80px;
       margin-top: 68px;
     }
-    
+
     .middlebx {
       > ul {
         display: flex;
@@ -2342,6 +2326,7 @@ img {
                 color: $black-1e;
                 flex: 1 0 0;
                 font-size: 28px;
+                font-weight: $fw-medium;
                 @media (max-width: 1600px) {
                   font-size: 27px;
                 }
@@ -2380,9 +2365,7 @@ img {
               }
             }
             .date {
-              position: absolute;
-              right: 0;
-              top: 0;
+              @include center(self,0,0);
               font-size: 14px;
               line-height: 150%;
               @media (max-width: 767px) {
@@ -2393,7 +2376,6 @@ img {
         }
       }
     }
-    
   }
 }
 
@@ -2425,7 +2407,7 @@ img {
       padding: 40px 24px 80px;
       margin-top: 68px;
     }
-    
+
     .middlebx {
       > ul {
         display: flex;
@@ -2443,6 +2425,8 @@ img {
           @media (max-width: 767px) {
             font-size: 16px;
             line-height: 150%;
+            padding: 20px 0;
+            gap: 20px;
           }
           a {
             color: $black-1e;
@@ -2465,6 +2449,7 @@ img {
             @media (max-width: 767px) {
               flex-direction: column;
               gap: 4px;
+              text-align: center;
             }
           }
           .titdate {
@@ -2489,14 +2474,13 @@ img {
         }
       }
     }
-    
   }
 }
 // help - notice_detail
 #notice_detail-container {
   .main {
     margin-top: 100px;
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       margin-top: 68px;
     }
     > .content {
@@ -2518,7 +2502,7 @@ img {
         padding: 80px 40px 100px;
       }
       @media (max-width: 767px) {
-        padding: 40px 0;
+        padding: 40px 0 80px;
         gap: 40px;
       }
       .txtbx {
@@ -2528,31 +2512,6 @@ img {
         gap: 20px;
         @media (max-width: 767px) {
           padding: 0 24px;
-        }
-        > h2 {
-          color: $black-1e;
-          font-size: 64px;
-          font-weight: $fw-bold;
-          line-height: 84px;
-          letter-spacing: -1px;
-          line-height: 131%;
-          font-size: 64px;
-          @media (max-width: 1600px) {
-            font-size: 60px;
-          }
-          @media (max-width: 1400px) {
-            font-size: 56px;
-          }
-          @media (max-width: 1200px) {
-            font-size: 52px;
-          }
-          @media (max-width: 1020px) {
-            font-size: 48px;
-          }
-          @media (max-width: 767px) {
-            font-size: 32px;
-            line-height: 125%;
-          }
         }
         > div {
           display: flex;
@@ -2576,6 +2535,9 @@ img {
           @media (max-width: 767px) {
             font-size: 14px;
             line-height: 142%;
+          }
+          > div:nth-child(1) {
+            font-weight: $fw-medium;
           }
           > div:nth-child(2) {
             color: $gray-6d;
@@ -2605,7 +2567,7 @@ img {
         }
         @media (max-width: 767px) {
           padding: 0 24px;
-          font-size: 16px;
+          font-size: 18px;
         }
       }
 
@@ -2805,7 +2767,6 @@ img {
         }
       }
     }
-    
   }
 }
 
@@ -2867,17 +2828,15 @@ img {
   }
   @media (max-width: 767px) {
     margin-top: 68px;
-    padding: 80px 24px; 
+    padding: 80px 24px;
     height: calc(100vh - 68px);
   }
   .txtbx {
-    position: absolute;
+    @include center(vertical);
     display: flex;
     flex-direction: column;
     gap: 60px;
     color: $white;
-    top: 50%;
-    transform: translateY(-50%);
     z-index: 1;
     letter-spacing: -1px;
     font-weight: $fw-bold;
@@ -2885,6 +2844,7 @@ img {
       font-weight: $fw-bold;
       font-size: 120px;
       line-height: 133%;
+      color: $white;
       @media (max-width: 1600px) {
         font-size: 100px;
       }
@@ -2925,9 +2885,7 @@ img {
     }
   }
   .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include center(def);
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -2958,28 +2916,35 @@ img {
       line-height: 125%;
     }
   }
-  .divide {
-    gap: 20px;
-    @media (max-width: 767px) {
-      gap: 8px;
-    }
-  }
   > .swiper {
     margin-top: 40px;
-    .swiper-slide {
-      width: auto;
-      padding: 12px 24px;
-      border-radius: 48px;
-      border: 2px solid rgba(30, 30, 30, 0.1);
-      background: #fff;
-      cursor: pointer;
-      &.active {
-        background: $primary;
-        color: $white;
+    .swiper-wrapper {
+      gap: 20px;
+      letter-spacing: -1px;
+      @media (max-width: 767px) {
+        gap: 8px;
       }
-      > a {
+      .swiper-slide {
+        width: auto;
+        padding: 12px 24px;
+        border-radius: 48px;
+        border: 2px solid rgba(30, 30, 30, 0.1);
+        background: #fff;
+        cursor: pointer;
         font-size: 20px;
+        line-height: 160%;
+        font-weight: $fw-medium;
         color: $black-1e;
+        @media (max-width: 767px) {
+          font-size: 16px;
+        }
+        &.active {
+          background: $primary;
+          color: $white;
+        }
+        @media (max-width: 767px) {
+          padding: 12px 20px;
+        }
       }
     }
   }
@@ -3067,161 +3032,170 @@ img {
       }
     }
   }
-} 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .txtbx{
-    font-size: 36px;
-    color : $gray-6d;
+.txtbx {
+  font-size: 36px;
+  color: $gray-6d;
+  letter-spacing: -1px;
+  @media (max-width: 2000px) {
+    font-size: 34px;
+  }
+  @media (max-width: 1800px) {
+    font-size: 30px;
+  }
+  @media (max-width: 1600px) {
+    font-size: 28px;
+  }
+  @media (max-width: 1400px) {
+    font-size: 26px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 24px;
+  }
+  @media (max-width: 1020px) {
+    font-size: 22px;
+  }
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 160%;
+  }
+  h2 {
+    color: $black-1e;
+    font-size: 64px;
+    font-weight: $fw-bold;
+    line-height: 84px;
     letter-spacing: -1px;
-    @media (max-width: 2000px) {
-      font-size: 34px;
-    }
-    @media (max-width: 1800px) {
-      font-size: 30px;
-    }
+    line-height: 131%;
+    font-size: 64px;
     @media (max-width: 1600px) {
-      font-size: 28px;
+      font-size: 60px;
     }
     @media (max-width: 1400px) {
-      font-size: 26px;
+      font-size: 56px;
     }
     @media (max-width: 1200px) {
-      font-size: 24px;
+      font-size: 52px;
     }
     @media (max-width: 1020px) {
-      font-size: 22px;
+      font-size: 48px;
     }
     @media (max-width: 767px) {
-      font-size: 20px;
-      line-height: 160%;
+      font-size: 32px;
+      line-height: 125%;
     }
+  }
+  h3 {
+    font-size: 64px;
+    color: $black-1e;
+    line-height: 131%;
+    @media (max-width: 1600px) {
+      font-size: 60px;
+    }
+    @media (max-width: 1400px) {
+      font-size: 56px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 52px;
+    }
+    @media (max-width: 1020px) {
+      font-size: 48px;
+    }
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
+  }
+  p {
+    line-height: 155%;
+  }
+  li {
+    line-height: 155%;
+  }
+  > h4 {
+    font-size: 36px;
+    font-weight: $fw-bold;
+    line-height: 155%;
+    @media (max-width: 1600px) {
+      font-size: 34px;
+    }
+    @media (max-width: 1400px) {
+      font-size: 32px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
+    @media (max-width: 1020px) {
+      font-size: 28px;
+    }
+    @media (max-width: 767px) {
+      font-size: 24px;
+      line-height: 150%;
+    }
+  }
+  &.h3fz48 {
     h3 {
-      font-size: 64px;
-      color: $black-1e;
-      line-height: 131%;
+      font-size: 48px;
+      line-height: 150%;
       @media (max-width: 1600px) {
-        font-size: 60px;
+        font-size: 44px;
+      }
+      @media (max-width: 1600px) {
+        font-size: 42px;
       }
       @media (max-width: 1400px) {
-        font-size: 56px;
+        font-size: 40px;
       }
       @media (max-width: 1200px) {
-        font-size: 52px;
+        font-size: 40px;
       }
       @media (max-width: 1020px) {
-        font-size: 48px;
+        font-size: 38px;
       }
       @media (max-width: 767px) {
-        font-size: 32px;
-      }
-    }
-    p{
-      line-height: 155%;
-    }
-    li{
-      line-height: 155%;
-    }
-    > h4 {
-      font-size: 36px;
-      font-weight: $fw-bold;
-      line-height: 155%;
-      @media (max-width: 1600px) {
-        font-size: 34px;
-      }
-      @media (max-width: 1400px) {
-        font-size: 32px;
-      }
-      @media (max-width: 1200px) {
-        font-size: 30px;
-      }
-      @media (max-width: 1020px) {
         font-size: 28px;
-      }
-      @media (max-width: 767px) {
-        font-size: 24px;
-        line-height: 150%;
-      }
-    }
-    &.h3fz48{
-      h3{
-        font-size: 48px;
-        line-height: 150%;
-        @media (max-width: 1600px) {
-          font-size: 44px;
-        }
-        @media (max-width: 1600px) {
-          font-size: 42px;
-        }
-        @media (max-width: 1400px) {
-          font-size: 40px;
-        }
-        @media (max-width: 1200px) {
-          font-size: 40px;
-        }
-        @media (max-width: 1020px) {
-          font-size: 38px;
-        }
-        @media (max-width: 767px) {
-          font-size: 28px;
-        }
       }
     }
   }
-
-.contentP{
-  padding: 180px 240px;
-      @media (max-width: 1600px) {
-        padding: 120px 200px;
-      }
-      @media (max-width: 1400px) {
-        padding: 100px 150px;
-      }
-      @media (max-width: 1200px) {
-        padding: 80px 100px;
-      }
-      @media (max-width: 1020px) {
-        padding: 60px 40px;
-      }
-      @media (max-width: 767px) {
-        padding: 40px 24px;
-      }
 }
 
-.listP{
+.contentP {
+  padding: 180px 240px;
+  @media (max-width: 1600px) {
+    padding: 120px 200px;
+  }
+  @media (max-width: 1400px) {
+    padding: 100px 150px;
+  }
+  @media (max-width: 1200px) {
+    padding: 80px 100px;
+  }
+  @media (max-width: 1020px) {
+    padding: 60px 40px;
+  }
+  @media (max-width: 767px) {
+    padding: 40px 24px;
+  }
+}
+
+.listP {
   padding: 120px 240px 180px 240px;
-@media (max-width: 1600px) {
-      padding: 120px 200px 180px;
-    }
-    @media (max-width: 1400px) {
-      padding: 120px 150px 180px;
-      gap: 100px;
-    }
-    @media (max-width: 1200px) {
-      padding: 120px 100px 180px;
-      gap: 80px;
-    }
-    @media (max-width: 1020px) {
-      padding: 80px 40px 100px;
-      gap: 60px;
-    }
-    @media (max-width: 767px) {
-      gap: 40px;
-      padding: 40px 24px 80px;
-    }
+  @media (max-width: 1600px) {
+    padding: 120px 200px 180px;
+  }
+  @media (max-width: 1400px) {
+    padding: 120px 150px 180px;
+    gap: 100px;
+  }
+  @media (max-width: 1200px) {
+    padding: 120px 100px 180px;
+    gap: 80px;
+  }
+  @media (max-width: 1020px) {
+    padding: 80px 40px 100px;
+    gap: 60px;
+  }
+  @media (max-width: 767px) {
+    gap: 40px;
+    padding: 40px 24px 80px;
+  }
 }
