@@ -5419,7 +5419,7 @@ img {
 
 @media (max-width: 767px) {
   .topbx > .swiper .swiper-wrapper .swiper-slide {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -5430,7 +5430,7 @@ img {
 
 @media (max-width: 767px) {
   .topbx > .swiper .swiper-wrapper .swiper-slide {
-    padding: 12px 20px;
+    padding: 10px 18px;
   }
 }
 

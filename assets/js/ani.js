@@ -122,6 +122,8 @@ let ani = {
     // help
     // slide 열고 닫기 클래스 on주면 열림
     ani.siblingsSlide("#faq_list-container .faq-slide li")
+
+    
   },
   scrollTop: function () {
     $(window).scrollTop(0);

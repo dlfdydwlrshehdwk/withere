@@ -9,10 +9,17 @@ let swiper = {
         grabCursor : true
       })
     })
+
+    
+    
+
 	},
+  draggable : function(){
+    $('.divide').draggable()
+  }
 }
 
 $(function () {
 	swiper.init();
-	
+	swiper.draggable();
 });
