@@ -1,32 +1,56 @@
 let scrollEvent = {
   init: function () {
-    $(window).on("scroll", scrollEvent.scrollTopBtn);
+    
+
+
+    let a = $(window).width()
+    let b = window.screen.width;
+    let c = $('.news-target').width()/100 * 40
+    let end = c - ( a - b)
+    
+    
+    
+    // let timer;
+    // function resizeDone(){
+    // }
+    // $(window).on('scroll',function(){
+    //   clearTimeout(timer);
+    //   timer = setTimeout(resizeDone , 150)
+    // })
+
+
+
+
+    scrollEvent.scrollTopBtn();
     scrollEvent.gsapAni();
-    scrollEvent.horizontalScroll();
+    scrollEvent.horizontalScroll(end);
+
   },
 
-  horizontalScroll: function () {
-    gsap.registerPlugin(ScrollTrigger);
-    // 가로스크롤 되게하기
-    ScrollTrigger.matchMedia({
-      // 반응형 768넘어가면 이벤트먹게
-      "(min-width : 768px)": function () {
-        let ex = gsap
-          .timeline({
-            // 타임라인에 추가할 수 있다!
-            scrollTrigger: {
-              trigger: ".news", // trigger 대상
-              pin: true, // trigger 고정 스티키기능 - 가로스크롤할거면 필수
-              start: "top top", // trigger가 viewport 상단에 닿을때 시작
-              end: "+=1500", // 시작지점에서 500px를 스크롤한 후 끝
-              scrub: 1, // 애니메이션 부드럽게 진행
-            },
-          })
-          .to(".news-target", {
-            left: "-40%",
-          });
-      },
-    });
+  horizontalScroll: function (end) {
+    
+      gsap.registerPlugin(ScrollTrigger);
+      // 가로스크롤 되게하기
+      ScrollTrigger.matchMedia({
+        // 반응형 768넘어가면 이벤트먹게
+        "(min-width : 768px)": function () {
+          let ex = gsap
+            .timeline({
+              // 타임라인에 추가할 수 있다!
+              scrollTrigger: {
+                trigger: ".news", // trigger 대상
+                pin: true, // trigger 고정 스티키기능 - 가로스크롤할거면 필수
+                anticipatePin : 1,
+                start: "top top", // trigger가 viewport 상단에 닿을때 시작
+                end: "+=1500", // 시작지점에서 500px를 스크롤한 후 끝
+                scrub: 1, // 애니메이션 부드럽게 진행
+              },
+            })
+            .to(".news-target", {
+              left: - end + "px",
+            });
+        },
+      });
   },
   gsapAni: function () {
     // startbanner 부분 가운데 텍스트박스가 스크롤에 맞춰 올라오게 설정

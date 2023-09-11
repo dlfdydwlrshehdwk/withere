@@ -22,11 +22,17 @@ let common = {
 		$(".modal").remove();
 		// $("body").css("position", "relative").css({overflowX : 'hidden',overflowY : 'auto'});
 		$(".popup").hide();
-		if($('body').hasClass('oh')){
-			return;
-		}
-		else{
+		if(!window.matchMedia("(max-width : 1600px)").matches){
+			console.log('dd')
 			$('body').removeClass('oh')
+		}
+		else {
+			if($('body').hasClass('oh')){
+				return;
+			}
+			else{
+				$('body').removeClass('oh')
+			}
 		}
 	}
 
