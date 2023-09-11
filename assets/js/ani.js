@@ -1,14 +1,57 @@
 let ani = {
   init: function () {
-
+    // 새로고침시 맨위로
     setTimeout(()=>{
       ani.scrollTop();
     },100)
-
+    // 맨위로 버튼 클릭시 맨 위로
     $(".scrolltop").click(function () {
       ani.scrollTop();
     });
 
+    // news
+    // 버튼클릭하면 파란불들어오기
+    $('.divide > div').each(function(idx,ele){
+      ani.blueCircle(ele)
+    })
+
+    // help
+    // slide 열고 닫기 클래스 on주면 열림
+    ani.siblingsSlide("#faq_list-container .faq-slide li")
+
+    // main 애니
+    ani.mainAni();
+
+  },
+  scrollTop: function () {
+    $(window).scrollTop(0);
+  },
+  blueCircle: function (target) {
+    let tg = $(target);
+
+    tg.click(function (e) {
+      e.preventDefault();
+      $(this).parent().find("div").removeClass("active");
+      $(this).addClass("active");
+    });
+  },
+  siblingsSlide : function(target){
+    $(target).click(function () {
+      let li = $(target);
+      let allListOn = li.hasClass("on");
+      let thisOn = $(this).hasClass("on");
+      if (allListOn) {
+        li.removeClass("on");
+        $(this).addClass("on");
+      } else {
+        $(this).addClass("on");
+      }
+      if (thisOn) {
+        $(this).toggleClass("on");
+      }
+    });
+  },
+  mainAni : function(){
     let width1600 = window.matchMedia('(max-width : 1600px)')
     $(window).resize(function () {
       if (width1600.matches == false) {
@@ -112,47 +155,7 @@ let ani = {
       $(this).addClass("active");
     });
 
-    // news
-    // 버튼클릭하면 파란불들어오기
-    ani.blueCircle("#news-container .divide > div");
-    ani.blueCircle("#data_list-container .divide > div");
-    ani.blueCircle("#notice_list-container .divide > div");
-    ani.blueCircle("#faq_list-container .divide > div");
-
-    // help
-    // slide 열고 닫기 클래스 on주면 열림
-    ani.siblingsSlide("#faq_list-container .faq-slide li")
-
-    
-  },
-  scrollTop: function () {
-    $(window).scrollTop(0);
-  },
-  blueCircle: function (target) {
-    let tg = $(target);
-
-    tg.click(function (e) {
-      e.preventDefault();
-      $(this).parent().find("div").removeClass("active");
-      $(this).addClass("active");
-    });
-  },
-  siblingsSlide : function(target){
-    $(target).click(function () {
-      let li = $(target);
-      let allListOn = li.hasClass("on");
-      let thisOn = $(this).hasClass("on");
-      if (allListOn) {
-        li.removeClass("on");
-        $(this).addClass("on");
-      } else {
-        $(this).addClass("on");
-      }
-      if (thisOn) {
-        $(this).toggleClass("on");
-      }
-    });
-  },
+  }
 };
 
 $(function () {

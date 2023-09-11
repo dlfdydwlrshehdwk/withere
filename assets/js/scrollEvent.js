@@ -3,10 +3,10 @@ let scrollEvent = {
     
 
 
-    let a = $(window).width()
-    let b = window.screen.width;
-    let c = $('.news-target').width()/100 * 40
-    let end = c - ( a - b)
+    let windW = $(window).width()
+    let winSW = window.screen.width;
+    let targetW = $('.news-target').width()/100 * 40
+    let end = targetW - ( windW - winSW)
     
     
     
