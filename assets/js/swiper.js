@@ -10,6 +10,7 @@ let swiper = {
       })
     })
 
+    swiper.draggable()
     
     
 
@@ -21,5 +22,4 @@ let swiper = {
 
 $(function () {
 	swiper.init();
-	swiper.draggable();
 });
