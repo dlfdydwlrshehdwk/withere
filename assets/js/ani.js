@@ -22,6 +22,9 @@ let ani = {
     // main 애니
     ani.mainAni();
 
+    // swiper
+    this.swiperAni();
+
   },
   scrollTop: function () {
     $(window).scrollTop(0);
@@ -155,7 +158,22 @@ let ani = {
       $(this).addClass("active");
     });
 
-  }
+  },
+  swiperAni:function(){
+
+    $('.swiper').each(function(idx,ele){
+      const swiper = new Swiper(ele,{
+        slidesPerView : 'auto',
+        slideToClickedSlide : true,
+        grabCursor : true
+      })
+    })
+
+    $('.divide').draggable()
+    
+    
+
+	},
 };
 
 $(function () {
