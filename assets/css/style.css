@@ -5827,6 +5827,15 @@ img {
   }
 }
 
+.blank {
+  height: 100vh;
+  width: 100%;
+  background-color: #e5bfc3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*! jQuery UI - v1.13.2 - 2022-12-19
 * http://jqueryui.com
 * Includes: draggable.css, core.css, resizable.css, selectable.css, sortable.css, accordion.css, autocomplete.css, menu.css, button.css, controlgroup.css, checkboxradio.css, datepicker.css, dialog.css, progressbar.css, selectmenu.css, slider.css, spinner.css, tabs.css, tooltip.css, theme.css
