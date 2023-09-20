@@ -24,7 +24,7 @@ const test = {
       // 시작하는 트리거
       ScrollTrigger.create({
         trigger : ".content",
-        start : "top top",
+        start : "top 30%",
         onEnter : () => {
           ani.play()
           function numberWithCommas(x) {
