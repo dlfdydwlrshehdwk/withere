@@ -5853,6 +5853,170 @@ img {
   transform: translate(-50%, -50%);
 }
 
+#test.main12 .content-box.scrollchart {
+  position: relative;
+  border: 1px solid #000;
+  overflow: hidden;
+  width: 1200px;
+  height: 600px;
+}
+
+#test.main12 .inner-img {
+  position: absolute;
+  width: 100%;
+  height: 2000px;
+  background: linear-gradient(to bottom, blue, silver, white, green, gold);
+}
+
+#test.main12 .content-box.lightbox {
+  width: 400px;
+  height: 300px;
+  background: #292925;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#test.main12 .content-box.lightbox .light {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: 100%;
+  left: -100%;
+  background: rgba(255, 255, 0, 0.3);
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  transform-origin: bottom right;
+}
+
+#test.main13 .content {
+  padding: 180px 30px;
+}
+
+#test.main13 .bubble-box {
+  position: absolute;
+  border-radius: 150px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.3);
+}
+
+#test.main13 .bubble-box:nth-child(2) {
+  font-size: 48px;
+  top: 30%;
+  left: 30%;
+  background-color: pink;
+  font-size: 48px;
+  width: 40%;
+  height: 20%;
+  z-index: 1;
+}
+
+#test.main13 .bubble-box:nth-child(3) {
+  font-size: 24px;
+  top: 15%;
+  left: 25%;
+  background-color: #4edafd;
+  width: 20%;
+  height: 8%;
+}
+
+#test.main13 .bubble-box:nth-child(4) {
+  top: 25%;
+  left: 5%;
+  background-color: #9efa34;
+  font-size: 36px;
+  width: 25%;
+  height: 15%;
+}
+
+#test.main13 .bubble-box:nth-child(5) {
+  top: 40%;
+  right: 8%;
+  background-color: #ffab4a;
+  font-size: 48px;
+  width: 30%;
+  height: 20%;
+}
+
+#test.main13 .bubble-box:nth-child(6) {
+  top: 60%;
+  left: 45%;
+  background-color: #fd8dc1;
+  font-size: 48px;
+  padding: 36px 72px;
+}
+
+#test.main14 .content .content-box {
+  position: absolute;
+  bottom: 0;
+  right: 240px;
+  background: gray;
+  width: 1200px;
+  height: 800px;
+}
+
+#test.main9 .graph-set {
+  width: 800px;
+  height: 600px;
+}
+
+#test.main9 .graph-set .graph-box {
+  position: relative;
+}
+
+#test.main9 .graph-set .graph-box .graph-y {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#test.main9 .graph-set .graph-box .graph-x {
+  display: flex;
+  gap: 100px;
+  margin-left: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+#test.main9 .graph-set .graph-box .graph-x > li {
+  position: relative;
+}
+
+#test.main9 .graph-set .graph-box .graph-x > li:nth-child(1) .bar {
+  height: 100px;
+}
+
+#test.main9 .graph-set .graph-box .graph-x > li:nth-child(2) .bar {
+  height: 300px;
+}
+
+#test.main9 .graph-set .graph-box .graph-x > li:nth-child(3) .bar {
+  height: 210px;
+}
+
+#test.main9 .graph-set .graph-box .graph-x > li:nth-child(4) .bar {
+  height: 420px;
+}
+
+#test.main9 .graph-set .graph-box .graph-x > li:nth-child(5) .bar {
+  height: 250px;
+}
+
+#test.main9 .graph-set .graph-box .graph-x > li:nth-child(6) .bar {
+  height: 140px;
+}
+
+#test.main9 .graph-set .graph-box .graph-x > li > .bar {
+  position: absolute;
+  width: 10px;
+  background-color: darkcyan;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 #test .blank {
   height: 100vh;
   width: 100%;
@@ -5867,15 +6031,6 @@ img {
   min-height: calc(100vh - 100px);
   height: 100vh;
   padding: 180px 240px;
-}
-
-#test .content .content-box {
-  position: absolute;
-  bottom: 0;
-  right: 240px;
-  background: gray;
-  width: 1200px;
-  height: 800px;
 }
 
 #test .content .content-box .img-box {

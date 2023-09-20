@@ -3234,6 +3234,170 @@ img {
       }
     }
   }
+  &.main12{
+    .content-box.scrollchart{
+      position: relative;
+      border: 1px solid #000;
+      overflow: hidden;
+      width: 1200px;
+      height: 600px;
+
+    }
+    .inner-img{
+      position: absolute;
+      width: 100%;
+      height: 2000px;
+      background: linear-gradient(to bottom,blue,silver,white,green,gold);
+    }
+    .content-box.lightbox{
+      width: 400px;
+      height: 300px;
+      background: rgb(41, 41, 37);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      .light{
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        bottom: 100%;
+        left: -100%;
+        background: rgba(255, 255, 0, 0.3);
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        transform-origin: bottom right;
+      }
+    }
+  }
+  &.main13{
+    .content{
+      padding: 180px 30px;
+    }
+    .bubble-box{
+      position: absolute;
+      border-radius: 150px;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.3);
+      // transform: scale(0);
+      &:nth-child(2){
+        font-size: 48px;
+        top: 30%;
+        left: 30%;
+        background-color: pink;
+        font-size: 48px;
+        width: 40%;
+        height: 20%;
+        z-index: 1;
+      }
+      &:nth-child(3){
+        font-size: 24px;
+        top: 15%;
+        left: 25%;
+        background-color: rgb(78, 218, 253);
+        width: 20%;
+        height: 8%;
+      }
+      &:nth-child(4){
+        top: 25%;
+        left: 5%;
+        background-color: rgb(158, 250, 52);
+        font-size: 36px;
+        width: 25%;
+        height: 15%;
+      }
+      &:nth-child(5){
+        top: 40%;
+        right: 8%;
+        background-color: rgb(255, 171, 74);
+        font-size: 48px;
+        width: 30%;
+        height: 20%;
+      }
+      &:nth-child(6){
+        top: 60%;
+        left: 45%;
+        background-color: rgb(253, 141, 193);
+        font-size: 48px;
+        padding: 36px 72px;
+      }
+    }
+  }
+  &.main14 {
+    .content{
+      .content-box{
+        position: absolute;
+        bottom: 0;
+        right: 240px;
+        background: gray;
+        width: 1200px;
+        height: 800px;
+      }
+    }
+  }
+  &.main9{
+    .graph-set {
+      width: 800px;
+      height: 600px;
+      .graph-box{
+        position: relative;
+        .graph-y{
+          display: flex;
+          flex-direction: column;
+          gap: 50px;
+        }
+        .graph-x{
+          display: flex;
+          gap: 100px;
+          margin-left: 100px;
+          justify-content: center;
+          align-items: center;
+          > li{
+            position: relative;
+            &:nth-child(1){
+              .bar{
+                height: 100px;
+              }
+            }
+            &:nth-child(2){
+              .bar{
+                height: 300px;
+              }
+            }
+            &:nth-child(3){
+              .bar{
+                height: 210px;
+              }
+            }
+            &:nth-child(4){
+              .bar{
+                height: 420px;
+              }
+            }
+            &:nth-child(5){
+              .bar{
+                height: 250px;
+              }
+            }
+            &:nth-child(6){
+              .bar{
+                height: 140px;
+              }
+            }
+            > .bar{
+              position: absolute;
+              width: 10px;
+              background-color: darkcyan;
+              bottom: 100%;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+      }
+    }
+  }
   .blank {
     height: 100vh;
     width: 100%;
@@ -3248,12 +3412,6 @@ img {
     height: 100vh;
     padding: 180px 240px;
     .content-box{
-      position: absolute;
-      bottom: 0;
-      right: 240px;
-      background: gray;
-      width: 1200px;
-      height: 800px;
       .img-box{
         position: absolute;
         width: 600px;

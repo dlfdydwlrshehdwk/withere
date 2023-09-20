@@ -2,10 +2,12 @@ const test = {
   init : function(){
     this.main14()
     this.main10()
+    this.main9()
+    this.main13()
+    this.main12()
   },
   main10 : function(){
     let isMain10 = $('#test').hasClass('main10')
-    console.log(isMain10)
     if(!isMain10) return
     else {
       // 저장용 옮길것
@@ -18,7 +20,6 @@ const test = {
       //   rotation : 180,
       //   duration : 2 
       // })
-
 
       // 시작하는 트리거
       ScrollTrigger.create({
@@ -86,20 +87,98 @@ const test = {
       //   duration : 2, rotation : 180
       // })
 
-
-
-
-
-
-
-
-
     }
   },
+  main9 : function(){
+    let isMain9 = $('#test').hasClass('main9')
 
+    if(!isMain9) return
+    else {
+      const tl = gsap.from(".bar",{height : 0,duration : 2,paused : true})
+      // 시작하는 트리거
+      ScrollTrigger.create({
+        trigger : ".content",
+        start : "top 30%",
+        onEnter : () => {
+          tl.play()
+        }
+      })
+      // 초기화 트리거
+      ScrollTrigger.create({
+        trigger : ".content",
+        start : "top bottom",
+        onEnter : () => {
+          tl.pause(0)
+        }
+      })
+    }
+  },
+  main12 : function(){
+    let isMain12 = $('#test').hasClass('main12')
+    let innerH = $('.inner-img').height()
+    let boxH = $('.main12 .content-box').height()
+    let point = innerH - boxH;
 
+    if(!isMain12) return
+    else {
+     const tl = gsap.to(".inner-img",{
+      top : -point,
+      duration : 1,
 
+    })
 
+    const tl2 = gsap.timeline()
+    tl2
+    .from(".light",{
+      scale : 0,
+      duration : 2,
+      // delay : 1
+    })
+    .to(".light",{
+      autoAlpha : 0,
+      duration : .1
+    })
+    .to(".light",{
+      autoAlpha : 1,
+      duration : .1
+    })
+    .to(".light",{
+      autoAlpha : 0,
+      duration : .1
+    })
+    .to(".light",{
+      autoAlpha : 1,
+      duration : .1
+    })
+    .to(".light",{
+      autoAlpha : 0,
+      duration : .1
+    })
+    .to(".light",{
+      autoAlpha : 1,
+      duration : .1
+    })
+
+      // 시작하는 트리거
+      ScrollTrigger.create({
+        trigger : ".content",
+        start : "top 30%",
+        onEnter : () => {
+          tl.play()
+          tl2.play()
+        }
+      })
+      // 초기화 트리거
+      ScrollTrigger.create({
+        trigger : ".content",
+        start : "top bottom",
+        onEnter : () => {
+          tl.pause(0)
+          tl2.pause(0)
+        }
+      })
+    }
+  },
   main14 : function(){
 
     let isMain14 = $('#test').hasClass('main14')
@@ -119,8 +198,55 @@ const test = {
         }
       })
     }
+  },
+  // temp : function(){
+  //   let isClass = $('#test').hasClass('Class')
 
+  //   if(!isClass) return
+  //   else {}
+  // }
+  main13 : function(){
+    let isMain13 = $('#test').hasClass('main13')
 
+    if(!isMain13) return
+    else {
+
+      const tl = gsap.timeline({
+        defaults: {duration : .3}
+      })
+      tl.from(".box1",{
+        scale : 0
+      },.3)
+      tl.from(".box2",{
+        scale : 0
+      },1.1)
+      tl.from(".box3",{
+        scale : 0
+      },1.2)
+      tl.from(".box4",{
+        scale : 0
+      },1.4)
+      tl.from(".box5",{
+        scale : 0
+      },1.1)
+
+      // 시작하는 트리거
+      ScrollTrigger.create({
+        trigger : ".content",
+        start : "top 30%",
+        onEnter : () => {
+          tl.play()
+        }
+      })
+      // 초기화 트리거
+      ScrollTrigger.create({
+        trigger : ".content",
+        start : "top bottom",
+        onEnter : () => {
+          tl.pause(0)
+        }
+      })
+    }
   }
 }
 
