@@ -3200,13 +3200,254 @@ img {
   }
 }
 
-
+// 테스트 팝업
+.pop-monitoring{
+  display: block;
+  .tit-set{
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: $fw-bold
+  }
+  .table-set{
+    .table-top{
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 20px;
+      .fwB{
+        font-weight: $fw-bold;
+        font-size: 20px;
+      }
+    }
+  }
+  .table-total{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    padding: 30px;
+    height: 500px;
+    overflow-y: scroll;
+    tr{
+      > td:nth-child(2)::after{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        margin-top: 2px;
+      }
+    }
+    th{
+      border-top: 2px solid #000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      &:nth-child(1){
+        color: $primary;
+      }
+    }
+    td{
+      padding: 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    text-align: center;
+    .male::before{
+      content: 'M';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: blue;
+      font-weight: bold;
+      font-size: 14px;
+      background-color: skyblue;
+      padding: 4px;
+      border-radius: 75%;
+    }
+    .female::before{
+      content: 'F';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: purple;
+      font-weight: bold;
+      font-size: 14px;
+      background-color: plum;
+      padding: 4px;
+      border-radius: 75%;
+    }
+    .risk-r::before{
+      content: '저위험';
+      display: inline-block;
+      width: 70px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: orange;
+      font-weight: bold;
+      font-size: 14px;
+      border: 1px solid orange;
+      padding: 4px;
+      border-radius: 75px;
+    }
+    .risk-m::before{
+      content: '중위험';
+      display: inline-block;
+      width: 70px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: yellowgreen;
+      font-weight: bold;
+      font-size: 14px;
+      border: 1px solid yellowgreen;
+      padding: 4px;
+      border-radius: 75px;
+    }
+    .risk-h::before{
+      content: '고위험';
+      display: inline-block;
+      width: 70px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      font-size: 14px;
+      border: 1px solid red;
+      padding: 4px;
+      border-radius: 75px;
+    }
+  }
+  .table-bottom{
+    width: 100px;
+    height: 50px;
+    color: $white;
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+}
 
 
 // 테스트
 #test{
-  
-  &.main10 {
+  .main567{
+    .content {
+      height: 100vh;
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 0;
+      width: 300%;
+      .hrslide{
+        width: 100%;
+        position: relative;
+        padding: 180px 30px;
+        &:nth-child(1){
+          background-color: salmon;
+        }
+        &:nth-child(2){
+          background-color: thistle;
+          .info-box{
+            width: 800px;
+            height: 600px;
+            border-radius: 35px;
+            background-color: #1e1e1e;
+            padding: 24px;
+            color: $white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .info-box-header{
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              background: $gray-6d;
+              ul {
+                display: flex;
+                gap: 10px;
+              }
+            }
+            .info-box-container{
+              height: 100%;
+              display: flex;
+              gap: 10px;
+              .lft-set{
+                background-color: $gray-6d;
+                height: 100%;
+                width: 20%;
+              }
+              .rgt-set{
+                background-color: #e5bfc3;
+                width: 100%;
+                color: $black-1e;
+                .pop-btn{
+                  background-color: #fff;
+                  width: 200px;
+                  height: 100px;
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(3){
+          background-color: goldenrod;
+        }
+        .progress-set{
+          width: 1200px;
+          background: #273149;
+          color: white;
+          border-radius: 35px;
+          padding: 24px;
+          .tit-set{
+            display: flex;
+            gap: 10px;
+          }
+          .progress-box{
+            display: flex;
+            width: 400px;
+            background: #18202e;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            border-radius: 15px;
+          }
+          .progress{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #6e1e1e;
+            border-radius: 50%;
+            .tit{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+            }
+            .c1{
+              width: 200px;
+              height: 200px;
+              fill: none;
+              stroke: greenyellow;
+              stroke-width: 6px;
+              stroke-dasharray: 300%;
+              stroke-dashoffset: 300%;
+              transition: .1s linear;
+            }
+          }
+        }
+      }
+    }
+  }
+  .main10 {
     .content{
       .content-box{
         position: relative;
@@ -3234,7 +3475,7 @@ img {
       }
     }
   }
-  &.main12{
+  .main12{
     .content-box.scrollchart{
       position: relative;
       border: 1px solid #000;
@@ -3268,7 +3509,7 @@ img {
       }
     }
   }
-  &.main13{
+  .main13{
     .content{
       padding: 180px 30px;
     }
@@ -3324,7 +3565,7 @@ img {
       }
     }
   }
-  &.main14 {
+  .main14 {
     .content{
       .content-box{
         position: absolute;
@@ -3336,7 +3577,7 @@ img {
       }
     }
   }
-  &.main9{
+  .main9{
     .graph-set {
       width: 800px;
       height: 600px;

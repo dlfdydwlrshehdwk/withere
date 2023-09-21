@@ -1,9 +1,9 @@
 let ani = {
   init: function () {
     // 새로고침시 맨위로
-    setTimeout(() => {
-      ani.scrollTop();
-    }, 100);
+    // setTimeout(() => {
+    //   ani.scrollTop();
+    // }, 100);
     // 맨위로 버튼 클릭시 맨 위로
     $(".scrolltop").click(function () {
       ani.scrollTop();
@@ -289,7 +289,10 @@ let ani = {
     let image = [];
     let obj = { curimg: 0 };
     for (let i = start; i < end; i++) {
-      image.push(`../assets/images/sequence/sequence_${i}.jpg`);
+      // 메인 경로
+      // image.push(`../assets/images/sequence/sequence_${i}.jpg`);
+      // 테스트용 경로
+      image.push(`../../assets/images/sequence/sequence_${i}.jpg`);
     }
 
     let controller = new ScrollMagic.Controller();

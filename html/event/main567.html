@@ -30,9 +30,12 @@
     
     <script type="text/javascript" src="../../assets/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/greensock/gsap.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/greensock/ScrollTrigger.min.js"></script>
 
     <script type="text/javascript" src="../../assets/js/common.js"></script>
     <script type="text/javascript" src="../../assets/js/ani.js"></script>
+    <script type="text/javascript" src="../../assets/js/test.js"></script>
     </script>
   </head>
   <body>
@@ -202,14 +205,229 @@
 
 
     <div id="test">
-      <div class="blank">스크롤을 내려주세요</div>
-      <div class="blank">스크롤을 내려주세요</div>
-      <div class="content">
-        
+      <div class="main567">
+        <div class="blank">스크롤을 내려주세요</div>
+        <div class="blank">스크롤을 내려주세요</div>
+        <div class="content">
+          <div class="content-box hrslide hrslide1">
+            <div class="tit-set">
+              <h2>늘 실버케어</h2>
+              <p>AI 기반 요양병원 환자 위험도 예측<br>
+              예방을 통한 한 발 앞선 돌봄</p>
+            </div>
+          </div>
+          <div class="content-box hrslide hrslide2">
+            <div class="tit-set">
+              <h2>실시간 환자 모니터링</h2>
+              <p>환자의 실시간 상태와 공간의 환경 정보,<br>
+              위치 정보를 실시간으로 확인</p>
+            </div>
+            <div class="info-box">
+              <div class="info-box-header">
+                <div>조감도 모니터링</div>
+                <div>
+                  <ul>
+                    <li>저위험</li>
+                    <li>중위험</li>
+                    <li>고위험</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="info-box-container">
+                <div class="lft-set"></div>
+                <div class="rgt-set">
+                  <div class="pop-btn" onclick="common.openModalPopup('pop-monitoring')">
+                    CLICK
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-box hrslide hrslide3">
+            <div class="tit-set">
+              <h2>AI 위험 예측 기반 환자 위험 관리</h2>
+              <p>개인화된 AI위험 예측 알고리즘</p>
+              <p>위험 원인 분석 및 고위험 환자 집중관리</p>
+            </div>
+            <div class="progress-set">
+              <div class="tit-set">
+                <h3>위험 평가 점수</h3>
+                <div>|</div>
+                <p>최근 1개월</p>
+              </div>
+              <div class="progress-box">
+                <div>욕창위험도<br>평가</div>
+                <div class="progress">
+                  <div class="tit">0%</div>
+                  <svg viewBox="0 0 200 200">
+                    <circle
+                    class="c1" cx="100" cy="100" r="97"
+                    transform="rotate(-90,100,100)"
+                    ></circle>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blank">스크롤을 내려주세요</div>
       </div>
     </div>
+    
       
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="popup pop-monitoring">
+      <div class="tit-set">
+        <div class="tit">
+          모니터링 환자보기
+        </div>
+      </div>
+      <div class="table-set">
+        <div class="table-top">
+          <div class="floor">
+            <span class="fwB">8</span>
+            <span>층</span>
+          </div>
+          <div class="room">
+            <span class="fwB">803</span>
+            <span>호</span>
+          </div>
+          <div class="total">
+            <span>전체</span>
+            <span class="fwB">8</span>
+            <span>명</span>
+          </div>
+        </div>
+        <div class="table-total">
+          <table>
+            <colgroup>
+              <col style="width: 16%;">
+              <col style="width: 8%;">
+              <col style="width: 8%;">
+              <col style="width: 8%;">
+              <col style="width: 12%;">
+              <col style="width: 12%;">
+              <col style="width: 12%;">
+              <col style="width: 12%;">
+              <col style="width: 12%;">
+            </colgroup>
+            <tr>
+              <th>차트 No.</th>
+              <th>환자명</th>
+              <th>성별</th>
+              <th>나이</th>
+              <th>NEWS Score</th>
+              <th>SIRS Score</th>
+              <th>qSOFA Scroe</th>
+              <th>낙상 위험예측</th>
+              <th>심근경색 위험예측</th>
+            </tr>
+            <tr>
+              <td>A123456789</td>
+              <td>김선우</td>
+              <td ><span class="male"></span></td>
+              <td>71</td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+              <td ><span class="risk-h"></span></td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+            </tr>
+            <tr>
+              <td>A123456789</td>
+              <td>김선우</td>
+              <td ><span class="female"></span></td>
+              <td>71</td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+              <td ><span class="risk-h"></span></td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+            </tr>
+            <tr>
+              <td>A123456789</td>
+              <td>김선우</td>
+              <td ><span class="female"></span></td>
+              <td>71</td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+              <td ><span class="risk-h"></span></td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+            </tr>
+            <tr>
+              <td>A123456789</td>
+              <td>김선우</td>
+              <td ><span class="male"></span></td>
+              <td>71</td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+              <td ><span class="risk-h"></span></td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+            </tr>
+            <tr>
+              <td>A123456789</td>
+              <td>김선우</td>
+              <td ><span class="male"></span></td>
+              <td>71</td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+              <td ><span class="risk-h"></span></td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+            </tr>
+            <tr>
+              <td>A123456789</td>
+              <td>김선우</td>
+              <td ><span class="male"></span></td>
+              <td>71</td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+              <td ><span class="risk-h"></span></td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+            </tr>
+            <tr>
+              <td>A123456789</td>
+              <td>김선우</td>
+              <td ><span class="male"></span></td>
+              <td>71</td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+              <td ><span class="risk-h"></span></td>
+              <td ><span class="risk-r"></span></td>
+              <td ><span class="risk-m"></span></td>
+            </tr>
+          </table>
+        </div>
+        <div class="table-bottom" onclick="common.closeModalPopup()">
+          <div>확인</div>
+        </div>
+      </div>
+    </div>
 
 
 

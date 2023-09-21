@@ -5,25 +5,120 @@ const test = {
     this.main9()
     this.main13()
     this.main12()
+    this.main567()
+  },
+  main567 : function(){
+    let isClass = $('#test > div').hasClass('main567')
+    console.log(isClass,'main567')
+    if(!isClass) return
+    else {
+      // gsap.registerPlugin(ScrollTrigger);
+      
+      let sections = gsap.utils.toArray('.hrslide')
+      let trigger = $('.main567 .content')
+      let hrslide2 = $('.hrslide').eq(1)
+      let hrslide3 = $('.hrslide').eq(2)
+      let infoBox = $('.main567 .info-box')
+      let tit = $('.main567 .tit')
+      console.log(sections)
+
+      // 가로스크롤
+      let hrSlide = gsap.to(sections, {
+        xPercent : -100 * (sections.length - 1),
+        ease : 'none',
+        scrollTrigger : {
+          trigger : trigger,
+          pin : true,
+          scrub : 0.1,
+          // end : `+=${(sections.length - 1) * 1000}`,
+          end : "+=3000",
+          // 스냅삭제시 투두두두둑 스크크롤
+          // snap : {
+          //   snapTo:1 / (sections.length - 1),
+          //   duration : 1,
+          //   delay : 0,
+          //   ease : "power1.inOut"
+          // }
+        }
+      })
+
+      let tl2 = gsap.from(infoBox,{
+        duration : 2,
+        autoAlpha : 0
+      })
+      ScrollTrigger.create({
+        animation : tl2,
+        containerAnimation : hrSlide,
+        trigger : hrslide2,
+        start : 'left center'
+      })
+
+      // 게이지 충전
+      let tl = gsap.fromTo('.c1',
+        {
+          strokeDashoffset : '300%',
+          autoAlpha : 0
+        },
+        {
+        duration : 3,
+        strokeDashoffset : '60%',
+        autoAlpha : 1
+        }
+      )
+
+      // 시작하는 트리거
+      let onlyOne = 0; // 한번만 실행하는 변수
+      ScrollTrigger.create({
+        animation : tl,
+        containerAnimation : hrSlide,
+        trigger : hrslide3,
+        start : "left center",
+        onEnter : () => {
+          // 한번만 실행하기 싫으면 onlyOne제거 후 이거 해제
+          // tl.restart(true,false)
+          if(onlyOne) return;
+          else{
+            $({ val : 0}).animate({ val : 77}, {
+              duration: 3000,
+              step: function() {
+                var num = test.numberWithCommas(Math.floor(this.val));
+                tit.text(num + '%');
+              },
+              complete: function() {
+                var num = test.numberWithCommas(Math.floor(this.val));
+                tit.text(num + '%');
+              }
+            });
+          }
+          onlyOne = 1; // 한번만실행하기 싫으면 삭제
+        }
+      })
+      // 초기화 트리거 계속반복하고 싶으면 onlyOne삭제 후 이거 주석해제
+      // ScrollTrigger.create({
+      //   containerAnimation : hrSlide,
+      //   trigger : hrslide3,
+      //   start : "top bottom",
+      //   onEnter : () => {
+      //     tl.pause(0)
+      //   },
+      // })
+    }
   },
   main10 : function(){
-    let isMain10 = $('#test').hasClass('main10')
+    let isMain10 = $('#test > div').hasClass('main10')
+    let trigger = $('.main10 .content')
+    let tit = $('.main10 .tit')
+
+    console.log(isMain10,'isMain10')
     if(!isMain10) return
     else {
       // 저장용 옮길것
       // 일반형
       let ani = gsap.to(".stick",{duration : 2,rotation : 180,paused : true})
 
-      // 스크롤트리거 1회만 실행 간단한 형
-      // gsap.to(".stick",{
-      //   scrollTrigger : ".stick",
-      //   rotation : 180,
-      //   duration : 2 
-      // })
-
       // 시작하는 트리거
       ScrollTrigger.create({
-        trigger : ".content",
+        trigger : trigger,
         start : "top 30%",
         onEnter : () => {
           ani.play()
@@ -34,11 +129,11 @@ const test = {
             duration: 2000,
             step: function() {
               var num = numberWithCommas(Math.floor(this.val));
-              $(".tit").text(num);
+              tit.text(num);
             },
             complete: function() {
               var num = numberWithCommas(Math.floor(this.val));
-              $(".tit").text(num);
+              tit.text(num);
             }
             // 이렇게 하면 step이 시작되고 complete가 비동기되는데 뚝! 끊기는 느낌이 들 수 있음
             // 그게 싫다면 val 종료숫자를 1올리고 complete를 삭제하자
@@ -47,11 +142,11 @@ const test = {
       })
       // 초기화 트리거
       ScrollTrigger.create({
-        trigger : ".content",
+        trigger : trigger,
         start : "top bottom",
         onEnter : () => {
           ani.pause(0)
-          $(".tit").text(0);
+          tit.text(0);
         }
       })
 
@@ -90,78 +185,80 @@ const test = {
     }
   },
   main9 : function(){
-    let isMain9 = $('#test').hasClass('main9')
-
+    let isMain9 = $('#test > div').hasClass('main9')
+    let trigger = $('.main9 .content')
+    let bar = $(".main9 .bar")
+    console.log(isMain9,"isMain9")
     if(!isMain9) return
     else {
-      const tl = gsap.from(".bar",{height : 0,duration : 2,paused : true})
+      const main9Ani = gsap.from(bar,{height : 0,duration : 2,paused : true})
       // 시작하는 트리거
       ScrollTrigger.create({
-        trigger : ".content",
+        trigger : trigger,
         start : "top 30%",
         onEnter : () => {
-          tl.play()
+          main9Ani.play()
         }
       })
       // 초기화 트리거
       ScrollTrigger.create({
-        trigger : ".content",
+        trigger : trigger,
         start : "top bottom",
         onEnter : () => {
-          tl.pause(0)
+          main9Ani.pause(0)
         }
       })
     }
   },
   main12 : function(){
-    let isMain12 = $('#test').hasClass('main12')
+    let isMain12 = $('#test > div').hasClass('main12')
     let innerH = $('.inner-img').height()
     let boxH = $('.main12 .content-box').height()
     let point = innerH - boxH;
-
+    let trigger = $('.main12 ,content')
+    let light = $(".main12 .light")
+    console.log( isMain12,"isMain12")
     if(!isMain12) return
     else {
      const tl = gsap.to(".inner-img",{
       top : -point,
       duration : 1,
-
     })
 
     const tl2 = gsap.timeline()
     tl2
-    .from(".light",{
+    .from(light,{
       scale : 0,
       duration : 2,
-      // delay : 1
     })
-    .to(".light",{
+    .to(light,{
       autoAlpha : 0,
       duration : .1
     })
-    .to(".light",{
+    .to(light,{
       autoAlpha : 1,
       duration : .1
     })
-    .to(".light",{
+    .to(light,{
       autoAlpha : 0,
       duration : .1
     })
-    .to(".light",{
+    .to(light,{
       autoAlpha : 1,
       duration : .1
     })
-    .to(".light",{
+    .to(light,{
       autoAlpha : 0,
       duration : .1
     })
-    .to(".light",{
+    .to(light,{
       autoAlpha : 1,
       duration : .1
     })
 
       // 시작하는 트리거
       ScrollTrigger.create({
-        trigger : ".content",
+        trigger : trigger,
         start : "top 30%",
         onEnter : () => {
           tl.play()
@@ -170,7 +267,7 @@ const test = {
       })
       // 초기화 트리거
       ScrollTrigger.create({
-        trigger : ".content",
+        trigger : trigger,
         start : "top bottom",
         onEnter : () => {
           tl.pause(0)
@@ -181,33 +278,29 @@ const test = {
   },
   main14 : function(){
 
-    let isMain14 = $('#test').hasClass('main14')
-
+    let isMain14 = $('#test > div').hasClass('main14')
+    let trigger = $('.main14 .content')
+    console.log(isMain14,'isMain14')
     if(!isMain14) return
     else {
-      let tg = $('#test .content').offset().top - 100
+      let tg = trigger.offset().top - 100
   
       $(window).scroll(function(){
         let windowH = $(window).scrollTop()
   
         if(windowH >= tg){
-          $('.img-box').addClass('on')
+          trigger.find('.img-box').addClass('on')
         }
         if(windowH < tg){
-          $('.img-box').removeClass('on')
+          trigger.find('.img-box').removeClass('on')
         }
       })
     }
   },
-  // temp : function(){
-  //   let isClass = $('#test').hasClass('Class')
-
-  //   if(!isClass) return
-  //   else {}
-  // }
   main13 : function(){
-    let isMain13 = $('#test').hasClass('main13')
-
+    let isMain13 = $('#test > div').hasClass('main13')
+    let trigger = $('.main13 .content')
+    console.log(isMain13,'isMain13')
     if(!isMain13) return
     else {
 
@@ -232,7 +325,7 @@ const test = {
 
       // 시작하는 트리거
       ScrollTrigger.create({
-        trigger : ".content",
+        trigger : trigger,
         start : "top 30%",
         onEnter : () => {
           tl.play()
@@ -240,13 +333,16 @@ const test = {
       })
       // 초기화 트리거
       ScrollTrigger.create({
-        trigger : ".content",
+        trigger : trigger,
         start : "top bottom",
         onEnter : () => {
           tl.pause(0)
         }
       })
     }
+  },
+  numberWithCommas : function(x){
+    return x.toLocaleString();
   }
 }
 
