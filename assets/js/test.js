@@ -6,13 +6,17 @@ const test = {
     this.main13()
     this.main12()
     this.main567()
+
+    $(window).scroll(function(){
+      console.log($(window).scrollTop())
+    })
   },
   main567 : function(){
     let isClass = $('#test > div').hasClass('main567')
     console.log(isClass,'main567')
     if(!isClass) return
     else {
-      // gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
       
       let sections = gsap.utils.toArray('.hrslide')
       let trigger = $('.main567 .content')
@@ -20,7 +24,8 @@ const test = {
       let hrslide3 = $('.hrslide').eq(2)
       let infoBox = $('.main567 .info-box')
       let tit = $('.main567 .tit')
-      console.log(sections)
+      let endPoint = trigger.innerWidth()
+      console.log(sections,endPoint)
 
       // 가로스크롤
       let hrSlide = gsap.to(sections, {
@@ -31,7 +36,7 @@ const test = {
           pin : true,
           scrub : 0.1,
           // end : `+=${(sections.length - 1) * 1000}`,
-          end : "+=3000",
+          end : `+=3000`,
           // 스냅삭제시 투두두두둑 스크크롤
           // snap : {
           //   snapTo:1 / (sections.length - 1),
@@ -191,6 +196,7 @@ const test = {
     console.log(isMain9,"isMain9")
     if(!isMain9) return
     else {
+      console.log('main9트리거타겟값',trigger.offset().top)
       const main9Ani = gsap.from(bar,{height : 0,duration : 2,paused : true})
       // 시작하는 트리거
       ScrollTrigger.create({
