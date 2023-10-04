@@ -2,7 +2,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "node-sass": "node-sass",
-    "sass": "node-sass -rw --source-map true --source-map-contents true --output-style expanded ./assets/scss/style.scss ./assets/css/style.css"
+		"sass-common": "node-sass -rw --source-map true --source-map-contents true --output-style expanded ./assets/common/scss/style.scss ./assets/common/css/style.css",
+    "sass-kr": "node-sass -rw --source-map true --source-map-contents true --output-style expanded ./assets/kr/scss/style.scss ./assets/kr/css/style.css",
+		"sass-en": "node-sass -rw --source-map true --source-map-contents true --output-style expanded ./assets/en/scss/style.scss ./assets/en/css/style.css"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0"

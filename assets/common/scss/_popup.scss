@@ -1,0 +1,114 @@
+/*******************************************************************
+	popup
+********************************************************************/
+.modal{
+	z-index: 900;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0.6;
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)';
+}
+.popup{
+	display: none;
+	border: 1px solid #000;
+	border-radius: 20px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: $white;
+	// width: 720px;
+	padding: 40px;
+	z-index: 901;
+	.popup-header{
+		text-align: right;
+		.popup-close{
+			font-size: 32px;
+		}
+		h1{
+			text-align: center;
+			font-size : 64px;
+			font-weight: normal;
+			@media (max-width : 1600px) {
+				font-size: 60px;
+			}
+			@media (max-width : 1400px) {
+				font-size: 56px;
+			}
+			@media (max-width : 1200px) {
+				font-size: 52px;
+			}
+			@media (max-width : 1020px) {
+				font-size: 48px;
+			}
+			@media (max-width : 767px) {
+				font-size: 32px;
+			}
+		}
+	}
+	.form-list{
+		// width: 640px;
+		margin: 0 auto;
+		background-color: $bg-f5;
+		padding: 16px;
+		border-radius: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px 0;
+		margin-top: 28px;
+		li{
+			display: flex;
+			justify-content: space-between;
+			gap: 0 16px;
+			height: 48px;
+		}
+		.necessary{
+			width: 20%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.con{
+			display: flex;
+			align-items: center;
+			width: 100%;
+			background-color: $white;
+			border-radius: 8px;
+			padding: 0 10px;
+			.slct {
+				width: 100%;
+			}
+			input{
+				border: none;
+			}
+		}
+	}
+	.terms-agree{
+		margin-top: 28px;
+	}
+	.btn-area button{
+		display: block;
+		padding: 16px 32px;
+		border-radius: 8px;
+		color: $white;
+		background-color: $primary;
+		width: 145px;
+		margin: 0 auto;
+		margin-top: 28px;
+	}
+	.contact{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		
+		.contact-info{
+			display: flex;
+			gap: 40px;
+		}
+	}
+}

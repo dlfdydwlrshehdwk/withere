@@ -1,0 +1,348 @@
+/*******************************************************************
+	Button
+********************************************************************/
+.btn{
+	@include font(20px, $white);
+	font-weight: $fw-medium;
+	letter-spacing: -1px;
+	&-rect{
+		border: 0;
+		border-radius: 8px;
+	}
+	&-round{
+		height: 72px;
+		padding: 0 40px;
+		background: $primary;
+		border-radius: 48px;
+		&.demo{
+			display: flex;
+			align-items: center;
+			height: 48px;
+			padding: 0 16px;
+			border-radius: 16px;
+			box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.20) inset, 1px 1px 0px 0px rgba(255, 255, 255, 0.20) inset, 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
+			@include font(16px, $white);
+			font-weight: $fw-bold;
+			letter-spacing: 0;
+			&::before{
+				content: '';
+				width: 20px;
+				height: 20px;
+				margin-right: 8px;
+				background: url('../../common/images/icon/icon_app.svg') no-repeat 0 0;
+				background-size: 100%;
+			}
+		}
+	}
+	// size
+	&.sm{
+		height: 56px;
+		padding: 0 24px;
+		@include font(16px);
+	}
+	&.md{
+		height: 64px;
+		padding: 0 32px;
+	}
+	// color
+	&.primary{
+		background: $primary;
+	}
+	&.navy{
+		background: $bg-ef;
+	}
+	&.white{
+		background: $white;
+		border: 2px solid $black-1e;
+		color: $black-1e;
+	}
+	&.black{
+		background: $black-1e;
+		color: $white;
+	}
+	// icon
+	&.icon{
+		&-arr{
+			&:after{
+				content: '';
+				width: 32px;
+				height: 16px;
+				margin-left: 8px;
+				background: url('../../assets/images/icon/icon_arr.svg') no-repeat 0 0;
+				background-size: 100%;
+			}
+		}
+	}
+	// type
+	&-search{
+		flex-shrink: 0;
+		width: 40px;
+		height: 40px;
+		background: url('../../assets/images/btn/btn_search.svg') no-repeat 50%;
+		background-size: 100%;
+	}
+	&-del{
+		flex-shrink: 0;
+		width: 40px;
+		height: 40px;
+		background: url('../../assets/images/btn/btn_del.svg') no-repeat 50%;
+		background-size: 100%;
+	}
+	&-view{
+		flex-shrink: 0;
+		width: 32px;
+		height: 32px;
+		background: url('../../assets/images/btn/btn_view.svg') no-repeat 50%;
+		background-size: 100%;
+	}
+	&-link{
+		@include font(18px, $black-1e);
+		font-weight: $fw-medium;
+		&::after{
+			content: '';
+			flex-shrink: 0;
+			width: 32px;
+			height: 32px;
+			margin-left: 8px;
+			background: url('../../assets/images/icon/icon_arr_round.svg') no-repeat 0 0;
+			background-size: 100% 100%;
+		}
+	}
+
+	// @media all and (max-width:1600px){
+	// 	@include font(18px);
+	// 	&-round{
+	// 		height: 60px;
+	// 		padding: 0 35px;
+	// 		border-radius: 40px;
+	// 		&.demo{
+	// 			height: 40px;
+	// 			padding: 0 14px;
+	// 			border-radius: 14px;
+	// 			@include font(14px);
+	// 			&::before{
+	// 				width: 16px;
+	// 				height: 16px;
+	// 				margin-right: 6px;
+	// 			}
+	// 		}
+	// 	}
+	// 	// size
+	// 	&.sm{
+	// 		height: 46px;
+	// 		padding: 0 20px;
+	// 		@include font(14px);
+	// 	}
+	// 	&.md{
+	// 		height: 54px;
+	// 		padding: 0 25px;
+	// 	}
+	// 	// icon
+	// 	&.icon{
+	// 		&-arr{
+	// 			&:after{
+	// 				width: 26px;
+	// 				height: 14px;
+	// 				margin-left: 6px;
+	// 			}
+	// 		}
+	// 	}
+	// 	// type
+	// 	&-search{
+	// 		width: 35px;
+	// 		height: 35px;
+	// 	}
+	// 	&-del{
+	// 		width: 35px;
+	// 		height: 35px;
+	// 	}
+	// 	&-view{
+	// 		width: 28px;
+	// 		height: 28px;
+	// 	}
+	// 	&-link{
+	// 		@include font(16px);
+	// 		&::after{
+	// 			width: 26px;
+	// 			height: 26px;
+	// 			margin-left: 6px;
+	// 		}
+	// 	}
+	// }
+	// @media all and (max-width:1400px){
+	// 	@include font(16px);
+	// 	&-round{
+	// 		height: 50px;
+	// 		padding: 0 30px;
+	// 		border-radius: 35px;
+	// 		&.demo{
+	// 			height: 35px;
+	// 			padding: 0 12px;
+	// 			border-radius: 12px;
+	// 			@include font(12px);
+	// 			&::before{
+	// 				width: 14px;
+	// 				height: 14px;
+	// 				margin-right: 4px;
+	// 			}
+	// 		}
+	// 	}
+	// 	// size
+	// 	&.sm{
+	// 		height: 38px;
+	// 		padding: 0 16px;
+	// 		@include font(12px);
+	// 	}
+	// 	&.md{
+	// 		height: 45px;
+	// 		padding: 0 20px;
+	// 	}
+	// 	// icon
+	// 	&.icon{
+	// 		&-arr{
+	// 			&:after{
+	// 				width: 22px;
+	// 				height: 12px;
+	// 				margin-left: 4px;
+	// 			}
+	// 		}
+	// 	}
+	// 	// type
+	// 	&-search{
+	// 		width: 30px;
+	// 		height: 30px;
+	// 	}
+	// 	&-del{
+	// 		width: 30px;
+	// 		height: 30px;
+	// 	}
+	// 	&-view{
+	// 		width: 22px;
+	// 		height: 22px;
+	// 	}
+	// 	&-link{
+	// 		@include font(14px);
+	// 		&::after{
+	// 			width: 22px;
+	// 			height: 22px;
+	// 		}
+	// 	}
+	// }
+	// @media all and (max-width:1200px){
+	// 	@include font(14px);
+	// 	&-round{
+	// 		height: 42px;
+	// 		padding: 0 25px;
+	// 		border-radius: 30px;
+	// 		&.demo{
+	// 			height: 30px;
+	// 			padding: 0 10px;
+	// 			border-radius: 10px;
+	// 			@include font(10px);
+	// 			&::before{
+	// 				width: 12px;
+	// 				height: 12px;
+	// 			}
+	// 		}
+	// 	}
+	// 	// size
+	// 	&.sm{
+	// 		height: 32px;
+	// 		padding: 0 14px;
+	// 		@include font(10px);
+	// 	}
+	// 	&.md{
+	// 		height: 35px;
+	// 		padding: 0 16px;
+	// 	}
+	// 	// icon
+	// 	&.icon{
+	// 		&-arr{
+	// 			&:after{
+	// 				width: 16px;
+	// 				height: 10px;
+	// 			}
+	// 		}
+	// 	}
+	// 	// type
+	// 	&-search{
+	// 		width: 25px;
+	// 		height: 25px;
+	// 	}
+	// 	&-del{
+	// 		width: 25px;
+	// 		height: 25px;
+	// 	}
+	// 	&-link{
+	// 		@include font(12px);
+	// 		&::after{
+	// 			width: 18px;
+	// 			height: 18px;
+	// 			margin-left: 4px;
+	// 		}
+	// 	}
+	// }
+	// @media all and (max-width:1023px){
+	// 	@include font(calcRem(18px));
+	// 	font-weight: $fw-medium;
+	// 	letter-spacing: -1px;
+	// 	&-round{
+	// 		height: 52px;
+	// 		padding: 0 24px;
+	// 		border-radius: 60px;
+	// 		&.demo{
+	// 			height: 52px;
+	// 			padding: 0 16px;
+	// 			border-radius: 16px;
+	// 			@include font(calcRem(18px));
+	// 			&::before{
+	// 				width: 20px;
+	// 				height: 20px;
+	// 				margin-right: 8px;
+	// 			}
+	// 		}
+	// 	}
+	// 	// size
+	// 	&.sm{
+	// 		height: 40px;
+	// 		padding: 0 20px;
+	// 		@include font(calcRem(16px));
+	// 	}
+	// 	&.md{
+	// 		height: 45px;
+	// 		padding: 0 22px;
+	// 		@include font(calcRem(16px));
+	// 	}
+	// 	// icon
+	// 	&.icon{
+	// 		&-arr{
+	// 			&:after{
+	// 				width: 30px;
+	// 				height: 16px;
+	// 				margin-left: 8px;
+	// 			}
+	// 		}
+	// 	}
+	// 	// type
+	// 	&-search{
+	// 		width: 32px;
+	// 		height: 32px;
+	// 	}
+	// 	&-del{
+	// 		width: 32px;
+	// 		height: 32px;
+	// 	}
+	// 	&-view{
+	// 		width: 32px;
+	// 		height: 32px;
+	// 	}
+	// 	&-link{
+	// 		@include font(calcRem(16px));
+	// 		&::after{
+	// 			width: 32px;
+	// 			height: 32px;
+	// 			margin-left: 8px;
+	// 		}
+	// 	}
+	// }
+}
