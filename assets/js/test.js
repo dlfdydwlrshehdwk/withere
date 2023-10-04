@@ -5,8 +5,8 @@ const test = {
     this.main9()
     this.main13()
     this.main12()
-    // this.main567()
-    this.test567()
+    this.main567()
+    // this.test567()
 
   },
   test567 : function(){
