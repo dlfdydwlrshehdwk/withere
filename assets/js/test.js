@@ -5,11 +5,30 @@ const test = {
     this.main9()
     this.main13()
     this.main12()
-    this.main567()
+    // this.main567()
+    this.test567()
 
-    $(window).scroll(function(){
-      console.log($(window).scrollTop())
+  },
+  test567 : function(){
+    gsap.registerPlugin(ScrollTrigger);
+
+    let zebal = gsap.timeline({
+      ScrollTrigger : {
+        trigger : ".zebal",
+        start : "top top",
+        end: "+=1500",
+        scrub : true,
+        pin : true,
+        anticipatePin : 1,
+        markers : {
+          startColor : 'yellow',
+          endColor : "blue"
+        },
+      }
     })
+    .to('.zb-slide',{x:-1000})
+
+    
   },
   main567 : function(){
     let isClass = $('#test > div').hasClass('main567')
@@ -17,45 +36,48 @@ const test = {
     if(!isClass) return
     else {
       gsap.registerPlugin(ScrollTrigger);
-      
+
       let sections = gsap.utils.toArray('.hrslide')
       let trigger = $('.main567 .content')
       let hrslide2 = $('.hrslide').eq(1)
       let hrslide3 = $('.hrslide').eq(2)
       let infoBox = $('.main567 .info-box')
       let tit = $('.main567 .tit')
-      let endPoint = trigger.innerWidth()
-      console.log(sections,endPoint)
+      let end = trigger.width() - $(window).outerWidth()
 
       // 가로스크롤
-      let hrSlide = gsap.to(sections, {
+      let hrSlide = gsap.to(sections,end,{
         xPercent : -100 * (sections.length - 1),
         ease : 'none',
         scrollTrigger : {
           trigger : trigger,
+          top : "top top",
+          end : `+=${end}`,
           pin : true,
-          scrub : 0.1,
-          // end : `+=${(sections.length - 1) * 1000}`,
-          end : `+=3000`,
+          scrub : 1,
+          anticipatePin : 1,
           // 스냅삭제시 투두두두둑 스크크롤
-          // snap : {
-          //   snapTo:1 / (sections.length - 1),
-          //   duration : 1,
-          //   delay : 0,
-          //   ease : "power1.inOut"
-          // }
+          snap : {
+            snapTo:1 / (sections.length - 1),
+            duration : 1,
+            delay : 0,
+            ease : "power1.inOut",
+            inertia : false,  // rhkstjdgyrhk qlghkftjd
+          },
+          invalidateOnRefresh : true, // 새로고침시 가로값인식
         }
       })
 
-      let tl2 = gsap.from(infoBox,{
+      // 박스등장
+    gsap.from(infoBox,{
         duration : 2,
-        autoAlpha : 0
-      })
-      ScrollTrigger.create({
-        animation : tl2,
-        containerAnimation : hrSlide,
-        trigger : hrslide2,
-        start : 'left center'
+        autoAlpha : 0,
+        scrollTrigger : {
+          trigger : hrslide2,
+          start : "left center",
+          containerAnimation : hrSlide,
+          markers : false,
+        }
       })
 
       // 게이지 충전
@@ -99,14 +121,14 @@ const test = {
         }
       })
       // 초기화 트리거 계속반복하고 싶으면 onlyOne삭제 후 이거 주석해제
-      // ScrollTrigger.create({
-      //   containerAnimation : hrSlide,
-      //   trigger : hrslide3,
-      //   start : "top bottom",
-      //   onEnter : () => {
-      //     tl.pause(0)
-      //   },
-      // })
+      ScrollTrigger.create({
+        containerAnimation : hrSlide,
+        trigger : hrslide3,
+        start : "top bottom",
+        onEnter : () => {
+          tl.pause(0)
+        },
+      })
     }
   },
   main10 : function(){
@@ -196,12 +218,12 @@ const test = {
     console.log(isMain9,"isMain9")
     if(!isMain9) return
     else {
-      console.log('main9트리거타겟값',trigger.offset().top)
       const main9Ani = gsap.from(bar,{height : 0,duration : 2,paused : true})
       // 시작하는 트리거
       ScrollTrigger.create({
         trigger : trigger,
         start : "top 30%",
+        markers : true,
         onEnter : () => {
           main9Ani.play()
         }
@@ -210,6 +232,7 @@ const test = {
       ScrollTrigger.create({
         trigger : trigger,
         start : "top bottom",
+        markers : true,
         onEnter : () => {
           main9Ani.pause(0)
         }

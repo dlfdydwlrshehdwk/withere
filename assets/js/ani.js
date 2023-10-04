@@ -224,7 +224,7 @@ let ani = {
                 pin: true, // trigger 고정 스티키기능 - 가로스크롤할거면 필수
                 anticipatePin: 1,
                 start: "top top", // trigger가 viewport 상단에 닿을때 시작
-                end: "+=1500", // 시작지점에서 500px를 스크롤한 후 끝
+                end: "+=1500", // 시작지점에서 1500px를 스크롤한 후 끝
                 scrub: 1, // 애니메이션 부드럽게 진행
               },
             })

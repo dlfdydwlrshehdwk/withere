@@ -3333,21 +3333,24 @@ img {
     cursor: pointer;
   }
 }
-
-
 // 테스트
 #test{
   .main567{
     .content {
-      height: 100vh;
-      display: flex;
-      flex-wrap: nowrap;
       padding: 0;
-      width: 300%;
+      overflow: hidden;
+      .zbzb{
+        position: relative;
+        width: 300%;
+        height: 100vh;
+        display: flex;
+      }
       .hrslide{
         width: 100%;
         position: relative;
-        padding: 180px 30px;
+        .content-box-wrap{
+          padding: 180px 30px; 
+        }
         &:nth-child(1){
           background-color: salmon;
         }
@@ -3686,4 +3689,29 @@ img {
       }
     }
   }
+}
+
+.zebal {
+  display: flex;
+  height: 100vh;
+  background-color: beige;
+}
+.zb-content{
+  width: 100%;
+}
+.zb-slide{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.zb-slide > div {
+  width: 40%;
+  height: 100%;
+  background-color: firebrick;
+}
+.zb-slide > div:nth-child(2) {
+  width: 40%;
+  height: 100%;
+  background-color: rgba(77, 45, 45, 0.274);
 }

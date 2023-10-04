@@ -5971,16 +5971,23 @@ img {
 }
 
 #test .main567 .content {
+  padding: 0;
+  overflow: hidden;
+}
+
+#test .main567 .content .zbzb {
+  position: relative;
+  width: 300%;
   height: 100vh;
   display: flex;
-  flex-wrap: nowrap;
-  padding: 0;
-  width: 300%;
 }
 
 #test .main567 .content .hrslide {
   width: 100%;
   position: relative;
+}
+
+#test .main567 .content .hrslide .content-box-wrap {
   padding: 180px 30px;
 }
 
@@ -6337,6 +6344,35 @@ img {
 #test .content .content-box .img-box.on:nth-child(3) {
   opacity: 1;
   transition-delay: .6s;
+}
+
+.zebal {
+  display: flex;
+  height: 100vh;
+  background-color: beige;
+}
+
+.zb-content {
+  width: 100%;
+}
+
+.zb-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.zb-slide > div {
+  width: 40%;
+  height: 100%;
+  background-color: firebrick;
+}
+
+.zb-slide > div:nth-child(2) {
+  width: 40%;
+  height: 100%;
+  background-color: rgba(77, 45, 45, 0.274);
 }
 
 /*! jQuery UI - v1.13.2 - 2022-12-19
