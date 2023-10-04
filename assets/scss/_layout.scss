@@ -3335,122 +3335,8 @@ img {
 }
 // 테스트
 #test{
-  .main567{
-    .content {
-      padding: 0;
-      overflow: hidden;
-      .zbzb{
-        position: relative;
-        width: 300%;
-        height: 100vh;
-        display: flex;
-      }
-      .hrslide{
-        width: 100%;
-        height: 100%;
-        position: relative;
-        .content-box-wrap{
-          padding: 180px 30px; 
-        }
-        &:nth-child(1){
-          background-color: salmon;
-        }
-        &:nth-child(2){
-          background-color: thistle;
-          .info-box{
-            width: 800px;
-            height: 600px;
-            border-radius: 35px;
-            background-color: #1e1e1e;
-            padding: 24px;
-            color: $white;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            .info-box-header{
-              width: 100%;
-              display: flex;
-              justify-content: space-between;
-              background: $gray-6d;
-              ul {
-                display: flex;
-                gap: 10px;
-              }
-            }
-            .info-box-container{
-              height: 100%;
-              display: flex;
-              gap: 10px;
-              .lft-set{
-                background-color: $gray-6d;
-                height: 100%;
-                width: 20%;
-              }
-              .rgt-set{
-                background-color: #e5bfc3;
-                width: 100%;
-                color: $black-1e;
-                .pop-btn{
-                  background-color: #fff;
-                  width: 200px;
-                  height: 100px;
-                }
-              }
-            }
-          }
-        }
-        &:nth-child(3){
-          background-color: goldenrod;
-        }
-        .progress-set{
-          width: 1200px;
-          background: #273149;
-          color: white;
-          border-radius: 35px;
-          padding: 24px;
-          .tit-set{
-            display: flex;
-            gap: 10px;
-          }
-          .progress-box{
-            display: flex;
-            width: 400px;
-            background: #18202e;
-            justify-content: space-between;
-            padding: 20px;
-            align-items: center;
-            border-radius: 15px;
-          }
-          .progress{
-            position: relative;
-            width: 200px;
-            height: 200px;
-            border: 1px solid #6e1e1e;
-            border-radius: 50%;
-            .tit{
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%,-50%);
-            }
-            .c1{
-              width: 200px;
-              height: 200px;
-              fill: none;
-              stroke: greenyellow;
-              stroke-width: 6px;
-              stroke-dasharray: 300%;
-              stroke-dashoffset: 300%;
-              transition: .1s linear;
-            }
-          }
-        }
-      }
-    }
-  }
+  
+
   .main10 {
     .content{
       .content-box{
@@ -3692,27 +3578,114 @@ img {
   }
 }
 
-.zebal {
-  display: flex;
-  height: 100vh;
-  background-color: beige;
-}
-.zb-content{
-  width: 100%;
-}
-.zb-slide{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-.zb-slide > div {
-  width: 40%;
-  height: 100%;
-  background-color: firebrick;
-}
-.zb-slide > div:nth-child(2) {
-  width: 40%;
-  height: 100%;
-  background-color: rgba(77, 45, 45, 0.274);
+.qq567{
+  .slide567{
+    position: relative;
+    display: flex;
+    width: 300%;
+    .qq {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .qq1{
+      background-color: aqua;
+    }
+    .qq2{
+      background-color: #6e1e1e;
+      .info-box{
+        width: 800px;
+        height: 600px;
+        border-radius: 35px;
+        background-color: #1e1e1e;
+        padding: 24px;
+        color: $white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .info-box-header{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          background: $gray-6d;
+          ul {
+            display: flex;
+            gap: 10px;
+          }
+        }
+        .info-box-container{
+          height: 100%;
+          display: flex;
+          gap: 10px;
+          .lft-set{
+            background-color: $gray-6d;
+            height: 100%;
+            width: 20%;
+          }
+          .rgt-set{
+            background-color: #e5bfc3;
+            width: 100%;
+            color: $black-1e;
+            .pop-btn{
+              background-color: #fff;
+              width: 200px;
+              height: 100px;
+            }
+          }
+        }
+      }
+    }
+    .qq3{
+      background-color: #6c93ea;
+      .progress-set{
+        width: 1200px;
+        background: #273149;
+        color: white;
+        border-radius: 35px;
+        padding: 24px;
+        .tit-set{
+          display: flex;
+          gap: 10px;
+        }
+        .progress-box{
+          display: flex;
+          width: 400px;
+          background: #18202e;
+          justify-content: space-between;
+          padding: 20px;
+          align-items: center;
+          border-radius: 15px;
+        }
+        .progress{
+          position: relative;
+          width: 200px;
+          height: 200px;
+          border: 1px solid #6e1e1e;
+          border-radius: 50%;
+          .tit{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+          }
+          .c1{
+            width: 200px;
+            height: 200px;
+            fill: none;
+            stroke: greenyellow;
+            stroke-width: 6px;
+            stroke-dasharray: 300%;
+            stroke-dashoffset: 300%;
+            transition: .1s linear;
+          }
+        }
+      }
+    }
+  }
 }

@@ -6,79 +6,165 @@ const test = {
     this.main13()
     this.main12()
     // this.main567()
-    // this.test567()
+    this.test567()
 
   },
   test567 : function(){
-    gsap.registerPlugin(ScrollTrigger);
 
-    let zebal = gsap.timeline({
-      ScrollTrigger : {
-        trigger : ".zebal",
-        start : "top top",
-        end: "+=1500",
-        scrub : true,
-        pin : true,
-        anticipatePin : 1,
-        markers : {
-          startColor : 'yellow',
-          endColor : "blue"
-        },
+    let controller = new ScrollMagic.Controller();
+
+    let tween = new TimelineMax({
+      onUpdate : function(){
+        let windowW = $(window).outerWidth()
+        let standard = Math.floor($('.qq').offset().left)
+
       }
     })
-    .to('.zb-slide',{x:-1000})
-
+    .to('.slide567',{left : '-200%'})
     
+    let scene = new ScrollMagic.Scene({
+      triggerElement : ".qq567",
+      duration : 3000,
+      triggerHook : '0', // 0 - onEnter , 1 - onLeave
+      // offset : 200 // start 30% 라면 30%를 의미 이수치만큼 뒤에시작
+    })
+    .setPin('.qq567', // {pushFollowers : false} 핀벗겨줌
+    )
+    // .setClassToggle('class','ele') // 클래스추가 클래스,어디에
+    .setTween(tween)
+    .addTo(controller)
+    .addIndicators({
+      name : "1"
+    })
+
+
+    let tg = $('.qq2 .info-box')
+    let controller2 = new ScrollMagic.Controller({vertical : false});
+    let tween2 = TweenMax.from(tg,1,{
+      autoAlpha : 0,
+      onStart : function(){
+        console.log('되니')
+      }
+    })
+    let scene2 = new ScrollMagic.Scene({
+      triggerElement : ".qq2",
+      duration : '0%',
+      triggerHook : '.3',
+      reverse : false
+    })
+    .setTween(tween2)
+    .addIndicators({name : '등장'})
+    .addTo(controller2)
+
+
+
+
+
+
+
+
+
+
+    let tit = $('.qq3 .tit')
+    let tg2 = $('.qq3 .c1')
+    let controller3 = new ScrollMagic.Controller({vertical : false});
+    let tween3 = TweenMax.fromTo(tg2,3,
+      {
+      strokeDashoffset : '300%',
+      autoAlpha : 0
+      },
+      {
+      duration : 3,
+      strokeDashoffset : '60%',
+      autoAlpha : 1,
+      onStart : function(){
+        console.log('gg')
+        $({ val : 0}).animate({ val : 77}, {
+          duration: 3000,
+          step: function() {
+            var num = test.numberWithCommas(Math.floor(this.val));
+            tit.text(num + '%');
+          },
+          complete: function() {
+            var num = test.numberWithCommas(Math.floor(this.val));
+            tit.text(num + '%');
+          }
+        })
+      }
+      })
+    let scene3 = new ScrollMagic.Scene({
+      triggerElement : ".qq3",
+      duration : '0%',
+      triggerHook : '.3',
+      reverse : false
+    })
+    .setTween(tween3)
+    .addIndicators({name : '등장2'})
+    .addTo(controller3)
+
+
+
+
+
+
+
+
+    // ScrollTrigger.create({
+    //   animation : tl,
+    //   containerAnimation : sections,
+    //   trigger : hrslide3,
+    //   start : "left center",
+    //   onEnter : () => {
+    //     // 한번만 실행하기 싫으면 onlyOne제거 후 이거 해제
+    //     // tl.restart(true,false)
+    //     if(onlyOne) return;
+    //     else{
+    //       $({ val : 0}).animate({ val : 77}, {
+    //         duration: 3000,
+    //         step: function() {
+    //           var num = test.numberWithCommas(Math.floor(this.val));
+    //           tit.text(num + '%');
+    //         },
+    //         complete: function() {
+    //           var num = test.numberWithCommas(Math.floor(this.val));
+    //           tit.text(num + '%');
+    //         }
+    //       });
+    //     }
+    //     onlyOne = 1; // 한번만실행하기 싫으면 삭제
+    //   }
+    // })
+
+
+
+
   },
   main567 : function(){
-    let isClass = $('#test > div').hasClass('main567')
+    let isClass = $('#container div').hasClass('main567')
     console.log(isClass,'main567')
     if(!isClass) return
     else {
       gsap.registerPlugin(ScrollTrigger);
 
-      let sections = gsap.utils.toArray('.hrslide')
-      let trigger = $('.main567 .content')
-      let hrslide2 = $('.hrslide').eq(1)
-      let hrslide3 = $('.hrslide').eq(2)
-      let infoBox = $('.main567 .info-box')
-      let tit = $('.main567 .tit')
-      let end = trigger.width() - $(window).outerWidth()
-
-      // 가로스크롤
-      let hrSlide = gsap.to(sections,end,{
-        xPercent : -100 * (sections.length - 1),
-        ease : 'none',
-        scrollTrigger : {
-          trigger : trigger,
-          top : "top top",
-          end : `+=${end}`,
-          pin : true,
-          scrub : 1,
-          anticipatePin : 1,
-          // 스냅삭제시 투두두두둑 스크크롤
-          snap : {
-            snapTo:1 / (sections.length - 1),
-            duration : 1,
-            delay : 0,
-            ease : "power1.inOut",
-            inertia : false,  // rhkstjdgyrhk qlghkftjd
-          },
-          invalidateOnRefresh : true, // 새로고침시 가로값인식
-        }
-      })
+      let sections = gsap.utils.toArray('.qq')
+      let trigger = $('.qq567')
+      let hrslide2 = $('.qq').eq(1)
+      let hrslide3 = $('.qq').eq(2)
+      let infoBox = $('.qq567 .info-box')
+      let tit = $('.qq .tit')
+      
 
       // 박스등장
-    gsap.from(infoBox,{
-        duration : 2,
-        autoAlpha : 0,
-        scrollTrigger : {
-          trigger : hrslide2,
-          start : "left center",
-          containerAnimation : hrSlide,
-          markers : false,
-        }
-      })
+    // gsap.from(infoBox,{
+    //     duration : 2,
+    //     autoAlpha : 0,
+    //     scrollTrigger : {
+    //       trigger : hrslide2,
+    //       start : "left center",
+    //       containerAnimation : sections,
+    //       markers : false,
+    //     }
+    //   })
 
       // 게이지 충전
       let tl = gsap.fromTo('.c1',
@@ -97,7 +183,7 @@ const test = {
       let onlyOne = 0; // 한번만 실행하는 변수
       ScrollTrigger.create({
         animation : tl,
-        containerAnimation : hrSlide,
+        containerAnimation : sections,
         trigger : hrslide3,
         start : "left center",
         onEnter : () => {
@@ -122,7 +208,7 @@ const test = {
       })
       // 초기화 트리거 계속반복하고 싶으면 onlyOne삭제 후 이거 주석해제
       ScrollTrigger.create({
-        containerAnimation : hrSlide,
+        containerAnimation : sections,
         trigger : hrslide3,
         start : "top bottom",
         onEnter : () => {
@@ -212,7 +298,7 @@ const test = {
     }
   },
   main9 : function(){
-    let isMain9 = $('#test > div').hasClass('main9')
+    let isMain9 = $('#container  div').hasClass('main9')
     let trigger = $('.main9 .content')
     let bar = $(".main9 .bar")
     console.log(isMain9,"isMain9")
@@ -223,7 +309,11 @@ const test = {
       ScrollTrigger.create({
         trigger : trigger,
         start : "top 30%",
-        markers : true,
+        markers : {
+          startColor : 'orange',
+          endColor : 'green',
+          fontSize : '30px'
+        },
         onEnter : () => {
           main9Ani.play()
         }
@@ -232,7 +322,7 @@ const test = {
       ScrollTrigger.create({
         trigger : trigger,
         start : "top bottom",
-        markers : true,
+        // markers : true,
         onEnter : () => {
           main9Ani.pause(0)
         }
