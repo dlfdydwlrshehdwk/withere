@@ -13,13 +13,7 @@ const test = {
 
     let controller = new ScrollMagic.Controller();
 
-    let tween = new TimelineMax({
-      onUpdate : function(){
-        let windowW = $(window).outerWidth()
-        let standard = Math.floor($('.qq').offset().left)
-
-      }
-    })
+    let tween = new TimelineMax()
     .to('.slide567',{left : '-200%'})
     
     let scene = new ScrollMagic.Scene({
@@ -107,33 +101,6 @@ const test = {
 
 
 
-
-
-    // ScrollTrigger.create({
-    //   animation : tl,
-    //   containerAnimation : sections,
-    //   trigger : hrslide3,
-    //   start : "left center",
-    //   onEnter : () => {
-    //     // 한번만 실행하기 싫으면 onlyOne제거 후 이거 해제
-    //     // tl.restart(true,false)
-    //     if(onlyOne) return;
-    //     else{
-    //       $({ val : 0}).animate({ val : 77}, {
-    //         duration: 3000,
-    //         step: function() {
-    //           var num = test.numberWithCommas(Math.floor(this.val));
-    //           tit.text(num + '%');
-    //         },
-    //         complete: function() {
-    //           var num = test.numberWithCommas(Math.floor(this.val));
-    //           tit.text(num + '%');
-    //         }
-    //       });
-    //     }
-    //     onlyOne = 1; // 한번만실행하기 싫으면 삭제
-    //   }
-    // })
 
 
 
@@ -396,7 +363,7 @@ const test = {
     }
   },
   main14 : function(){
-
+ 
     let isMain14 = $('#test > div').hasClass('main14')
     let trigger = $('.main14 .content')
     console.log(isMain14,'isMain14')
